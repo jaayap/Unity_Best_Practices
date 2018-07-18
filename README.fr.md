@@ -100,7 +100,7 @@ et voilà le tour est joué, à présent vous pouvez ajouter vos fichier et comm
 
 Si vous utilisez github, la notification “stored with Git LFS” devrait apparaître dans l’interface web lorsque vous ouvrez votre fichier
 
-**Add image**
+![Image of Github Stored with Git LFS](https://github.com/jaayap/Unity_Best_Practices/blob/master/Img/image7.png)
 
 Pour comprendre le fonctionnement de [Git LFS](https://git-lfs.github.com/), je vous conseille de regarder la vidéo proposé par bitbucket : https://www.youtube.com/watch?v=9gaTargV5BY
 
