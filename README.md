@@ -1,4 +1,4 @@
-### French version [here](https://github.com/jaayap/Unity_Best_Practices/edit/master/README.fr.md) 
+### French version [here](README.fr.md) 
 # Introduction
 # Versionning : Git & Unity
 # Tests & TDD
