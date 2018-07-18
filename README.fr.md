@@ -1,4 +1,5 @@
-French Version
+### [Consult this site in english](https://jaayap.github.io/Unity_Best_Practices/)
+
 # Introduction
 # Versionning : Git & Unity
 # Tests & TDD
