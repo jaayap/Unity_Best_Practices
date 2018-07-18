@@ -2,7 +2,7 @@
 
 Guide des bonnes pratiques de développement avec Unity : Versionning, tests unitaires, TDD, Clean Architecture
 
-__Plan du site :__
+__Plan :__
 - [Introduction](#introduction)
 - [Versionning : Git & Unity](#versionning--git--unity)
 - [Tests & TDD](#tests-&-tdd)
