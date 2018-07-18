@@ -5,10 +5,14 @@ Guide des bonnes pratiques de développement avec Unity : Versionning, tests uni
 __Plan :__
 - [Introduction](#introduction)
 - [Versionning : Git & Unity](#versionning--git--unity)
+        - [Le .gitignore](#le-.gitignore)
+        - [Smart Merge](#smart-merge)
+        - [Les gros fichiers](#les-gros-fichiers)
+        
 - [Tests & TDD](#tests-&-tdd)
-    - [Tests : Introduction](#tests--introduction)
-    - [Tests Unitaires](#tests-unitaires)
-    - [TDD (Test-driven-developpement)ou développement piloté par les tests](#tdd-test-driven-developpement-ou-développement-piloté-par-les-tests)
+        - [Tests : Introduction](#tests--introduction)
+        - [Tests Unitaires](#tests-unitaires)
+        - [TDD (Test-driven-developpement)ou développement piloté par les tests](#tdd-test-driven-developpement-ou-développement-piloté-par-les-tests)
 - [Clean Code](#clean-code)
 - [Architecture](#architecture)
 
@@ -20,20 +24,20 @@ __Plan :__
 Si vous utiliser *git* pour versionner vos projets *Unity*, vous avez du remarquez que parfois les fichiers tels que les scènes et les prefabs subissent des régressions lors des merges. Deux personnes modifiant ainsi le même fichier en même temps provoquent un conflit que git, par défaut n’arrive pas à résoudre. Vous retrouvez alors votre scène entièrement vide ou votre *prefab* tout cassé. 
 Voici la solution que j’ai choisi d’adopter : 
 
-## Etape 1 : Le .gitignore
+## Le .gitignore
 
 Il est important d’ajouter un fichier **.gitignore** à votre archive. Il permettra à git d’ignorer certains fichiers temporaires générés par *Unity* et par votre IDE (dans l’exemple visual studio, mais vous pouvez modifier le *gitignore* pour l’adapter aux outils que vous utilisé). Dans certains projets, il est pertinent d’ajouter des dossiers de votre projet afin de ne pas les enregistrer dans le dépôt en ligne, un *asset* de l’*asset store* par exemple (peut peser lourd dans l’archive, ce qui ralenti considérablement l’équipe lorsqu’elle doit mettre à jour le dépôt ou le récupérer).
 
 voir https://github.com/github/gitignore/blob/master/Unity.gitignore
 
-## Etape 2 : Enregistrement des fichiers en YAML
+## Enregistrement des fichiers en YAML
 
 ![Image of Unity Project Settings](https://s3.amazonaws.com/gamasutra/UnityVersionControlSettings.png)
 
 Passer le mode d’enregistrement des assets en “Force Text” (voir image ci-dessus). Vos fichiers s’enregistrent maintenant au format YAML.
 Cela permet à Git de mieux gérer les conflits, mais cela peut s'avérer insuffisant.
 
-## Etape 3 : Smart Merge
+## Smart Merge
 
 Depuis la version 5.0 de *Unity*, un **UnityYAMLMerge tool** est fourni avec son installation. Pour l’utiliser, il suffit de copier/ coller les lignes suivantes dans le fichier **.git/config** :
 
@@ -61,7 +65,7 @@ Continuer à utiliser git comme à votre habitude et si lors d’un merge, vous 
 
 Le SmartMerge possède ses limites. Il ne peut pas résoudre seul le conflit lorsque vous toucher au même objet de la scène. Dans ce cas, il vous demandera de choisir la bonne version ( la scène actuelle, l’ancienne scène ou celle de votre collègue ?)
 
-## Etape 4 : Les gros fichiers
+## Les gros fichiers
 
 Versionner des fichiers volumineux (png, fbx, …) peut s'avérer douloureux, en effet GitHub vous empêche de pousser des fichiers de plus de 100 Mo. De plus, votre dépôt Git contient toutes les versions de chaque fichier. Les révisions multiples de fichiers volumineux augmentent les temps de clonage et de récupération pour les autres utilisateurs du dépôt.
 Git demande à chaque utilisateur d'avoir autant d'espace libre sur un disque dur que d'espace consommé à tout moment. Par exemple, si une archive est de 1 Go, Git nécessite 1 Go d'espace libre supplémentaire pour être disponible. Il est conseillé de garder les fichiers suivant dans le dépôt : fichiers de code, assets qui ont besoin d’être versionné (graphiques), les fichiers de configuration (volumineux ou non) et de ne pas versionner les fichiers suivants : Bases de données, fichiers temporaires (journaux, log, …). 
