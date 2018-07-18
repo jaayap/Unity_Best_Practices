@@ -6,7 +6,7 @@ __Plan du site :__
 - [Introduction](#introduction)
 - [Versionning : Git & Unity](#versionning--git--unity)
 - [Tests & TDD](#tests-&-tdd)
-    - [Tests : Introduction](#tests---introduction)
+    - [Tests : Introduction](#tests--introduction)
     - [Tests Unitaires](#tests-unitaires)
     - [TDD (Test-driven-developpement)ou développement piloté par les tests](#tdd-test-driven-developpement-ou-développement-piloté-par-les-tests)
 - [Clean Code](#clean-code)
