@@ -79,8 +79,6 @@ Si le dépôt que vous utilisez est compatible avec [Git LFS](https://git-lfs.gi
 
 ![Image Explicative de Git LFS](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/image9.png?token=AHjeDpsdDG7nmpaEzQkxpTVyQp2cHdTmks5bWG9nwA%3D%3D)
 
-[![Image Explicative de Git LFS](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/image9.png?token=AHjeDpsdDG7nmpaEzQkxpTVyQp2cHdTmks5bWG9nwA%3D%3D)](https://www.youtube.com/watch?v=9gaTargV5BY)
-
 [Git LFS](https://git-lfs.github.com/), va tracker les fichiers que vous voulez, soit avec leurs noms précis, soit avec leurs extensions, soit ceux qui sont dans un dossier que vous spécifierez …. Ensuite, ces fichiers seront automatiquement stockés sur un serveur (Large File Storage) et seulement le lien de votre fichier sera gardé. Attention, ce système ne versionne pas les fichiers trackés. Mais avez-vous vraiment besoin d’un *versionning* de vos *assets* 3D ou de vos éléments UI ? Qui sont généralement déjà versionner en amont par les Designers.
 
 **Pour installer git LFS, lancer la commande :**
@@ -109,7 +107,7 @@ Si vous utilisez github, la notification “stored with Git LFS” devrait appar
 
 ![Image of Github Stored with Git LFS](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/image7.png?token=AHjeDnlpMeQpTc27ikncn_j53g50GMEOks5bWG4gwA%3D%3D)
 
-Pour comprendre le fonctionnement de [Git LFS](https://git-lfs.github.com/), je vous conseille de regarder la vidéo proposé par bitbucket : https://www.youtube.com/watch?v=9gaTargV5BY
+Pour comprendre le fonctionnement de [Git LFS](https://git-lfs.github.com/), je vous conseille de regarder la vidéo proposé par bitbucket : [![video Btbucket Git LFS](http://img.youtube.com/vi/9gaTargV5BY/0.jpg)](http://www.youtube.com/watch?v=9gaTargV5BY "Git LFS explain")
 
 Cependant, cette solution fonctionne **seulement** pour les fichiers **inférieur à 2Go**.
 
