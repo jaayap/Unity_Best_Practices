@@ -5,19 +5,13 @@ Guide des bonnes pratiques de développement avec Unity : Versionning, tests uni
 __Plan :__
 - [Introduction](#introduction)
 - [Versionning : Git & Unity](#versionning--git--unity)
-
         - [Le .gitignore](#le--gitignore)
-        
         - [Smart Merge](#smart-merge)
-        
         - [Les gros fichiers](#les-gros-fichiers)
         
 - [Tests & TDD](#tests-&-tdd)
-
         - [Tests : Introduction](#tests--introduction)
-        
         - [Tests Unitaires](#tests-unitaires)
-        
         - [TDD (Test-driven-developpement)ou développement piloté par les tests](#tdd-test-driven-developpement-ou-développement-piloté-par-les-tests)
         
 - [Clean Code](#clean-code)
