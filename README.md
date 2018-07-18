@@ -1,4 +1,4 @@
-### [Français ici](README.fr.md) 
+### [Consulter le site en français](README.fr.md) 
 # Introduction
 # Versionning : Git & Unity
 # Tests & TDD
