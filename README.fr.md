@@ -1,9 +1,12 @@
 ### [Consult this site in english](https://jaayap.github.io/Unity_Best_Practices/)
 
+
+# Introduction
+
 Guide des bonnes pratiques de développement avec Unity : Versionning, tests unitaires, TDD, Clean Architecture
 
-__Plan :__
-- [Introduction](#introduction)
+# __Plan :__
+
 - [Versionning : Git & Unity](#versionning--git--unity)
   - [Le .gitignore](#le-gitignore)
   - [Smart Merge](#smart-merge)
@@ -17,8 +20,6 @@ __Plan :__
 - [Clean Code](#clean-code)
 - [Architecture](#architecture)
 
-
-# Introduction
 
 # Versionning : Git & Unity
 
