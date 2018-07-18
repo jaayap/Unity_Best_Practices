@@ -5,7 +5,7 @@ Guide des bonnes pratiques de développement avec Unity : Versionning, tests uni
 __Plan :__
 - [Introduction](#introduction)
 - [Versionning : Git & Unity](#versionning--git--unity)
-  - [Le .gitignore](#le--gitignore)
+  - [Le .gitignore](#le-gitignore)
   - [Smart Merge](#smart-merge)
   - [Les gros fichiers](#les-gros-fichiers)
         
