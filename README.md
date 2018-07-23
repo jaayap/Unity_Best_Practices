@@ -66,7 +66,7 @@ use git as usual and when your merge crash, use the smartmerge command :  "git m
 
 In this following exemple, Two branch are create "Master" and "Another". Each branch modify "sceneTest" scene and commit. After, we try to merge and it crash. And now,  Our "sceneTest" is empty. Then we tap "git mergetool" and we find our scene with the twice modification.
 
-![Schema of Smart Merge](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/schemaSmartMergeVEn.PNG?token=AHjeDi_p8D-_yEHzg1tX2cRNjKBIPpT7ks5bWHrPwA%3D%3D)
+![Schema of Smart Merge](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/schemaSmartMergeVEn.PNG?token=AHjeDo_HuX2ADdAr7MqXYrBe-x9zlMyXks5bXzY1wA%3D%3D)
 
 Limits of Smartmerge :  
   - Modify the same object in a scene  
