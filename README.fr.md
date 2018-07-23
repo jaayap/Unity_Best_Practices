@@ -24,7 +24,7 @@ Guide des bonnes pratiques de développement avec Unity : Versionning, tests uni
 # Versionning : Git & Unity
 
 Si vous utiliser *git* pour versionner vos projets *Unity*, vous avez du remarquez que parfois les fichiers tels que les scènes et les prefabs subissent des régressions lors des merges. Deux personnes modifiant ainsi le même fichier en même temps provoquent un conflit que git, par défaut n’arrive pas à résoudre. Vous retrouvez alors votre scène entièrement vide ou votre *prefab* tout cassé. 
-Voici la solution que j’ai choisi d’adopter : 
+Voici la solution que j’ai choisi d’adopter.
 
 ## Le .gitignore
 
@@ -54,7 +54,7 @@ keepBackup = false
 ```
 
 Pensez à modifier le lien "*C:\\ ...*" selon l'emplacement de votre installation Unity, Si vous travaillez en équipe, il est préférable d'utilisez le même lien.
-**Attention : n'oublier pas de mettre des doubles '\\' et non des simples '\' ou '/'.**
+**Attention : n'oublier pas de mettre des doubles '\\\\' et non des simples '\\' ou '/'.**
 *[Ce merge tool peut être utilisé avec d’autres outils (Perforce,SVN, Mercurial, SourceTree) , je vous conseille de vous référez à la documentation](https://docs.unity3d.com/Manual/SmartMerge.html)*
 
 Cet outil est très performant et permet de travailler à plusieurs sans se soucier de tout perdre (fonctionne avec les scènes et les prefabs).
