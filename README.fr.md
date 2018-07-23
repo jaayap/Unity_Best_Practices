@@ -53,15 +53,15 @@ keepTempories = true
 keepBackup = false
 ```
 
-Pensez à modifier le lien "*C:\\ ...*" selon l'emplacement de votre installation Unity, Si vous travaillez en équipe, il est préférable d'utilisez le même lien.
-**Attention : n'oublier pas de mettre des doubles '\\\\' et non des simples '\\' ou '/'.**
-*[Ce merge tool peut être utilisé avec d’autres outils (Perforce,SVN, Mercurial, SourceTree) , je vous conseille de vous référez à la documentation](https://docs.unity3d.com/Manual/SmartMerge.html)*
-
+Pensez à modifier le lien "*C:\\ ...*" selon l'emplacement de votre installation Unity, Si vous travaillez en équipe, il est préférable d'utilisez le même lien.  
+**Attention : n'oublier pas de mettre des doubles '\\\\' et non des simples '\\' ou '/'.**  
+*[Ce merge tool peut être utilisé avec d’autres outils (Perforce,SVN, Mercurial, SourceTree) , je vous conseille de vous référez à la documentation](https://docs.unity3d.com/Manual/SmartMerge.html)*  
+  
 Cet outil est très performant et permet de travailler à plusieurs sans se soucier de tout perdre (fonctionne avec les scènes et les prefabs).
 
 ### Comment ça marche ?
 
-Continuer à utiliser git comme à votre habitude et si lors d’un merge, vous avez un conflit, effectuez la commande “git mergetool” qui appellera alors le smartMerge qui s’occupera dans la plupart des cas de régler vos conflits. Un exemple est donné ci-dessous, Deux branches sont créées, “Master” et “Another”, Chacune modifie la scene “sceneTest”. Ensuite Chacune est commit sur le dépôt et on essaye de “fusionner” les branches. A ce moment là, git nous dit qu’il y a conflit et lorsque l’on ouvre la scène dans Unity, on s'aperçoit qu’on a tout perdu. On exécute alors Git mergetool et on retrouve une scène qui possède tous nos objets.
+Continuer à utiliser git comme à votre habitude et si lors d’un merge, vous avez un conflit, effectuez la commande “git mergetool” qui appellera alors le smartMerge qui s’occupera dans la plupart des cas de régler vos conflits. Un exemple est donné ci-dessous, Deux branches sont créées, “Master” et “Another”, Chacune modifie la scene “sceneTest”. Ensuite Chacune est commit sur le dépôt et on essaye de “fusionner” les branches. A ce moment là, git nous dit qu’il y a conflit et lorsque l’on ouvre la scène dans Unity, on s'aperçoit qu’on a tout perdu. On exécute alors Git mergetool et on retrouve une scène qui possède tous nos objets.  
 
 ![Schema explicatif du Smart Merge](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/schemaSmartMergeV2.PNG?token=AHjeDi_p8D-_yEHzg1tX2cRNjKBIPpT7ks5bWHrPwA%3D%3D)
 
@@ -69,14 +69,14 @@ Le SmartMerge possède ses limites. Il ne peut pas résoudre seul le conflit lor
 
 ## Les gros fichiers
 
-  Versionner des fichiers volumineux (png, fbx, …) peut s'avérer douloureux, GitHub vous empêche de pousser des fichiers de plus de 100 Mo et votre dépôt Git contient toutes les versions de chaque fichier. 
-  Les révisions multiples de fichiers volumineux augmentent les temps de clonage et de récupération pour les autres utilisateurs du dépôt.
+  Versionner des fichiers volumineux (png, fbx, …) peut s'avérer douloureux, GitHub vous empêche de pousser des fichiers de plus de 100 Mo et votre dépôt Git contient toutes les versions de chaque fichier.  
+  Les révisions multiples de fichiers volumineux augmentent les temps de clonage et de récupération pour les autres utilisateurs du dépôt.  
   
-  Git demande à chaque utilisateur d'avoir autant d'espace libre sur un disque dur que d'espace consommé à tout moment. Par exemple, si une archive est de 1 Go, Git nécessite 1 Go d'espace libre supplémentaire pour être disponible.
+  Git demande à chaque utilisateur d'avoir autant d'espace libre sur un disque dur que d'espace consommé à tout moment. Par exemple, si une archive est de 1 Go, Git nécessite 1 Go d'espace libre supplémentaire pour être disponible.  
   
-  Il est conseillé de garder les fichiers suivant dans le dépôt : fichiers de code, assets qui ont besoin d’être versionné (graphiques), les fichiers de configuration (volumineux ou non) et de ne pas versionner les fichiers suivants : Bases de données, fichiers temporaires (journaux, log, …). 
+  Il est conseillé de garder les fichiers suivant dans le dépôt : fichiers de code, assets qui ont besoin d’être versionné (graphiques), les fichiers de configuration (volumineux ou non) et de ne pas versionner les fichiers suivants : Bases de données, fichiers temporaires (journaux, log, …).   
   
-  Si le dépôt que vous utilisez est compatible avec [Git LFS](https://git-lfs.github.com/), je vous recommande de l’utiliser. ([Git LFS](https://git-lfs.github.com/) est compatible avec GitHub / Bitbucket / Gitlab depuis la version 8). [Git LFS est une extension de Git et est open source](https://github.com/git-lfs/git-lfs?utm_source=gitlfs_site&utm_medium=repo_link&utm_campaign=gitlfs).
+  Si le dépôt que vous utilisez est compatible avec [Git LFS](https://git-lfs.github.com/), je vous recommande de l’utiliser. ([Git LFS](https://git-lfs.github.com/) est compatible avec GitHub / Bitbucket / Gitlab depuis la version 8). [Git LFS est une extension de Git et est open source](https://github.com/git-lfs/git-lfs?utm_source=gitlfs_site&utm_medium=repo_link&utm_campaign=gitlfs).  
 
 Cependant, cette solution fonctionne **seulement** pour les fichiers **inférieur à 2Go**.
 
@@ -107,7 +107,7 @@ $ git lfs track "*.extension"
 ```
 $ git add .gitattributes
 ```
-et voilà le tour est joué, à présent vous pouvez ajouter vos fichier et commit comme vous le faisiez avant, la différence est que git va envoyer les fichier tracké sur [Git LFS](https://git-lfs.github.com/).
+et voilà le tour est joué, à présent vous pouvez ajouter vos fichier et commit comme vous le faisiez avant, la différence est que git va envoyer les fichier tracké sur [Git LFS](https://git-lfs.github.com/).  
 
 Si vous utilisez github, la notification “stored with Git LFS” devrait apparaître dans l’interface web lorsque vous ouvrez votre fichier
 
