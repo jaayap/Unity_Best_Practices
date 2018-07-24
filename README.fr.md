@@ -129,13 +129,12 @@ D’autres solutions existes avec git : Git annex, Git fat , Git media , Git Big
 # Tests & TDD
 
 ## Tests : Introduction
-
-Les tests sont importants dans la réalisation d’un logiciel car ils assurent une **qualité logicielle** minimale. Beaucoup de logiciel sont conçu sans test et les conséquences sont:
+  
+Les tests sont importants dans la réalisation d’un logiciel car ils assurent une **qualité logicielle** minimale. Beaucoup de logiciel sont conçu sans test et les conséquences sont:  
 - beaucoup d’**anomalies**
 - des **bugs** compliqués à résoudre et parfois lancés en production.
 - un logiciel qui grossit à cause des patchs et des nouvelles fonctionnalités s’appuyant sur un code bancal. 
 En bref, un code non testé entraîne bien souvent une **dette technique**.
-
 
 ![Image de la pyramide des tests](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/img_pyramide_des_tests.png?token=AHjeDoKKyxTJRlb2sRXe6a4YPP5RwJQTks5bYCFzwA%3D%3D)
 
@@ -154,9 +153,67 @@ Pour le moment nous nous intéresserons aux tests unitaires et au TDD (test driv
 
 **Rédiger des tests unitaires sert à vérifier le comportement du code, tandis qu’avec l’approche TDD, qui consiste à écrire les tests en premier, rédiger des tests unitaires sert à spécifier comment le code doit fonctionner**.
 
-
+Pour en savoir plus sur les tests, je vous conseille [l'article sur la pyramide des tests du blog d'OCTO Technology](https://blog.octo.com/la-pyramide-des-tests-par-la-pratique-1-5) , [ou une de leurs publications, culture code](https://www.octo.com/fr/publications/20-culture-code).
 
 ## Tests Unitaires
+
+Les **tests unitaires** peuvent être regroupés dans un **projet de tests**.  
+Ce dernier doit avoir la même **structure** que le projet que l’on souhaite tester. Ainsi, **Une classe de l’application = Une classe de tests**.
+
+### Pourquoi écrire un test unitaire ?
+
+- Être sur de ne **pas** faire de **retour en arrière**, de ne pas avoir cassé un code en le modifiant avant la mise en production
+
+-  **Réduire les bugs** dans les fonctionnalité (déjà implémenté ou nouvelle)
+
+- **Refacto en toute quiétude** : ils réduisent la peur de faire des **modifications** et d’**ajouter de nouvelles fonctionnalités** dans le programme ou l’application.
+
+- Traiter **en amont** des tests interface et utilisateurs certains mauvais comportements et donc de les **corriger plus tôt**.
+
+- Avoir un feedback rapide sur le code que les developpeurs viennent d'ajouter ou modifier.
+
+- Permet d’avoir une application plus **robuste**
+
+- Avoir une documentation minimale
+
+En conclusion, plus rapidement vous saurez si un test échoue, plus vite vous pourrez corriger le problème et moins cher il vous en coûtera de le faire.
+
+### Qu'est-ce qu'un bon test unitaire ?
+
+Un bon test unitaire :
+- est **entièrement automatisé**
+- retourne **toujours le même résultat** si le code n’est pas modifié
+- test qu’**un seul concept** ou **une seule logique** de l’application
+- test qu’**une seule méthode à la fois**
+- porte un **nom clair et significatif**
+
+### Comment écrire un test unitaire ? 
+
+Différentes conventions de nommage existent :
+- Should_ExpectedBehavior_When_StateUnderTest
+- When_StateUnderTest_Expect_ExpectedBehavior
+
+Attention à **ne pas avoir le nom de la méthode dans le nom du test** car difficile à maintenir. En cas de refactorisation du nom de la méthode, le test ne veut plus rien dire.
+Un test unitaire exprime une intention, c'est à dire, qu'il test une fonctionnalité, et non son implémentation.
+
+Un test se décompose en **3 parties** : 
+- **Arrange** est l’étape d’initialisation
+- **Act** correspond à l’appel de la méthode testée
+- **Assert** est l’étape de vérification du résultat du comportement de la méthode testée
+
+Lorsque l'on écrit un test unitaire, il est conseillé de commencer par rédiger l'**Assert**, qui est la réponse à la question : **Qu'est-ce qu'on veut tester?**
+
+### Et dans la pratique ça se passe comment ?
+
+Le nom de la classe de test doit avoir en préfixe ou en suffixe “Test”, selon vos préférences.  
+Veillez à ce que votre code soit harmonisé, ainsi si vous choisissez de mettre “Test” en suffixe, faites le sur toutes vos classes de tests.  
+
+Par défaut Unity inclus **NUnit (C#)** pour les tests unitaires. 
+
+TODO : Explication : capture écran du test runner + introduire exercice, test à trou. 
+
+### Dependances, Mocks & Substituts
+
 ## TDD (Test-driven-developpement) ou développement piloté par les tests
 # Clean Code
 # Architecture
