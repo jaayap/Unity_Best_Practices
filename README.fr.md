@@ -137,7 +137,7 @@ Les tests sont importants dans la réalisation d’un logiciel car ils assurent 
 En bref, un code non testé entraîne bien souvent une **dette technique**.
 
 
-![Image de la pyramide des tests]()
+![Image de la pyramide des tests](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/img_pyramide_des_tests.png?token=AHjeDoKKyxTJRlb2sRXe6a4YPP5RwJQTks5bYCFzwA%3D%3D)
 
 La **pyramide des tests** présente les différents **types** de tests :
 
