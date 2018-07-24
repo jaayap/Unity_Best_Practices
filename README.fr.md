@@ -260,9 +260,15 @@ Unity ajoute également ses **propres assertions** (avec using UnityEngine.Asser
 
 #### Unity Test Runner 
 
-Page de la documentation : [ici] (https://docs.unity3d.com/Manual/testing-editortestsrunner.html)
-1 mode play : Execute [UnityTest] as a Coroutine
-1 mode Editor : Execute [UnityTest] in Editor.Application.Update, callback loop
+Page de la documentation : [ici] (https://docs.unity3d.com/Manual/testing-editortestsrunner.html)  
+Pour afficher la fenetre "Test Runner", allez dans windows / Test Runner.
+
+![Image of Github Stored with Git LFS](https://docs.unity3d.com/560/Documentation/uploads/Main/UnityTestRunner1.png)  
+
+On peut voir sur la capture d'écran, qu'il existe deux modes : 
+ - mode Play : Execute [UnityTest] as a Coroutine. Ce mode peut être désactivé lors du build afin de ne pas alourdir le fichier final.
+ - mode Editor : Execute [UnityTest] in Editor.Application.Update, callback loop  
+
 
 Source : Unite Austin 2017 - Testing for Sanity: Using Unity's Integrated TestRunner, https://www.youtube.com/watch?v=MWS4aSO7HAo
 
