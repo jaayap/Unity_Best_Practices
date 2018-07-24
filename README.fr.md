@@ -208,7 +208,63 @@ Lorsque l'on écrit un test unitaire, il est conseillé de commencer par rédige
 Le nom de la classe de test doit avoir en préfixe ou en suffixe “Test”, selon vos préférences.  
 Veillez à ce que votre code soit harmonisé, ainsi si vous choisissez de mettre “Test” en suffixe, faites le sur toutes vos classes de tests.  
 
-Par défaut Unity inclus **NUnit (C#)** pour les tests unitaires. 
+Par défaut Unity inclus **NUnit (C#)** pour les tests unitaires.
+Devant chaque méthode de test l'étiquette **[Test]** doit apparaître : 
+
+```
+[Test]
+public void Methode_Test() {
+ 
+    ...
+ 
+}
+```
+
+Avec le **using UnityEngine.TestTools;**, vous pouvez créer des **"Unity Tests"** :
+
+```
+[UnityTest]
+public IEnumerator Methode_Unity_Test() {
+ 
+    ...
+    yield return null;
+    ...
+ 
+}
+```
+
+Comme vous pouvez le voir dans l'exemple ci-dessus, un Unity Test est une Coroutine.
+Cela permet d'attendre une frame (yield retunr null) ou un nombre de secondes x (yield return new WaitForSecondes(x))
+
+Ces tests permettent donc de tester les comportements qui dépendent d'Unity. Ils s'apparentent le plus souvent à des **tests d'intégrations**
+
+
+Pour réaliser une assertion avec un test NUnit, rien de bien compliqué, il suffit d'utiliser la classe Assert. Quelques exemples :
+
+```
+    Assert.IsNotNull(object); 
+    Assert.IsTrue(boolean);
+    Assert.AreEqual(value1, value2)
+```
+
+Dans le cas de Asset.AreEqual, la value1 correspond à la valeur attendue est la value2 est la valeur testée. Cet ordre est important et permet notamment d'avoir des messages d'erreurs cohérents :  Expected "value1" but was "value2".
+
+Unity ajoute également ses **propres assertions** (avec using UnityEngine.Assertions) comme :
+- “Assert.AreApproximatelyEqual “ et “Assert.AreNotApproximatelyEqual “ qui prennent par défaut une tolérance de  0.00001f qui permettent de comparer deux floats.
+- “ColorEqualityComparer”
+- “QuaternionEqualityComparer”
+- “Vector2EqualityComparer” ,”Vector3EqualityComparer“ et “Vector4EqualityComparer”
+
+
+:!: Les méthode Awake, Start et Update doivent être passé en public pour être appelée avec les tests.
+
+#### Unity Test Runner 
+
+Page de la documentation : [ici] (https://docs.unity3d.com/Manual/testing-editortestsrunner.html)
+1 mode play : Execute [UnityTest] as a Coroutine
+1 mode Editor : Execute [UnityTest] in Editor.Application.Update, callback loop
+
+Source : Unite Austin 2017 - Testing for Sanity: Using Unity's Integrated TestRunner, https://www.youtube.com/watch?v=MWS4aSO7HAo
 
 TODO : Explication : capture écran du test runner + introduire exercice, test à trou. 
 
