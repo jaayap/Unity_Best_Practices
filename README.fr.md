@@ -56,7 +56,7 @@ keepBackup = false
 ```
 
 Pensez à modifier le lien "*C:\\ ...*" selon l'emplacement de votre installation Unity, Si vous travaillez en équipe, il est préférable d'utilisez le même lien.  
-**Attention : n'oublier pas de mettre des doubles '\\\\' et non des simples '\\' ou '/'.**  
+:warning: **Attention : n'oublier pas de mettre des doubles '\\\\' et non des simples '\\' ou '/'.**  
 *[Ce merge tool peut être utilisé avec d’autres outils (Perforce,SVN, Mercurial, SourceTree) , je vous conseille de vous référez à la documentation](https://docs.unity3d.com/Manual/SmartMerge.html)*  
   
 Cet outil est très performant et permet de travailler à plusieurs sans se soucier de tout perdre (fonctionne avec les scènes et les prefabs).
@@ -147,7 +147,7 @@ Quand ces tests ne sont pas automatisés, on engage des testeurs.
 
 - Les **tests unitaires** sont simples à mettre en œuvre lorsqu’ils sont faits au fur et à mesure du code, ils permettent de couvrir une majeure partie du code à faible coût.Ils peuvent être automatisé et rapide à exécuter. Il est fortement recommandé de commencer par rédiger des tests unitaires, ils sont la base des tests et permettent de repérer rapidement les régressions ou les mauvais comportement du logiciel.
 
-**Attention** : Séparer les tests unitaires (rapide) des tests d’intégrations (plus lent).
+:warning: **Attention** : Séparer les tests unitaires (rapide) des tests d’intégrations (plus lent).
 
 Pour le moment nous nous intéresserons aux tests unitaires et au TDD (test driven development).
 
@@ -256,7 +256,7 @@ Unity ajoute également ses **propres assertions** (avec using UnityEngine.Asser
 - “Vector2EqualityComparer” ,”Vector3EqualityComparer“ et “Vector4EqualityComparer”
 
 
-:!: Les méthode Awake, Start et Update doivent être passé en public pour être appelée avec les tests.
+:warning: Les méthode Awake, Start et Update doivent être passé en public pour être appelée avec les tests.
 
 #### Unity Test Runner 
 
