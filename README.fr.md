@@ -127,7 +127,35 @@ D’autres solutions existes avec git : Git annex, Git fat , Git media , Git Big
 
 
 # Tests & TDD
+
 ## Tests : Introduction
+
+Les tests sont importants dans la réalisation d’un logiciel car ils assurent une **qualité logicielle** minimale. Beaucoup de logiciel sont conçu sans test et les conséquences sont:
+- beaucoup d’**anomalies**
+- des **bugs** compliqués à résoudre et parfois lancés en production.
+- un logiciel qui grossit à cause des patchs et des nouvelles fonctionnalités s’appuyant sur un code bancal. 
+En bref, un code non testé entraîne bien souvent une **dette technique**.
+
+
+![Image de la pyramide des tests]()
+
+La **pyramide des tests** présente les différents **types** de tests :
+
+- Les **tests IHM** (Interface Homme-Machine) coûtent cher car il faut exécuter l’appli de bout en bout, Ces tests peuvent être automatisés mais long à être exécuté. Ces tests ne couvrent que certains scénario précis.
+Quand ces tests ne sont pas automatisés, on engage des testeurs.
+
+- Les **tests d’intégration** sont assez simples. On s’affranchit des contraintes majeures (IHM, certaines dépendances). Ils sont également assez proches du code, ce qui facilite leur refactoring. Cependant, ils couvrent un spectre plus large de code et de ce fait, ont davantage de risques d’être impactés par une modification.
+
+- Les **tests unitaires** sont simples à mettre en œuvre lorsqu’ils sont faits au fur et à mesure du code, ils permettent de couvrir une majeure partie du code à faible coût.Ils peuvent être automatisé et rapide à exécuter. Il est fortement recommandé de commencer par rédiger des tests unitaires, ils sont la base des tests et permettent de repérer rapidement les régressions ou les mauvais comportement du logiciel.
+
+**Attention** : Séparer les tests unitaires (rapide) des tests d’intégrations (plus lent).
+
+Pour le moment nous nous intéresserons aux tests unitaires et au TDD (test driven development).
+
+**Rédiger des tests unitaires sert à vérifier le comportement du code, tandis qu’avec l’approche TDD, qui consiste à écrire les tests en premier, rédiger des tests unitaires sert à spécifier comment le code doit fonctionner**.
+
+
+
 ## Tests Unitaires
 ## TDD (Test-driven-developpement) ou développement piloté par les tests
 # Clean Code
