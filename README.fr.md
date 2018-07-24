@@ -249,7 +249,7 @@ Pour réaliser une assertion avec un test NUnit, rien de bien compliqué, il suf
 
 Dans le cas de Asset.AreEqual, la value1 correspond à la valeur attendue est la value2 est la valeur testée. Cet ordre est important et permet notamment d'avoir des messages d'erreurs cohérents :  Expected "value1" but was "value2".
 
-Unity ajoute également ses **propres assertions** (avec using UnityEngine.Assertions) comme :
+Unity ajoute également ses **propres assertions** (avec using UnityEngine.Assertions et UnityEngine.TestTools.Utils) comme :
 - “Assert.AreApproximatelyEqual “ et “Assert.AreNotApproximatelyEqual “ qui prennent par défaut une tolérance de  0.00001f qui permettent de comparer deux floats.
 - “ColorEqualityComparer”
 - “QuaternionEqualityComparer”
