@@ -294,5 +294,33 @@ TODO : exercice à trou (suite) TU avec Mock.
 
 
 ## TDD (Test-driven-developpement) ou développement piloté par les tests
+
+Le **TDD ou Développement piloté par les tests** est une technique de développement qui consiste à écrire les tests **avant** d’écrire le code. Cela garantit davantage la structure du code comme testable et maintenable.
+En utilisant la technique TDD, les tests unitaires ne servent plus à valider un code existant mais à **spécifier** le futur code implémenter.
+
+ADD IMAGE CYCLE TDD
+
+Comme nous pouvons le voir sur le schéma ci-dessus, la méthode TDD possède **3** grandes étapes : 
+- **RED** : On commence par écrire un test et on vérifie que ce dernier échoue (car le code n'est pas implémenté). Ce test spécifie le comportement d'une méthode (ce qu'elle doit renvoyer, ce qu'elle doit appeler, ...).
+- **GREEN** : On écrit le code minimum pour que le test passe au vert.
+- **REFACTOR** : On améliore le code sans changer son comportement.
+Puis on passe à l'écriture d'un autre test, et la boucle recommence.
+
+
+Dans le livre Clean Code (p.80), Oncle Bob définit les 3 lois du TDD :
+  - 1. Vous n'êtes pas autorisé à écrire du code métier tant que vous n'avez pas écrit un premier test unitaire qui échoue.
+  - 2. Vous n'êtes pas autorisé à écrire plus qu'un test unitaire qui est suffisant pour échouer et qui ne compile pas.
+  - 3. Vous n'êtes pas autorisé à écrire plus de code que ce qui est suffisant pour passer au vert le test unitaire.
+  
+:warning: Oncle Bob, insiste sur le fait, qu'écrire des tests unitaires ou pratiquer le TDD n'est pas magique, et qu'on peut très bien continuer d'écrire du mauvais code et d'écrire des mauvais tests.
+Il précise également que suivre les trois lois n'est pas toujours appropprié, il faut donc trouver des solutions adaptés à notre projet.
+
+
+TODO : exercice à trou (suite ou reprise du même exo) TU avec TDD. 
+
+
 # Clean Code
+
+
+
 # Architecture
