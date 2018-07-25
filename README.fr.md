@@ -203,7 +203,7 @@ Un test se décompose en **3 parties** :
 
 Lorsque l'on écrit un test unitaire, il est conseillé de commencer par rédiger l'**Assert**, qui est la réponse à la question : **Qu'est-ce qu'on veut tester?**
 
-### Et dans la pratique ça se passe comment ?
+### Et dans la pratique ?
 
 Le nom de la classe de test doit avoir en préfixe ou en suffixe “Test”, selon vos préférences.  
 Veillez à ce que votre code soit harmonisé, ainsi si vous choisissez de mettre “Test” en suffixe, faites le sur toutes vos classes de tests.  
@@ -272,9 +272,26 @@ On peut voir sur la capture d'écran, qu'il existe deux modes :
 
 Source : Unite Austin 2017 - Testing for Sanity: Using Unity's Integrated TestRunner, https://www.youtube.com/watch?v=MWS4aSO7HAo
 
-TODO : Explication : capture écran du test runner + introduire exercice, test à trou. 
+TODO : Explication : capture écran du test runner + introduire exercice à trou TU. 
 
 ### Dependances, Mocks & Substituts
+
+Dans la pratique, un TU ne dois jamais s’appuyer sur **une dépendance extérieure** (service web, base de données, librairie, …). En effet, cela peut entraîner un **biais** et peut rendre les TU plus difficiles à maintenir dans le temps. 
+Une dépendance extérieure aura tendance à **rallonger le temps d'exécution**.
+
+Pour être sûr de tester un seul comportement, sans aucune dépendance, il est possible de créer **des objets “fake” (mock ou stub)** pour remplacer une classe.
+Cela permet d’éviter un null exception en renseignant un objet de substitution, ou encore de vérifier qu’une fonction est bien appelée sans exécuter son code.
+
+**Quelle est la différence entre Stub et Mock ?**
+
+**Un Stub** est un objet que vous pouvez contrôler, qui sert de substitut **à une dépendance extérieure** (exemple : un faux service web qui renvoie toujours la même information)  
+  
+**Un Mock** est un objet de substitut **dans le système**, qui décide si un test unitaire passe ou échoue (exemple : une base de données qui attend une certaine requête bien précise)
+
+Pour créer des mocks ou des substitut avec *Unity*, vous pouvez installer **NSubstitute**, pour cela il suffit de placer le fichier **NSubstitute.dll** dans votre projet *Unity*. Vous pouvez télécharger ce fichier ici. //TODO: add NSubstitute.dll dans le dépot + link
+
+TODO : exercice à trou (suite) TU avec Mock. 
+
 
 ## TDD (Test-driven-developpement) ou développement piloté par les tests
 # Clean Code
