@@ -307,9 +307,9 @@ Comme nous pouvons le voir sur le schéma ci-dessus, la méthode TDD possède **
 Puis on passe à l'écriture d'un autre test, et la boucle recommence.
 
 Dans le livre Clean Code (p.80), Oncle Bob définit les 3 lois du TDD :
-  - 1. Vous n'êtes pas autorisé à écrire du code métier tant que vous n'avez pas écrit un premier test unitaire qui échoue.
-  - 2. Vous n'êtes pas autorisé à écrire plus qu'un test unitaire qui est suffisant pour échouer et qui ne compile pas.
-  - 3. Vous n'êtes pas autorisé à écrire plus de code que ce qui est suffisant pour passer au vert le test unitaire.
+   1. Vous n'êtes pas autorisé à écrire du code métier tant que vous n'avez pas écrit un premier test unitaire qui échoue.
+   2. Vous n'êtes pas autorisé à écrire plus qu'un test unitaire qui est suffisant pour échouer et qui ne compile pas.
+   3. Vous n'êtes pas autorisé à écrire plus de code que ce qui est suffisant pour passer au vert le test unitaire.
   
 :warning: Oncle Bob, insiste sur le fait, qu'écrire des tests unitaires ou pratiquer le TDD n'est pas magique, et qu'on peut très bien continuer d'écrire du mauvais code et d'écrire des mauvais tests.
 Il précise également que suivre les trois lois n'est pas toujours appropprié, il faut donc trouver des solutions adaptés à notre projet.
