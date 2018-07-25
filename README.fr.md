@@ -298,7 +298,7 @@ TODO : exercice à trou (suite) TU avec Mock.
 Le **TDD ou Développement piloté par les tests** est une technique de développement qui consiste à écrire les tests **avant** d’écrire le code. Cela garantit davantage la structure du code comme testable et maintenable.
 En utilisant la technique TDD, les tests unitaires ne servent plus à valider un code existant mais à **spécifier** le futur code implémenter.
 
-ADD IMAGE CYCLE TDD
+![schema cycle TDD](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/RED-GREEN-REFACTO%20cycle.png?token=AHjeDtvHOiXwwhctewLgG-4a0KSUEjf7ks5bYXxlwA%3D%3D)
 
 Comme nous pouvons le voir sur le schéma ci-dessus, la méthode TDD possède **3** grandes étapes : 
 - **RED** : On commence par écrire un test et on vérifie que ce dernier échoue (car le code n'est pas implémenté). Ce test spécifie le comportement d'une méthode (ce qu'elle doit renvoyer, ce qu'elle doit appeler, ...).
