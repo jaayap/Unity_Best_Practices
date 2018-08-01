@@ -1,27 +1,28 @@
 ***site en construction, merci de votre comprehension***
 
 ### [Consult this site in english](https://jaayap.github.io/Unity_Best_Practices/)
-Guide des bonnes pratiques de développement avec Unity : Versionning, tests unitaires, TDD, Clean Architecture
-
-# Introduction
 
 Vous trouverez ici, les bonnes pratiques de développement appliqué aux projets Unity (TU, TDD, Clean archi, …).
 
 Si vous développez des gros projets avec Unity qui nécessite d’être maintenu dans le temps ou qui ont une tendance à évoluer, vous êtes au bon endroit.
 Au contraire, si vous développez des petits projets avec Unity qui nécessite un développement rapide (Game Jam, prototype) alors les pratiques détaillés ici ne sont pas adapté à ce que vous recherchez.
 
-
-
 # __Plan :__
 
 - [Versionning : Git & Unity](#versionning--git--unity)
   - [Le .gitignore](#le-gitignore)
+  - [Enregistrement de vos fichier en YAML](#enregistrement-des-fichiers-en-yaml)
   - [Smart Merge](#smart-merge)
   - [Les gros fichiers (.png, .fbx, ...)](#les-gros-fichiers)
         
 - [Tests & TDD](#tests-&-tdd)
   - [Tests : Introduction](#tests--introduction)
   - [Tests Unitaires](#tests-unitaires)
+      - [Pourquoi écrire un test unitaire ?](#pourquoi-ecrire-un-test-unitaire-?)
+      - [Qu'est-ce qu'un bon test unitaire ?](#qu-est-ce-qu-un-bon-test-unitaire-?)
+      - [Comment écrire un test unitaire ?](#comment-ecrire-un-test-unitaire-?)
+      - [Les tests unitaires dans la pratique ?](#et-dans-la-pratique-?)
+      - [Dependances, mocks & substitut](#dependances--mocks-&-substituts)
   - [TDD (Test-driven-developpement)ou développement piloté par les tests](#tdd-test-driven-developpement-ou-développement-piloté-par-les-tests)
         
 - [Clean Code](#clean-code)
