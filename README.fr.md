@@ -19,7 +19,7 @@ Au contraire, si vous développez des petits projets avec Unity qui nécessite u
   - [Tests : Introduction](#tests--introduction)
   - [Tests Unitaires](#tests-unitaires)
       - [Pourquoi écrire un test unitaire ?](#pourquoi-écrire-un-test-unitaire-)
-      - [Qu'est-ce qu'un bon test unitaire ?](#qu-est-ce-qu-un-bon-test-unitaire-)
+      - [Qu'est-ce qu'un bon test unitaire ?](#qu'est-ce-qu'un-bon-test-unitaire-)
       - [Comment écrire un test unitaire ?](#comment-écrire-un-test-unitaire-)
       - [Les tests unitaires dans la pratique ?](#et-dans-la-pratique-)
       - [Dependances, mocks & substitut](#dependances--mocks-&-substituts)
@@ -348,9 +348,9 @@ Le code est le premier **environnement de travail** du développeur. Il est donc
 
 Un code propre permet donc de **faire évoluer** et de **maintenir** un projet.
 
-##3.1 Par où commencer ? 
+## Par où commencer ? 
 
-###3.1.1 Les noms
+### Les noms
 
 Lorsqu’on programme, bien trop souvent on oublie de réfléchir aux noms que nous donnons aux variables, aux méthodes et parfois même aux classes.  Ce qui peut entraîner des incompréhensions du système par d’autres développeurs et une relecture du code plus longue. Un mauvais nommage peut également impacter la maintenabilité d’une application.
 
@@ -360,13 +360,13 @@ Lorsque vous programmer :
 - Choisissez des mots facile à prononcer.
 - Evitez de placer des valeurs sans les nommer (magic number)
 
-###3.1.2 Les commentaires
+### Les commentaires
 
 Dans un code, les commentaires sont importants mais parfois utilisés de manière abusives (écrire un commentaire pour expliquer tout le fonctionnement d’un algorithme plutôt que de le réécrire de manière simple et compréhensible). 
 
 Les bons commentaires sont des commentaires facultatifs, si possible, la compréhension du code ne doit pas être dépendant des commentaires. Ils doivent servir de complément d’informations, d’avertissement sur les conséquences ou à expliquer une intention.
 
-###3.1.3 La loi de demeter
+### La loi de demeter
 
 La loi de Déméter (en anglais Law of Demeter ou LoD) peut s’énoncer de la manière suivante :
 “Chaque unité doit avoir une connaissance limitée des autres unités, chaque unité doit voir que les unités étroitement liées à l’unité actuelle.”
@@ -383,7 +383,7 @@ En pratique, cela veut dire qu’une méthode peut invoquer les méthodes :
 
 :moins: L'inconvénient  de la loi de Déméter est qu'elle requiert l'écriture d'un grand nombre de petites méthodes "wrapper" pour propager les appels de méthodes à leurs composants. Cela peut augmenter le temps de développement initial, accroître l'espace mémoire utilisé, et diminuer les performances.
 
-##3.2 Quelques règles
+## 3.2 Quelques règles
 
 Depuis les années 1990/2000, plusieurs méthodes et principes ont été définis pour apporter une ligne directrice dans le développement de logiciel plus fiable et plus robuste. Parmis eux, beaucoup proviennent des pratiques eXtreme Programming et Clean code. Ces pratiques sont populaires aujourd’hui car elles répondent aux questions soulevé par l’agilité.
 
@@ -401,20 +401,20 @@ Quelques année plus tard, Robert Cecil Martin alias Oncle Bob met en avant plus
 
 **Les principes SOLID sont définis comme suit : **
 
-- <mark>**S**</mark>RP (Single Responsibility Principle)
-Ne faire qu’une seule chose mais la faire bien. Une classe doit avoir une et une seule raison de changer.
+- <mark>**S**</mark>RP (Single Responsibility Principle) 
+Ne faire qu’une seule chose mais la faire bien. Une classe doit avoir une et une seule raison de changer. 
 
-- **O**CP (Open-Closed Principle)
+- **O**CP (Open-Closed Principle) 
 Une classe doit être ouverte à l'extension mais fermée à la modification (plugins)
 
-- **L**SP (Liskov Substitution Principle)
+- **L**SP (Liskov Substitution Principle) 
 Toutes implémentation d’une interface doit pouvoir se substituer à une autre
 
-- **I**SP (interface Segregation Principle)
+- **I**SP (interface Segregation Principle) 
 Une classe ne doit implémenter une interface que si elle à réellement le besoin de 
 remplir son contrat
 
-- **D**IP (Dependency Inversion Principle)
+- **D**IP (Dependency Inversion Principle) 
 Le code ne doit pas interagir directement avec l'extérieur mais doit passer par des 
 abstractions (et vice versa). => Zenject
 
@@ -427,15 +427,14 @@ Les trois principes sont les suivants :
 
 - **REP (Reuse/Release Equivalence Principle)** : 
 Créer un code qui peut être réutilisé (plugin, code générique avec le moins de dépendance possible)
-“the granule of reuse is the granule of release”
+“the granule of reuse is the granule of release” 
 "Le germe de la réutilisation est le germe de la libération"
 
 - **CCP (Common Closure Principle)** : Un composant (une classe, une méthode, ...)  ne doit pas avoir plusieurs raisons de changer
 
-- **CRP (Common Reuse Principle)** :
-“Don’t force users of a component to depend on things they don’t need.”
-“Ne forcez pas les utilisateurs d’un composant à dépendre d’une chose dont ils n’ont pas besoin”
-
-
+- **CRP (Common Reuse Principle)** : 
+“Don’t force users of a component to depend on things they don’t need.” 
+“Ne forcez pas les utilisateurs d’un composant à dépendre d’une chose dont ils n’ont pas besoin” 
 
 # Architecture
+
