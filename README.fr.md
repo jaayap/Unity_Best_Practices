@@ -18,9 +18,9 @@ Au contraire, si vous développez des petits projets avec Unity qui nécessite u
 - [Tests & TDD](#tests-&-tdd)
   - [Tests : Introduction](#tests--introduction)
   - [Tests Unitaires](#tests-unitaires)
-      - [Pourquoi écrire un test unitaire ?](#pourquoi-ecrire-un-test-unitaire-?)
-      - [Qu'est-ce qu'un bon test unitaire ?](#qu-est-ce-qu-un-bon-test-unitaire-?)
-      - [Comment écrire un test unitaire ?](#comment-ecrire-un-test-unitaire-?)
+      - [Pourquoi écrire un test unitaire ?](#pourquoi-ecrire-un-test-unitaire--)
+      - [Qu'est-ce qu'un bon test unitaire ?](#qu-est-ce-qu-un-bon-test-unitaire)
+      - [Comment écrire un test unitaire ?](#comment-ecrire-un-test-unitaire-)
       - [Les tests unitaires dans la pratique ?](#et-dans-la-pratique-?)
       - [Dependances, mocks & substitut](#dependances--mocks-&-substituts)
   - [TDD (Test-driven-developpement)ou développement piloté par les tests](#tdd-test-driven-developpement-ou-développement-piloté-par-les-tests)
@@ -326,6 +326,12 @@ TODO : exercice à trou (suite ou reprise du même exo) TU avec TDD.
 
 # Clean Code
 
+> « Il existe deux façons de concevoir un logiciel : une façon est de le rendre si simple qu'il n'a visiblement aucun défaut, et une autre est de le rendre si complexe qu'il n'y a pas de défaut visible. La première façon est de loin la plus difficile. » 
+> Hoare
+
+Qu’est-ce qu’un code propre ? 
+
+![Image intro](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/wtfm.jpg)  
 
 
 # Architecture
