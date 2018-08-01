@@ -7,6 +7,15 @@
 
 Guide des bonnes pratiques de développement avec Unity : Versionning, tests unitaires, TDD, Clean Architecture
 
+
+
+Vous trouverez ici, les bonnes pratiques utilisées fréquemment dans le développement d’applications appliqué aux projets Unity (TU, TDD, Clean archi, …).
+
+Si vous développez des gros projets avec Unity qui nécessite d’être maintenu dans le temps ou qui ont une tendance à évoluer, vous êtes au bon endroit.
+Au contraire, si vous développez des petits projets avec Unity qui nécessite un développement rapide (Game Jam, prototype) alors les pratiques détaillés ici ne sont pas adapté à ce que vous recherchez.
+
+
+
 # __Plan :__
 
 - [Versionning : Git & Unity](#versionning--git--unity)
