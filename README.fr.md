@@ -383,7 +383,7 @@ En pratique, cela veut dire qu’une méthode peut invoquer les méthodes :
 
 :moins: L'inconvénient  de la loi de Déméter est qu'elle requiert l'écriture d'un grand nombre de petites méthodes "wrapper" pour propager les appels de méthodes à leurs composants. Cela peut augmenter le temps de développement initial, accroître l'espace mémoire utilisé, et diminuer les performances.
 
-## 3.2 Quelques règles
+## Quelques règles
 
 Depuis les années 1990/2000, plusieurs méthodes et principes ont été définis pour apporter une ligne directrice dans le développement de logiciel plus fiable et plus robuste. Parmis eux, beaucoup proviennent des pratiques eXtreme Programming et Clean code. Ces pratiques sont populaires aujourd’hui car elles répondent aux questions soulevé par l’agilité.
 
