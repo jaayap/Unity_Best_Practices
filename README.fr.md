@@ -222,14 +222,14 @@ Pour afficher la fenêtre "Test Runner", allez dans *Windows > Test Runner*.
 
 On peut voir sur la capture d'écran, qu'il existe **deux modes** :
 
- - **mode Play** : 
-  - permet d'executer des tests sur **plusieurs frames**
-  - comportement Awake(), Start(), ... sont executés **automatiquement**
-  - Sert davantage pour les **tests d'intégration**
-  - [UnityTest] = exécuté comme une **Coroutine classique**
-  - Ouvre une **scène** de test pour executé les tests (:warning: pensez à bien **enregistrer** votre scène avant de lancer les tests car votre scène sera écrasée au lancement des tests)
-  
-  - **mode Editor** :
+ - **PlayMode** : 
+    - permet d'executer des tests sur **plusieurs frames**
+    - comportement Awake(), Start(), ... sont executés **automatiquement**
+    - Sert davantage pour les **tests d'intégration**
+    - [UnityTest] = exécuté comme une **Coroutine classique**
+    - Ouvre une **scène** de test pour executé les tests (:warning: pensez à bien **enregistrer** votre scène avant de lancer les tests car votre scène sera écrasée au lancement des tests)
+
+  - **EditMode** :
     - Chaque test est executé en **une frame**
     - Il faut appeler **explicitement** les méthodes Awake() et Start(), ce qui necessite de les passer en **public**.
     - **Doit être placés dans un dossier Editor**
@@ -391,7 +391,8 @@ public class MaClassTest {
     game = new GameManager();
   }
   
-  [TearDown] public void Dispose() {
+  [TearDown]
+  public void Dispose() {
     Destroy(game);
   }
 
