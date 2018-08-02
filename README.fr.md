@@ -215,24 +215,24 @@ Lorsque l'on écrit un test unitaire, il est conseillé de commencer par rédige
 
 #### Unity Test Runner
 
-Pour réaliser des tests unitaires, Unity met à disposition un outils appelé le [Unity Test Runner](https://docs.unity3d.com/Manual/testing-editortestsrunner.html)  
-Pour afficher la fenêtre "Test Runner", allez dans windows / Test Runner.
+Pour réaliser des tests unitaires, Unity met à disposition un outil appelé le [**Unity Test Runner**](https://docs.unity3d.com/Manual/testing-editortestsrunner.html)  
+Pour afficher la fenêtre "Test Runner", allez dans *Windows/Test Runner*.
 
 ![Image of Test Runner](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture1_ouvertureOnglet.PNG)  
 
-On peut voir sur la capture d'écran, qu'il existe deux modes :
- - mode Play : Execute [UnityTest] as a Coroutine. Ce mode peut être désactivé lors du build afin de ne pas alourdir le fichier final.
- - mode Editor : Execute [UnityTest] in Editor.Application.Update, callback loop  
+On peut voir sur la capture d'écran, qu'il existe **deux modes** :
+ - **mode Play** : Execute [UnityTest] as a Coroutine. Ce mode peut être désactivé lors du build afin de ne pas alourdir le fichier final.
+ - **mode Editor** : Execute [UnityTest] in Editor.Application.Update, callback loop  
 
 
-Sélectionner le mode qui vous intéresse puis cliquer sur le bouton “Create PlayMode/EditMode Test Assembly Folder”. 
-Unity va créer automatiquement un dossier Test avec un fichier “Tests.asmdef”de type “assembly definition” 
-
-Une fois le dossier créé, placez-vous à l’intérieur puis cliquez sur “Create Test Script in current folder”.
+Sélectionnez le mode qui vous intéresse puis cliquez sur le bouton *“Create PlayMode/EditMode Test Assembly Folder”*. 
+Unity va créer automatiquement un dossier Test avec un fichier *“Tests.asmdef”de type “assembly definition”*.  
+  
+Une fois le dossier créé, placez-vous à l’intérieur puis cliquez sur *“Create Test Script in current folder”*.
 
 ![Image of Test Runner create script](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture2_btn_create_script.PNG)  
 
-Unity va alors créer un fichier template C# avec le code suivant :
+Unity va alors créer un fichier *template C#* avec le code suivant :
 
 ```cs
 using UnityEngine;
@@ -258,11 +258,11 @@ public class NewTestScript {
 }
 ```
 
-Ces deux tests devrait apparaître dans le test runner : 
+Ces deux tests devraient apparaître dans le Test Runner : 
 
 ![Image of Test Runner tests with test](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture3_tests.PNG)
 
-Si vous cliquer sur **“Run All”**, les tests vont se lancer, vu que ces tests n’ont pas d’assertion, les tests devrait passer au vert directement
+Si vous cliquer sur **“Run All”**, les tests vont se lancer, vu que ces tests n’ont pas d’assertion, les tests devrait passer au **vert** directement. 
 
 ![Image of Test Runner tests green tests](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture4_green_tests.PNG)
 
@@ -276,7 +276,7 @@ Maintenant, si nous remplaçons le premier test par celui ci :
     }
 ```
 
-le test devrait être rouge car 3 et 4 ne sont pas égaux :
+le test devrait être **rouge** car 3 et 4 ne sont pas égaux :
 
 ![Image of Test Runner tests red test](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture5_red_tests.PNG)
 
@@ -286,9 +286,9 @@ Si vous cliquez sur le test en question, vous pouvez voir un message d’erreur 
 
 #### Les Scripts de tests
 
-Le nom de la classe de test doit avoir en préfixe ou en suffixe “Test”, selon vos préférences.  
+**Le nom de la classe de test doit avoir en préfixe ou en suffixe *“Test”*, selon vos préférences.**  
 Veillez à ce que votre code soit harmonisé, ainsi si vous choisissez de mettre “Test” en suffixe, faites le sur toutes vos classes de tests.  
-                                
+
 Par défaut Unity inclus le framework de test unitaire C#  **[NUnit](https://nunit.org/)** pour les tests unitaires.
 Devant chaque méthode de test l’attribut **[Test]** doit apparaître :
 
@@ -314,11 +314,11 @@ public IEnumerator Methode_Unity_Test() {
 }
 ```
 
-Un Unity Test est une [Coroutine](https://docs.unity3d.com/Manual/Coroutines.html). Dans Unity, les Coroutines sont généralement utilisé pour gérer le rendu. Nous pouvons par exemple, attendre une frame (yield return null) ou un nombre de secondes x (yield return new WaitForSecondes(x)) pour effectuer une action.
+Un Unity Test est une [**Coroutine**](https://docs.unity3d.com/Manual/Coroutines.html). Dans Unity, les Coroutines sont généralement utilisé pour gérer le rendu. Nous pouvons par exemple, **attendre une frame** (yield return null) ou un **nombre de secondes x** (yield return new WaitForSecondes(x)) pour effectuer une action.
 
 Ces tests permettent donc de tester les comportements qui dépendent d'Unity. Ils s'apparentent le plus souvent à des **tests d'intégrations**
 
-Pour réaliser une assertion avec un test NUnit, rien de bien compliqué, il suffit d'utiliser la classe Assert. Quelques exemples :
+Pour réaliser une assertion avec un test NUnit, il faut utiliser la classe **Assert**, quelques exemples :
 
 ```cs
     Assert.IsNotNull(object);
