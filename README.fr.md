@@ -23,7 +23,7 @@ Au contraire, si vous développez des petits projets avec Unity qui nécessite u
       - [Comment écrire un test unitaire ?](#comment-écrire-un-test-unitaire-)
       - [Les tests unitaires dans la pratique ?](#et-dans-la-pratique-)
         - [Unity Test Runner](#unity-test-runner)
-        - [Les Scripts de Tests](les-scripts-de-tests)
+        - [Les Scripts de Tests](#les-scripts-de-tests)
       - [Dependances, mocks & substitut](#dependances--mocks-&-substituts)
   - [TDD (Test-driven-developpement)ou développement piloté par les tests](#tdd-test-driven-developpement-ou-développement-piloté-par-les-tests)
         
@@ -215,12 +215,11 @@ Lorsque l'on écrit un test unitaire, il est conseillé de commencer par rédige
 
 #### Unity Test Runner
 
-Page de la documentation : [ici] (https://docs.unity3d.com/Manual/testing-editortestsrunner.html)  
+Page de la documentation : [ici](https://docs.unity3d.com/Manual/testing-editortestsrunner.html)  
 
 Pour afficher la fenêtre "Test Runner", allez dans windows / Test Runner.
 
-![Image of Test Runner]
-(https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture1_ouvertureOnglet.PNG)  
+![Image of Test Runner](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture1_ouvertureOnglet.PNG)  
 
 On peut voir sur la capture d'écran, qu'il existe deux modes :
  - mode Play : Execute [UnityTest] as a Coroutine. Ce mode peut être désactivé lors du build afin de ne pas alourdir le fichier final.
