@@ -88,13 +88,13 @@ Le SmartMerge possède ses limites. Il ne peut pas résoudre seul le conflit lor
   
   Si le dépôt que vous utilisez est compatible avec [Git LFS](https://git-lfs.github.com/), je vous recommande de l’utiliser. ([Git LFS](https://git-lfs.github.com/) est compatible avec GitHub / Bitbucket / Gitlab depuis la version 8). [Git LFS est une extension de Git et est open source](https://github.com/git-lfs/git-lfs?utm_source=gitlfs_site&utm_medium=repo_link&utm_campaign=gitlfs).  
 
-Cependant, cette solution fonctionne **seulement** pour les fichiers **inférieur à 2Go**.
+Cependant, cette solution fonctionne **seulement** pour les fichiers **inférieurs à 2Go**.
 
 ### Comment ça marche ?
 
 ![Image Explicative de Git LFS](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/image9.png?token=AHjeDpsdDG7nmpaEzQkxpTVyQp2cHdTmks5bWG9nwA%3D%3D)
 
-[Git LFS](https://git-lfs.github.com/), va tracker les fichiers que vous voulez, soit avec leurs noms précis, soit avec leurs extensions, soit ceux qui sont dans un dossier que vous spécifierez …. Ensuite, ces fichiers seront automatiquement stockés sur un serveur (Large File Storage) et seulement le lien de votre fichier sera gardé. Attention, ce système ne versionne pas les fichiers trackés. Mais avez-vous vraiment besoin d’un *versionning* de vos *assets* 3D ou de vos éléments UI ? Qui sont généralement déjà versionner en amont par les Designers.
+[Git LFS](https://git-lfs.github.com/), va tracker les fichiers que vous voulez, soit avec leurs noms précis, soit avec leurs extensions, soit ceux qui sont dans un dossier que vous spécifierez. Ensuite, ces fichiers seront automatiquement stockés sur un serveur (Large File Storage) et seulement le lien de votre fichier sera gardé. Attention, ce système ne versionne pas les fichiers trackés. Mais avez-vous vraiment besoin d’un *versionning* de vos *assets* 3D ou de vos éléments UI ? Généralement déjà versionnés en amont par les Designers.
 
 **Pour installer git LFS, lancer la commande :**
 
@@ -106,7 +106,7 @@ Git LFS  devrait s’installer automatiquement, si c’est le cas, la commande d
 >Updated git hooks.
 >Git LFS initialized.
 ```
-**Utilisez la commande suivante pour tracker les fichiers avec les extentions voulu (remplacer le *.extension par *.png ou *.fbx)**
+**Utilisez la commande suivante pour tracker les fichiers avec les extensions voulu (remplacer le *.extension par *.png ou *.fbx)**
 ```
 $ git lfs track "*.extension" 
 >Tracking "*.png"
@@ -117,9 +117,9 @@ $ git lfs track "*.extension"
 ```
 $ git add .gitattributes
 ```
-et voilà le tour est joué, à présent vous pouvez ajouter vos fichier et commit comme vous le faisiez avant, la différence est que git va envoyer les fichier tracké sur [Git LFS](https://git-lfs.github.com/).  
+et voilà le tour est joué, à présent vous pouvez ajouter vos fichiers et *commit* comme vous le faisiez avant, la différence est que *Git* va envoyer les fichiers trackés sur [Git LFS](https://git-lfs.github.com/).  
 
-Si vous utilisez github, la notification “stored with Git LFS” devrait apparaître dans l’interface web lorsque vous ouvrez votre fichier
+Si vous utilisez github, la notification ***“stored with Git LFS”*** devrait apparaître dans l’interface web lorsque vous ouvrez votre fichier.
 
 
 ![Image of Github Stored with Git LFS](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/image7.png?token=AHjeDnlpMeQpTc27ikncn_j53g50GMEOks5bWG4gwA%3D%3D)
@@ -130,7 +130,6 @@ Pour comprendre le fonctionnement de [Git LFS](https://git-lfs.github.com/), je 
 [![video Btbucket Git LFS](http://img.youtube.com/vi/9gaTargV5BY/0.jpg)](http://www.youtube.com/watch?v=9gaTargV5BY "Git LFS explain")
 
 
-
 D’autres solutions existes avec git : Git annex, Git fat , Git media , Git Bigstore, Git sizer… //moins adapté à l’usage de unity / plus de ligne de commande / moins de documentation claire sur internet
 
 
@@ -138,7 +137,8 @@ D’autres solutions existes avec git : Git annex, Git fat , Git media , Git Big
 
 ## Tests : Introduction
   
-Les tests sont importants dans la réalisation d’un logiciel car ils assurent une **qualité logicielle** minimale. Beaucoup de logiciel sont conçu sans test et les conséquences sont:  
+Les tests sont importants dans la réalisation d’un logiciel car ils assurent une **qualité logicielle minimale**. 
+Beaucoup de logiciel sont conçu sans test et les conséquences sont:  
 - beaucoup d’**anomalies**
 - des **bugs** compliqués à résoudre et parfois lancés en production.
 - un logiciel qui grossit à cause des patchs et des nouvelles fonctionnalités s’appuyant sur un code bancal. 
@@ -148,16 +148,16 @@ En bref, un code non testé entraîne bien souvent une **dette technique**.
 
 La **pyramide des tests** présente les différents **types** de tests :
 
-- Les **tests IHM** (Interface Homme-Machine) coûtent cher car il faut exécuter l’appli de bout en bout, Ces tests peuvent être automatisés mais long à être exécuté. Ces tests ne couvrent que certains scénario précis.
-Quand ces tests ne sont pas automatisés, on engage des testeurs.
+- Les **tests IHM** (Interface Homme-Machine) coûtent cher car il faut exécuter l’appli de bout en bout. Ces tests peuvent être automatisés mais long à être exécutés. Ces tests ne couvrent que certains scénario précis.
+Quand ces tests ne sont pas automatisés, on peut engager des testeurs.
 
 - Les **tests d’intégration** sont assez simples. On s’affranchit des contraintes majeures (IHM, certaines dépendances). Ils sont également assez proches du code, ce qui facilite leur refactoring. Cependant, ils couvrent un spectre plus large de code et de ce fait, ont davantage de risques d’être impactés par une modification.
 
-- Les **tests unitaires** sont simples à mettre en œuvre lorsqu’ils sont faits au fur et à mesure du code, ils permettent de couvrir une majeure partie du code à faible coût.Ils peuvent être automatisé et rapide à exécuter. Il est fortement recommandé de commencer par rédiger des tests unitaires, ils sont la base des tests et permettent de repérer rapidement les régressions ou les mauvais comportement du logiciel.
+- Les **tests unitaires** sont simples à mettre en œuvre lorsqu’ils sont faits au fur et à mesure du code, ils permettent de couvrir une majeure partie du code à faible coût. Ils peuvent être **automatisés** et **rapide à exécuter**. Il est fortement recommandé de commencer par rédiger des tests unitaires, ils sont la **base** des tests et permettent de repérer rapidement les régressions ou les mauvais comportements du logiciel.
 
 :warning: **Attention** : Séparer les tests unitaires (rapide) des tests d’intégrations (plus lent).
 
-Pour le moment nous nous intéresserons aux tests unitaires et au TDD (test driven development).
+Pour le moment nous nous intéresserons aux **tests unitaires et au TDD (test driven development)**.
 
 **Rédiger des tests unitaires sert à vérifier le comportement du code, tandis qu’avec l’approche TDD, qui consiste à écrire les tests en premier, rédiger des tests unitaires sert à spécifier comment le code doit fonctionner**.
 
@@ -172,13 +172,13 @@ Ce dernier doit avoir la même **structure** que le projet que l’on souhaite t
 
 - Être sur de ne **pas** faire de **retour en arrière**, de ne pas avoir cassé un code en le modifiant avant la mise en production
 
--  **Réduire les bugs** dans les fonctionnalité (déjà implémenté ou nouvelle)
+-  **Réduire les bugs** dans les fonctionnalités (déjà implémentés ou nouvelles)
 
 - **Refacto en toute quiétude** : ils réduisent la peur de faire des **modifications** et d’**ajouter de nouvelles fonctionnalités** dans le programme ou l’application.
 
-- Traiter **en amont** des tests interface et utilisateurs certains mauvais comportements et donc de les **corriger plus tôt**.
+- Traiter **en amont** des tests interfaces et utilisateurs certains mauvais comportements et donc de les **corriger plus tôt**.
 
-- Avoir un feedback rapide sur le code que les developpeurs viennent d'ajouter ou modifier.
+- Avoir un **feedback rapide** sur le code que les developpeurs viennent d'ajouter ou modifier.
 
 - Permet d’avoir une application plus **robuste**
 
@@ -207,7 +207,7 @@ Un test unitaire exprime une intention, c'est à dire, qu'il test une fonctionna
 Un test se décompose en **3 parties** : 
 - **Arrange** est l’étape d’initialisation
 - **Act** correspond à l’appel de la méthode testée
-- **Assert** est l’étape de vérification du résultat du comportement de la méthode testée
+- **Assert** est l’étape de vérification du comportement de la méthode testée
 
 Lorsque l'on écrit un test unitaire, il est conseillé de commencer par rédiger l'**Assert**, qui est la réponse à la question : **Qu'est-ce qu'on veut tester?**
 
