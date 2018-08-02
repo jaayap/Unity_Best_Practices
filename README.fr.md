@@ -216,14 +216,24 @@ Lorsque l'on écrit un test unitaire, il est conseillé de commencer par rédige
 #### Unity Test Runner
 
 Pour réaliser des tests unitaires, Unity met à disposition un outil appelé le [**Unity Test Runner**](https://docs.unity3d.com/Manual/testing-editortestsrunner.html)  
-Pour afficher la fenêtre "Test Runner", allez dans *Windows/Test Runner*.
+Pour afficher la fenêtre "Test Runner", allez dans *Windows > Test Runner*.
 
 ![Image of Test Runner](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture1_ouvertureOnglet.PNG)  
 
 On peut voir sur la capture d'écran, qu'il existe **deux modes** :
- - **mode Play** : Execute [UnityTest] as a Coroutine. Ce mode peut être désactivé lors du build afin de ne pas alourdir le fichier final.
- - **mode Editor** : Execute [UnityTest] in Editor.Application.Update, callback loop  
 
+ - **mode Play** : 
+  - permet d'executer des tests sur **plusieurs frames**
+  - comportement Awake(), Start(), ... sont executés **automatiquement**
+  - Sert davantage pour les **tests d'intégration**
+  - [UnityTest] = exécuté comme une **Coroutine classique**
+  - Ouvre une **scène** de test pour executé les tests (:warning: pensez à bien **enregistrer** votre scène avant de lancer les tests car votre scène sera écrasée au lancement des tests)
+  
+  - **mode Editor** :
+    - Chaque test est executé en **une frame**
+    - Il faut appeler **explicitement** les méthodes Awake() et Start(), ce qui necessite de les passer en **public**.
+    - **Doit être placés dans un dossier Editor**
+    - [UnityTest] est executé dans l'editor avec **"Editor.Application.Update"**
 
 Sélectionnez le mode qui vous intéresse puis cliquez sur le bouton *“Create PlayMode/EditMode Test Assembly Folder”*. 
 Unity va créer automatiquement un dossier Test avec un fichier *“Tests.asmdef”de type “assembly definition”*.  
@@ -284,6 +294,10 @@ Si vous cliquez sur le test en question, vous pouvez voir un message d’erreur 
 
 ![Image of Test Runner tests red test explanation](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture5_red_tests_with_error_msg.PNG)
 
+Aujourd'hui, *Unity* ne permet pas de lancer les tests en lignes de commande.
+Les tests appelant des *MonoBehaviour* ne peuvent pas être éxécuté depuis [*Visual Studio*](https://visualstudio.microsoft.com/). 
+Si vous utilisez [***Rider***](https://www.jetbrains.com/dotnet/promo/unity/), vous pourrer les lancer directement dans son interface.
+
 #### Les Scripts de tests
 
 **Le nom de la classe de test doit avoir en préfixe ou en suffixe *“Test”*, selon vos préférences.**  
@@ -336,6 +350,72 @@ Unity ajoute également ses **propres assertions** (avec using UnityEngine.Asser
 
 
 :warning: Les méthode Awake, Start et Update doivent être passé en public pour être appelée avec les tests.
+
+Si tous vos tests ont le même "Arrange" vous pouvez utilisez les attributs [SetUp] et [TearDown].
+La méthode sous l'attribut [SetUp] s'executera avant toutes les méthodes [Tests] et la méthode sous l'attribut [TearDown] s'executera aprés  toutes les méthodes [Tests].
+
+Ainsi : 
+```cs
+public class MaClassTest {
+  [Test]
+  public void Methode_Test_0() {
+    //Arrange
+    GameManager game = new GameManager();
+    ...
+    //Act
+    ...
+    //Assert
+    ...
+  }
+
+  [Test]
+  public void Methode_Test_1() {
+    //Arrange
+    GameManager game = new GameManager();
+    ...
+    //Act
+    ...
+    //Assert
+    ...
+  }
+}
+```
+Devient : 
+```cs
+public class MaClassTest {
+  
+  GameManager game;
+  
+  [SetUp]
+  public void Init(){
+    game = new GameManager();
+  }
+  
+  [TearDown] public void Dispose() {
+    Destroy(game);
+  }
+
+  [Test]
+  public void Methode_Test_0() {
+    //Arrange
+    ...
+    //Act
+    ...
+    //Assert
+    ...
+  }
+
+  [Test]
+  public void Methode_Test_1() {
+    //Arrange
+    ...
+    //Act
+    ...
+    //Assert
+    ...
+  }
+
+```
 
 
 Source : Unite Austin 2017 - Testing for Sanity: Using Unity's Integrated TestRunner, https://www.youtube.com/watch?v=MWS4aSO7HAo
