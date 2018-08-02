@@ -215,8 +215,7 @@ Lorsque l'on écrit un test unitaire, il est conseillé de commencer par rédige
 
 #### Unity Test Runner
 
-Page de la documentation : [ici](https://docs.unity3d.com/Manual/testing-editortestsrunner.html)  
-
+Pour réaliser des tests unitaires, Unity met à disposition un outils appelé le [Unity Test Runner](https://docs.unity3d.com/Manual/testing-editortestsrunner.html)  
 Pour afficher la fenêtre "Test Runner", allez dans windows / Test Runner.
 
 ![Image of Test Runner](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture1_ouvertureOnglet.PNG)  
