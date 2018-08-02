@@ -139,8 +139,7 @@ A lot of software are designed without testing and the consequences are:
 
 Most of time, an untested code leads to **technical debt**.
 
-![Image of test pyramid](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/img_pyramide_des_tests.png?token=AHjeDoKKyxTJRlb2sRXe6a4YPP5RwJQTks5bYCFzwA%3D%3D)
-//TODO: Traduction in en
+![Image of test pyramid](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/img_pyramide_des_tests-en.png)
 
 The tests pyramid present different **type** of test : 
 
