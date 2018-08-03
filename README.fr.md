@@ -82,7 +82,7 @@ Le SmartMerge possède ses limites. Il ne peut pas résoudre seul le conflit lor
   Versionner des fichiers volumineux (png, fbx, …) peut s'avérer douloureux, GitHub vous empêche de pousser des fichiers de plus de 100 Mo et votre dépôt Git contient toutes les versions de chaque fichier.  
   Les révisions multiples de fichiers volumineux augmentent les temps de clonage et de récupération pour les autres utilisateurs du dépôt.  
   
-  Git demande à chaque utilisateur d'avoir autant d'espace libre sur un disque dur que d'espace consommé à tout moment. Par exemple, si une archive est de 1 Go, Git nécessite 1 Go d'espace libre supplémentaire pour être disponible.  
+  Git demande à chaque utilisateur d'avoir autant d'espace libre sur un disque dur que d'espace consommé à tout moment. Par exemple, si une archive est de 1 Go, Git nécessite de 1 Go d'espace libre supplémentaire pour être disponible.  
   
   Il est conseillé de garder les fichiers suivant dans le dépôt : fichiers de code, assets qui ont besoin d’être versionné (graphiques), les fichiers de configuration (volumineux ou non) et de ne pas versionner les fichiers suivants : Bases de données, fichiers temporaires (journaux, log, …).   
   
@@ -94,10 +94,9 @@ Cependant, cette solution fonctionne **seulement** pour les fichiers **inférieu
 
 ![Image Explicative de Git LFS](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/image9.png?token=AHjeDpsdDG7nmpaEzQkxpTVyQp2cHdTmks5bWG9nwA%3D%3D)
 
-[Git LFS](https://git-lfs.github.com/), va tracker les fichiers que vous voulez, soit avec leurs noms précis, soit avec leurs extensions, soit ceux qui sont dans un dossier que vous spécifierez. Ensuite, ces fichiers seront automatiquement stockés sur un serveur (Large File Storage) et seulement le lien de votre fichier sera gardé. Attention, ce système ne versionne pas les fichiers trackés. Mais avez-vous vraiment besoin d’un *versionning* de vos *assets* 3D ou de vos éléments UI ? Généralement déjà versionnés en amont par les Designers.
+[Git LFS](https://git-lfs.github.com/), va tracker les fichiers que vous voulez, soit avec leurs noms, soit avec leurs extensions, soit avec leurs emplacements. Ensuite, ces fichiers seront automatiquement stockés sur un serveur (Large File Storage) et seulement le lien de votre fichier sera gardé. Attention, ce système ne versionne pas les fichiers trackés. Mais avez-vous vraiment besoin d’un *versionning* de vos *assets* 3D ou de vos éléments UI ? Généralement déjà versionnés en amont par les Designers.
 
 **Pour installer git LFS, lancer la commande :**
-
 ```
 $ git lfs install
 ```
@@ -109,7 +108,7 @@ Git LFS  devrait s’installer automatiquement, si c’est le cas, la commande d
 **Utilisez la commande suivante pour tracker les fichiers avec les extensions voulu (remplacer le *.extension par *.png ou *.fbx)**
 ```
 $ git lfs track "*.extension" 
->Tracking "*.png"
+>Tracking "*.extension"
 ```
 
 **Assurez vous que votre projet possède un *.gitattributes***
