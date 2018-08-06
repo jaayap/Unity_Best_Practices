@@ -10,25 +10,33 @@ Au contraire, si vous développez des petits projets avec Unity qui nécessite u
 # __Plan :__
 
 - [Versionning : Git & Unity](#versionning--git--unity)
-  - [Le .gitignore](#le-gitignore)
-  - [Enregistrement de vos fichier en YAML](#enregistrement-des-fichiers-en-yaml)
-  - [Smart Merge](#smart-merge)
-  - [Les gros fichiers (.png, .fbx, ...)](#les-gros-fichiers)
+  - [Creer un .gitignore](#le-gitignore)
+  - [Enregistrer des fichiers en YAML](#enregistrement-des-fichiers-en-yaml)
+  - [Merger avec l'outil Smart Merge](#smart-merge)
+  - [Gerer les fichiers volumineux (images, objets 3D, ...)](#les-gros-fichiers)
         
-- [Tests & TDD](#tests-&-tdd)
-  - [Tests : Introduction](#tests--introduction)
-  - [Tests Unitaires](#tests-unitaires)
-      - [Pourquoi écrire un test unitaire ?](#pourquoi-écrire-un-test-unitaire-)
-      - [Qu'est-ce qu'un bon test unitaire ?](#quest-ce-quun-bon-test-unitaire-)
-      - [Comment écrire un test unitaire ?](#comment-écrire-un-test-unitaire-)
-      - [Les tests unitaires dans la pratique ?](#et-dans-la-pratique-)
+- [Tests unitaires & TDD](#tests-&-tdd)
+  - [Horizon sur les tests](#tests--introduction)
+  - [Tests Unitaires (TU)](#tests-unitaires)
+      - [Pourquoi écrire un TU ?](#pourquoi-écrire-un-test-unitaire-)
+      - [Qu'est-ce qu'un bon TU ?](#quest-ce-quun-bon-test-unitaire-)
+      - [Comment écrire un TU ?](#comment-écrire-un-test-unitaire-)
+      - [Comment mettre en pratique Les TU avec Unity ?](#et-dans-la-pratique-)
         - [Unity Test Runner](#unity-test-runner)
-        - [Les Scripts de Tests](#les-scripts-de-tests)
-      - [Dependances, mocks & substitut](#dependances--mocks-&-substituts)
-  - [TDD (Test-driven-developpement)ou développement piloté par les tests](#tdd-test-driven-developpement-ou-développement-piloté-par-les-tests)
+        - [Les scripts de tests](#les-scripts-de-tests)   
+  - [développement piloté par les tests (TDD)](#tdd-test-driven-developpement-ou-développement-piloté-par-les-tests)
+
+- [Dependances, mocks & substitut](#dependances--mocks-&-substituts)
         
-- [Clean Code](#clean-code)
+- [Propreté du code avec Clean Code](#clean-code)
+  - Par où commencer ?
+    - Les noms
+    - Les commentaires
+    - La loi de demeter
+  - Principes et méthodes
+  
 - [Architecture](#architecture)
+  - la clean architecture
 
 
 # Versionning : Git & Unity
@@ -77,7 +85,7 @@ Continuer à utiliser git comme à votre habitude et si lors d’un merge, vous 
 
 Le SmartMerge possède ses limites. Il ne peut pas résoudre seul le conflit lorsque vous toucher au même objet de la scène. Dans ce cas, il vous demandera de choisir la bonne version ( la scène actuelle, l’ancienne scène ou celle de votre collègue ?)
 
-## Les gros fichiers
+## Gerer les fichiers volumineux (images, objets 3D, ...)
 
   Versionner des fichiers volumineux (png, fbx, …) peut s'avérer douloureux, GitHub vous empêche de pousser des fichiers de plus de 100 Mo et votre dépôt Git contient toutes les versions de chaque fichier.  
   Les révisions multiples de fichiers volumineux augmentent les temps de clonage et de récupération pour les autres utilisateurs du dépôt.  
@@ -210,7 +218,7 @@ Un test se décompose en **3 parties** :
 
 Lorsque l'on écrit un test unitaire, il est conseillé de commencer par rédiger l'**Assert**, qui est la réponse à la question : **Qu'est-ce qu'on veut tester?**
 
-### Et dans la pratique ?
+### Comment mettre en pratique Les TU avec Unity ?
 
 #### Unity Test Runner
 
@@ -421,23 +429,6 @@ public class MaClassTest {
 Source : Unite Austin 2017 - Testing for Sanity: Using Unity's Integrated TestRunner, https://www.youtube.com/watch?v=MWS4aSO7HAo
 
 
-### Dependances, Mocks & Substituts
-
-Dans la pratique, un TU ne dois jamais s’appuyer sur **une dépendance extérieure** (service web, base de données, librairie, …). En effet, cela peut entraîner un **biais** et peut rendre les TU plus difficiles à maintenir dans le temps. 
-Une dépendance extérieure aura tendance à **rallonger le temps d'exécution**.
-
-Pour être sûr de tester un seul comportement, sans aucune dépendance, il est possible de créer **des objets “fake” (mock ou stub)** pour remplacer une classe.
-Cela permet d’éviter un null exception en renseignant un objet de substitution, ou encore de vérifier qu’une fonction est bien appelée sans exécuter son code.
-
-**Quelle est la différence entre Stub et Mock ?**
-
-**Un Stub** est un objet que vous pouvez contrôler, qui sert de substitut **à une dépendance extérieure** (exemple : un faux service web qui renvoie toujours la même information)  
-  
-**Un Mock** est un objet de substitut **dans le système**, qui décide si un test unitaire passe ou échoue (exemple : une base de données qui attend une certaine requête bien précise)
-
-Pour créer des mocks ou des substitut avec *Unity*, vous pouvez installer **NSubstitute**, pour cela il suffit de placer le fichier **NSubstitute.dll** dans votre projet *Unity*. Vous pouvez télécharger ce fichier ici. //TODO: add NSubstitute.dll dans le dépot + link
-
-TODO : exercice à trou (suite) TU avec Mock. 
 
 
 ## TDD (Test-driven-developpement) ou développement piloté par les tests
@@ -464,6 +455,23 @@ Il précise également que suivre les trois lois n'est pas toujours appropprié,
 
 TODO : exercice à trou (suite ou reprise du même exo) TU avec TDD. 
 
+# Dependances, Mocks & Substituts
+
+Dans la pratique, un TU ne dois jamais s’appuyer sur **une dépendance extérieure** (service web, base de données, librairie, …). En effet, cela peut entraîner un **biais** et peut rendre les TU plus difficiles à maintenir dans le temps. 
+Une dépendance extérieure aura tendance à **rallonger le temps d'exécution**.
+
+Pour être sûr de tester un seul comportement, sans aucune dépendance, il est possible de créer **des objets “fake” (mock ou stub)** pour remplacer une classe.
+Cela permet d’éviter un null exception en renseignant un objet de substitution, ou encore de vérifier qu’une fonction est bien appelée sans exécuter son code.
+
+**Quelle est la différence entre Stub et Mock ?**
+
+**Un Stub** est un objet que vous pouvez contrôler, qui sert de substitut **à une dépendance extérieure** (exemple : un faux service web qui renvoie toujours la même information)  
+  
+**Un Mock** est un objet de substitut **dans le système**, qui décide si un test unitaire passe ou échoue (exemple : une base de données qui attend une certaine requête bien précise)
+
+Pour créer des mocks ou des substitut avec *Unity*, vous pouvez installer **NSubstitute**, pour cela il suffit de placer le fichier **NSubstitute.dll** dans votre projet *Unity*. Vous pouvez télécharger ce fichier ici. //TODO: add NSubstitute.dll dans le dépot + link
+
+TODO : exercice à trou (suite) TU avec Mock. 
 
 # Clean Code
 
