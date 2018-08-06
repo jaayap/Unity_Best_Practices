@@ -1,5 +1,3 @@
-***site en construction, merci de votre comprehension***
-
 ### [Consult this site in english](https://jaayap.github.io/Unity_Best_Practices/)
 
 Vous trouverez ici, les bonnes pratiques de développement appliqué aux projets Unity (TU, TDD, Clean archi, …).
@@ -26,16 +24,16 @@ Au contraire, si vous développez des petits projets avec Unity qui nécessite u
         - [Les scripts de tests](#les-scripts-de-tests)   
   - [développement piloté par les tests (TDD)](#tdd-test-driven-developpement-ou-développement-piloté-par-les-tests)
 
-- [Gestion des dépendances](#gestion-des-dependances)
+- [Gestion des dépendances **(en cours)**](#gestion-des-dependances)
         
-- [Propreté du code avec Clean Code](#propreté-du-code-avec-clean-code)
+- [Propreté du code avec Clean Code **(en cours)**](#propreté-du-code-avec-clean-code)
   - Par où commencer ?
     - Les noms
     - Les commentaires
     - La loi de demeter
   - Principes et méthodes
   
-- [Architecture](#architecture)
+- [Architecture **(prochainement)**](#architecture)
   - la clean architecture
 
 
