@@ -26,7 +26,9 @@ Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faud
   - [développement piloté par les tests (TDD)](#tdd-test-driven-developpement-ou-développement-piloté-par-les-tests)
 
 - [Gestion des dépendances **(en cours)**](#gestion-des-dépendances)
-        
+  - [Les dépendances dans les TU](#les-dépendances-dans-les-tests-unitaires) 
+  - [Injection de dépendances](#injection-de-dépendances)
+  
 - [Propreté du code avec Clean Code **(en cours)**](#propreté-du-code-avec-clean-code)
   - Par où commencer ?
     - Les noms
@@ -456,10 +458,12 @@ TODO : exercice à trou (suite ou reprise du même exo) TU avec TDD.
 
 # Gestion des dépendances
 
+## Les dépendances dans les tests unitaires 
+
 Dans la pratique, un TU ne dois jamais s’appuyer sur **une dépendance extérieure** (service web, base de données, librairie, …). En effet, cela peut entraîner un **biais** et peut rendre les TU plus difficiles à maintenir dans le temps. 
 Une dépendance extérieure aura tendance à **rallonger le temps d'exécution**.
 
-Pour être sûr de tester un seul comportement, sans aucune dépendance, il est possible de créer **des objets “fake” (mock ou stub)** pour remplacer une classe.
+Pour être sûr de tester un seul comportement, sans aucune dépendance, il est possible de créer **des bouchons (mock ou stub)** pour remplacer une classe.
 Cela permet d’éviter un null exception en renseignant un objet de substitution, ou encore de vérifier qu’une fonction est bien appelée sans exécuter son code.
 
 **Quelle est la différence entre Stub et Mock ?**
@@ -468,9 +472,14 @@ Cela permet d’éviter un null exception en renseignant un objet de substitutio
   
 **Un Mock** est un objet de substitut **dans le système**, qui décide si un test unitaire passe ou échoue (exemple : une base de données qui attend une certaine requête bien précise)
 
-Pour créer des mocks ou des substitut avec *Unity*, vous pouvez installer **NSubstitute**, pour cela il suffit de placer le fichier **NSubstitute.dll** dans votre projet *Unity*. Vous pouvez télécharger ce fichier ici. //TODO: add NSubstitute.dll dans le dépot + link
+Pour créer des mocks ou des substitut avec *Unity*, vous pouvez installer **NSubstitute**, pour cela il suffit de placer le fichier **NSubstitute.dll** dans votre projet *Unity*. Vous pouvez télécharger ce fichier [ici](https://github.com/jaayap/Unity_Best_Practices/tree/master/NSubstitute/dll). 
 
-TODO : exercice à trou (suite) TU avec Mock. 
+PROCHAINEMENT : Exemple de code avec TU
+
+## Injection de dépendances 
+
+D de SOLID (voir partie suivante)
+ => Zenject
 
 # Propreté du code avec Clean Code
 
@@ -530,6 +539,7 @@ En pratique, cela veut dire qu’une méthode peut invoquer les méthodes :
 :plus: L'avantage de suivre la règle de Déméter est que le logiciel résultat est plus maintenable et plus adaptable. Puisque les objets sont moins dépendants de la structure interne des autres objets, ceux-ci peuvent être changés sans changer le code de leurs appelants.
 
 :moins: L'inconvénient  de la loi de Déméter est qu'elle requiert l'écriture d'un grand nombre de petites méthodes "wrapper" pour propager les appels de méthodes à leurs composants. Cela peut augmenter le temps de développement initial, accroître l'espace mémoire utilisé, et diminuer les performances.
+TODO : vérifier info / ajouter sources
 
 ## Quelques règles
 
@@ -567,7 +577,7 @@ remplir son contrat
 
 - **D**IP (Dependency Inversion Principle) 
 Le code ne doit pas interagir directement avec l'extérieur mais doit passer par des 
-abstractions (et vice versa). => Zenject
+abstractions (et vice versa).
 
 
 **Les trois principes composants**
