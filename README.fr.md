@@ -10,23 +10,23 @@ Au contraire, si vous développez des petits projets avec Unity qui nécessite u
 # __Plan :__
 
 - [Versionning : Git & Unity](#versionning--git--unity)
-  - [Creer un .gitignore](#le-gitignore)
-  - [Enregistrer des fichiers en YAML](#enregistrement-des-fichiers-en-yaml)
-  - [Merger avec l'outil Smart Merge](#smart-merge)
-  - [Gerer les fichiers volumineux (images, objets 3D, ...)](#les-gros-fichiers)
+  - [Créer un .gitignore](#creer-un-gitignore)
+  - [Enregistrer des fichiers en YAML](#enregistrer-des-fichiers-en-yaml)
+  - [Merger avec l'outil Smart Merge](#merger-avec-loutil-smart-merge)
+  - [Gérer les fichiers volumineux (images, objets 3D, ...)](#gerer-les-fichiers-volumineux)
         
-- [Tests unitaires & TDD](#tests-&-tdd)
-  - [Horizon sur les tests](#tests--introduction)
-  - [Tests Unitaires (TU)](#tests-unitaires)
+- [Tests unitaires & TDD](#tests-unitaires-&-tdd)
+  - [Tour d'horizon sur les tests](#tour-dhorizon-sur-les-tests)
+  - [Tests Unitaires (TU)](#tests-unitaires-tu)
       - [Pourquoi écrire un TU ?](#pourquoi-écrire-un-test-unitaire-)
       - [Qu'est-ce qu'un bon TU ?](#quest-ce-quun-bon-test-unitaire-)
       - [Comment écrire un TU ?](#comment-écrire-un-test-unitaire-)
-      - [Comment mettre en pratique Les TU avec Unity ?](#et-dans-la-pratique-)
+      - [Comment mettre en pratique Les TU avec Unity ?](#Comment-mettre-en-pratique-les-tu-avec-Unity-)
         - [Unity Test Runner](#unity-test-runner)
         - [Les scripts de tests](#les-scripts-de-tests)   
   - [développement piloté par les tests (TDD)](#tdd-test-driven-developpement-ou-développement-piloté-par-les-tests)
 
-- [Dependances, mocks & substitut](#dependances--mocks-&-substituts)
+- [Gestion des dépendances](#gestion-des-dependances)
         
 - [Propreté du code avec Clean Code](#clean-code)
   - Par où commencer ?
@@ -44,20 +44,20 @@ Au contraire, si vous développez des petits projets avec Unity qui nécessite u
 Si vous utiliser *git* pour versionner vos projets *Unity*, vous avez du remarquez que parfois les fichiers tels que les scènes et les prefabs subissent des régressions lors des merges. Deux personnes modifiant ainsi le même fichier en même temps provoquent un conflit que git, par défaut n’arrive pas à résoudre. Vous retrouvez alors votre scène entièrement vide ou votre *prefab* tout cassé. 
 Voici la solution que j’ai choisi d’adopter.
 
-## Le .gitignore
+## Créer un .gitignore
 
 Il est important d’ajouter un fichier **.gitignore** à votre archive. Il permettra à git d’ignorer certains fichiers temporaires générés par *Unity* et par votre IDE (dans l’exemple visual studio, mais vous pouvez modifier le *gitignore* pour l’adapter aux outils que vous utilisé). Dans certains projets, il est pertinent d’ajouter des dossiers de votre projet afin de ne pas les enregistrer dans le dépôt en ligne, un *asset* de l’*asset store* par exemple (peut peser lourd dans l’archive, ce qui ralenti considérablement l’équipe lorsqu’elle doit mettre à jour le dépôt ou le récupérer).
 
 [voir dépot .gitignore Unity](https://github.com/github/gitignore/blob/master/Unity.gitignore)
 
-## Enregistrement des fichiers en YAML
+## Enregistrer des fichiers en YAML
 
 ![Image of Unity Project Settings](https://s3.amazonaws.com/gamasutra/UnityVersionControlSettings.png)
 
 Passer le mode d’enregistrement des assets en “Force Text” (voir image ci-dessus). Vos fichiers s’enregistrent maintenant au format YAML.
 Cela permet à Git de mieux gérer les conflits, mais cela peut s'avérer insuffisant.
 
-## Smart Merge
+## Merger avec l’outil Smart Merge
 
 Depuis la version 5.0 de *Unity*, un **UnityYAMLMerge tool** est fourni avec son installation. Pour l’utiliser, il suffit de copier/ coller les lignes suivantes dans le fichier **.git/config** :
 
@@ -85,7 +85,7 @@ Continuer à utiliser git comme à votre habitude et si lors d’un merge, vous 
 
 Le SmartMerge possède ses limites. Il ne peut pas résoudre seul le conflit lorsque vous toucher au même objet de la scène. Dans ce cas, il vous demandera de choisir la bonne version ( la scène actuelle, l’ancienne scène ou celle de votre collègue ?)
 
-## Gerer les fichiers volumineux (images, objets 3D, ...)
+## Gérer les fichiers volumineux
 
   Versionner des fichiers volumineux (png, fbx, …) peut s'avérer douloureux, GitHub vous empêche de pousser des fichiers de plus de 100 Mo et votre dépôt Git contient toutes les versions de chaque fichier.  
   Les révisions multiples de fichiers volumineux augmentent les temps de clonage et de récupération pour les autres utilisateurs du dépôt.  
@@ -140,9 +140,9 @@ Pour comprendre le fonctionnement de [Git LFS](https://git-lfs.github.com/), je 
 D’autres solutions existes avec git : Git annex, Git fat , Git media , Git Bigstore, Git sizer… //moins adapté à l’usage de unity / plus de ligne de commande / moins de documentation claire sur internet
 
 
-# Tests & TDD
+# Tests unitaires & TDD
 
-## Tests : Introduction
+## Tour d'horizon sur les tests
   
 Les tests sont importants dans la réalisation d’un logiciel car ils assurent une **qualité logicielle minimale**. 
 Beaucoup de logiciel sont conçu sans test et les conséquences sont:  
@@ -170,7 +170,7 @@ Pour le moment nous nous intéresserons aux **tests unitaires et au TDD (test dr
 
 Pour en savoir plus sur les tests, je vous conseille [l'article sur la pyramide des tests du blog d'OCTO Technology](https://blog.octo.com/la-pyramide-des-tests-par-la-pratique-1-5) , [ou une de leurs publications, culture code](https://www.octo.com/fr/publications/20-culture-code).
 
-## Tests Unitaires
+## Tests Unitaires (TU)
 
 Les **tests unitaires** peuvent être regroupés dans un **projet de tests**.  
 Ce dernier doit avoir la même **structure** que le projet que l’on souhaite tester. Ainsi, **Une classe de l’application = Une classe de tests**.
@@ -218,7 +218,7 @@ Un test se décompose en **3 parties** :
 
 Lorsque l'on écrit un test unitaire, il est conseillé de commencer par rédiger l'**Assert**, qui est la réponse à la question : **Qu'est-ce qu'on veut tester?**
 
-### Comment mettre en pratique Les TU avec Unity ?
+### Comment mettre en pratique les TU avec Unity ?
 
 #### Unity Test Runner
 
@@ -455,7 +455,7 @@ Il précise également que suivre les trois lois n'est pas toujours appropprié,
 
 TODO : exercice à trou (suite ou reprise du même exo) TU avec TDD. 
 
-# Dependances, Mocks & Substituts
+# Gestion des dépendances
 
 Dans la pratique, un TU ne dois jamais s’appuyer sur **une dépendance extérieure** (service web, base de données, librairie, …). En effet, cela peut entraîner un **biais** et peut rendre les TU plus difficiles à maintenir dans le temps. 
 Une dépendance extérieure aura tendance à **rallonger le temps d'exécution**.
