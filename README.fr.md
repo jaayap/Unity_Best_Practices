@@ -562,20 +562,20 @@ Quelques année plus tard, Robert Cecil Martin alias Oncle Bob met en avant plus
 
 **Les principes SOLID sont définis comme suit : **
 
-- **<mark>S</mark>**RP (Single Responsibility Principle) 
+- <mark>S</mark>RP (Single Responsibility Principle) 
 Ne faire qu’une seule chose mais la faire bien. Une classe doit avoir une et une seule raison de changer. 
 
-- **O**CP (Open-Closed Principle) 
+- <mark>O</mark>CP (Open-Closed Principle) 
 Une classe doit être ouverte à l'extension mais fermée à la modification (plugins)
 
-- **L**SP (Liskov Substitution Principle) 
+- <mark>L</mark>SP (Liskov Substitution Principle) 
 Toutes implémentation d’une interface doit pouvoir se substituer à une autre
 
-- **I**SP (interface Segregation Principle) 
+- <mark>I</mark>SP (interface Segregation Principle) 
 Une classe ne doit implémenter une interface que si elle à réellement le besoin de 
 remplir son contrat
 
-- **D**IP (Dependency Inversion Principle) 
+- <mark>D</mark>IP (Dependency Inversion Principle) 
 Le code ne doit pas interagir directement avec l'extérieur mais doit passer par des 
 abstractions (et vice versa).
 
