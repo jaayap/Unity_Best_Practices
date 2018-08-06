@@ -1,9 +1,8 @@
 ### [Consult this site in english](https://jaayap.github.io/Unity_Best_Practices/)
 
-Vous trouverez ici, les bonnes pratiques de développement appliqué aux projets Unity (TU, TDD, Clean archi, …).
-
-Si vous développez des gros projets avec Unity qui nécessite d’être maintenu dans le temps ou qui ont une tendance à évoluer, vous êtes au bon endroit.
-Au contraire, si vous développez des petits projets avec Unity qui nécessite un développement rapide (Game Jam, prototype) alors les pratiques détaillés ici ne sont pas adapté à ce que vous recherchez.
+Ce guide a pour but de rassembler des informations sur les bonnes pratiques de développement (versionning, tests, architecture, ...) et de montrer comment les appliquer dans un projet Unity.  
+La mise en place des bonnes pratiques ont pour but de générer des projets plus facilement maintenable et adaptable.  
+Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faudra les apprendre et les pratiquer pour les maîtriser.
 
 # __Plan :__
 
