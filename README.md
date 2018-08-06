@@ -1,5 +1,4 @@
 
-**Site in construct, thanks your comprehension**
 ### [Consulter le site en français](README.fr.md) 
 
 # Introduction
@@ -8,16 +7,22 @@
 
 - [Versionning : Git & Unity](#versionning--git--unity)
   - [.gitignore](#gitignore)
-  - [Smart Merge](#smart-merge)
-  - [Large files (.png, .fbx, ...)](#large-files)
+  - [Store file in YAML](#store-file-in-yaml)
+  - [Merge with Smart Merge](#merge-with-smart-merge)
+  - [Large files (image, 3D object, ...)](#large-files)
         
-- [Tests & TDD](#tests-&-tdd)
+- [Unit Tests & TDD](#tests-&-tdd)
   - [Tests : Introduction](#tests--introduction)
-  - [Unit Tests](#unit-tests)
-  - [TDD (Test-driven-developpement)](#tdd-test-driven-developpement)
-        
-- [Clean Code](#clean-code)
-- [Architecture](#architecture)
+  - [Unit Tests **(In progress)**](#unit-tests)
+    -[Why you should be write unit tests ?](#why-you-should-be-write-unit-tests-)
+    -[What is a good unit test ?](#what-is-a-good-unit-test-)
+    -[How write a unit test ?](#how-write-a-unit-test-)
+    -[How to put unit tests into practice with Unity **(Soon)**]
+  - [Test-driven-developpement (TDD) **(Soon)**](#test-driven-developpement-tdd)
+ 
+- [Management of dependencies **(Soon)**]()
+- [Clean Code **(Soon)**](#clean-code)
+- [Architecture **(Soon)**](#architecture)
 
 
 # Versionning : Git & Unity
@@ -38,7 +43,7 @@ Moreover, you can add folder to ignore, for exemple, an asset folder from the *a
 
 Pass asset serialization mode in “Force Text”. This option convert binary file to YAML file.
 
-## Smart Merge
+## Merge with Smart Merge
 
 Since *Unity* 5.0, a **UnityYAMLMerge tool** is include with its installation.  
 For use them, Copy/Paste the following lines in  **.git/config** file.
@@ -179,7 +184,7 @@ A Sofware Class = A Test Class.
 
 In fact, more quickly you know test fail, more quickly you can correct the problem and resolve be cheaper.
 
-### A good unit test
+### What is a good unit test ?
 
 A good unit test :
 - is fully automatised
@@ -216,7 +221,7 @@ The Class name must be prefix or suffix by "Test".
 
 
 
-## TDD (Test-driven-developpement)
+## Test-driven-developpement (TDD)
 # Clean Code
 # Architecture
 
