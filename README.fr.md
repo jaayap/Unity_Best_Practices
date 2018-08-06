@@ -1,7 +1,9 @@
 ### [Consult this site in english](https://jaayap.github.io/Unity_Best_Practices/)
 
 Ce guide a pour but de rassembler des informations sur les bonnes pratiques de développement (versionning, tests, architecture, ...) et de montrer comment les appliquer dans un projet Unity.  
+  
 La mise en place des bonnes pratiques ont pour but de générer des projets plus facilement maintenable et adaptable.  
+  
 Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faudra les apprendre et les pratiquer pour les maîtriser.
 
 # __Plan :__
@@ -23,7 +25,7 @@ Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faud
         - [Les scripts de tests](#les-scripts-de-tests)   
   - [développement piloté par les tests (TDD)](#tdd-test-driven-developpement-ou-développement-piloté-par-les-tests)
 
-- [Gestion des dépendances **(en cours)**](#gestion-des-dependances)
+- [Gestion des dépendances **(en cours)**](#gestion-des-dépendances)
         
 - [Propreté du code avec Clean Code **(en cours)**](#propreté-du-code-avec-clean-code)
   - Par où commencer ?
@@ -537,10 +539,13 @@ Ainsi, les règles d’un design simple sont définis par Kent Beck en 1990 dans
 
 1. les tests passent (signifie que le code fonctionne correctement et sous entend que le code doit être couvert par les tests)
 2. L’intention du code est claire
-3. **DRY** principle (Don’t Repeat Yourself) : Il n’y a pas de duplication de code
+3. **DRY** principle (Don’t Repeat Yourself) :
+            Il n’y a pas de duplication de code
 4. Le code a le moins d’éléments possible :
     - **KISS : Keep it Simple & Stupid**
+                Principe de la responsabilité unique (un élément possède qu'une seule raison d'être modifié)
     - **YAGNI  : You ain’t gonna need it**
+                Essayer d'anticiper les problèmes futurs, n'est pas une bonnes idée. Il est préférable de s'occuper du présent et de ne pas faire d'hypothèse sur ce que l'application pourrait utiliser.
 
 
 Quelques année plus tard, Robert Cecil Martin alias Oncle Bob met en avant plusieurs grands principes : Les principes SOLID et les principes composants. 
