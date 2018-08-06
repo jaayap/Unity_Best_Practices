@@ -26,18 +26,18 @@ Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faud
   - [développement piloté par les tests (TDD)](#tdd-test-driven-developpement-ou-développement-piloté-par-les-tests)
 
 - [Gestion des dépendances **(en cours)**](#gestion-des-dépendances)
-  - [Les dépendances dans les TU](#les-dépendances-dans-les-tests-unitaires) 
-  - [Injection de dépendances](#injection-de-dépendances)
+  - [Les dépendances dans les TU  **(en cours)**](#les-dépendances-dans-les-tests-unitaires) 
+  - [Injection de dépendances  **(prochainement)**](#injection-de-dépendances)
   
 - [Propreté du code avec Clean Code **(en cours)**](#propreté-du-code-avec-clean-code)
-  - Par où commencer ?
-    - Les noms
-    - Les commentaires
-    - La loi de demeter
-  - Principes et méthodes
+  - [Par où commencer ?](#par-où-commencer-)
+    - [Les noms](#les-noms)
+    - [Les commentaires](#les-commentaires)
+    - [La loi de demeter](#la-loi-de-demeter)
+  - [Principes et méthodes](#principes-et-méthodes)
   
 - [Architecture **(prochainement)**](#architecture)
-  - la clean architecture
+  - [La clean architecture **(prochainement)**](#la-clean-architecture)
 
 
 # Versionning : Git & Unity
@@ -599,3 +599,4 @@ Créer un code qui peut être réutilisé (plugin, code générique avec le moin
 
 # Architecture
 
+## La Clean Architecture
