@@ -10,25 +10,25 @@ Au contraire, si vous développez des petits projets avec Unity qui nécessite u
 # __Plan :__
 
 - [Versionning : Git & Unity](#versionning--git--unity)
-  - [Créer un .gitignore](#creer-un-gitignore)
+  - [Créer un .gitignore](#créer-un-gitignore)
   - [Enregistrer des fichiers en YAML](#enregistrer-des-fichiers-en-yaml)
   - [Merger avec l'outil Smart Merge](#merger-avec-loutil-smart-merge)
-  - [Gérer les fichiers volumineux (images, objets 3D, ...)](#gerer-les-fichiers-volumineux)
+  - [Gérer les fichiers volumineux (images, objets 3D, ...)](#gérer-les-fichiers-volumineux)
         
-- [Tests unitaires & TDD](#tests-unitaires-&-tdd)
+- [Tests unitaires & TDD](#tests-unitaires--tdd)
   - [Tour d'horizon sur les tests](#tour-dhorizon-sur-les-tests)
   - [Tests Unitaires (TU)](#tests-unitaires-tu)
       - [Pourquoi écrire un TU ?](#pourquoi-écrire-un-test-unitaire-)
       - [Qu'est-ce qu'un bon TU ?](#quest-ce-quun-bon-test-unitaire-)
       - [Comment écrire un TU ?](#comment-écrire-un-test-unitaire-)
-      - [Comment mettre en pratique Les TU avec Unity ?](#Comment-mettre-en-pratique-les-tu-avec-Unity-)
+      - [Comment mettre en pratique Les TU avec Unity ?](#comment-mettre-en-pratique-les-tu-avec-unity-)
         - [Unity Test Runner](#unity-test-runner)
         - [Les scripts de tests](#les-scripts-de-tests)   
   - [développement piloté par les tests (TDD)](#tdd-test-driven-developpement-ou-développement-piloté-par-les-tests)
 
 - [Gestion des dépendances](#gestion-des-dependances)
         
-- [Propreté du code avec Clean Code](#clean-code)
+- [Propreté du code avec Clean Code](#propreté-du-code-avec-clean-code)
   - Par où commencer ?
     - Les noms
     - Les commentaires
@@ -473,7 +473,7 @@ Pour créer des mocks ou des substitut avec *Unity*, vous pouvez installer **NSu
 
 TODO : exercice à trou (suite) TU avec Mock. 
 
-# Clean Code
+# Propreté du code avec Clean Code
 
 > « Il existe deux façons de concevoir un logiciel : une façon est de le rendre si simple qu'il n'a visiblement aucun défaut, et une autre est de le rendre si complexe qu'il n'y a pas de défaut visible. La première façon est de loin la plus difficile. » 
 > Hoare
