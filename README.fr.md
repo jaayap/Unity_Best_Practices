@@ -562,7 +562,7 @@ Quelques année plus tard, Robert Cecil Martin alias Oncle Bob met en avant plus
 
 **Les principes SOLID sont définis comme suit : **
 
-- <mark>**S**</mark>RP (Single Responsibility Principle) 
+- **<mark>S</mark>**RP (Single Responsibility Principle) 
 Ne faire qu’une seule chose mais la faire bien. Une classe doit avoir une et une seule raison de changer. 
 
 - **O**CP (Open-Closed Principle) 
