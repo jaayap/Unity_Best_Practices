@@ -564,7 +564,48 @@ En pratique, cela veut dire qu’une méthode peut invoquer les méthodes :
 
 L'avantage de suivre la règle de Déméter est que le logiciel est plus maintenable et adaptable. Puisque les objets sont moins dépendants de la structure interne des autres objets, ceux-ci peuvent être changés sans changer le code de leurs appelants.
 
-TODO : ajouter exemple
+**Exemple**
+
+**Code qui ne respecte pas la loi de Déméter**
+
+```cs
+public class VideoService {
+    public IVideoRepository videoRepository;
+    
+    public void Play(string videoId) {
+        …
+        var video = this.videoRepository.GetVideo(videoId);
+        var format = video.GetFormat();
+        var codec = format.GetCodec();
+        codec.DecodeVideo(video.GetContent());
+    }
+}
+```
+**Refacto de ce code pour qu'il respecte la loi de Déméter**
+
+```cs
+public class VideoService {
+    public IVideoRepository videoRepository;
+    
+    public void Play(string videoId) {
+        …
+        var video = this.videoRepository.GetVideo(videoId);
+        var codec = video.GetCodec();
+        DecodeVideo(video, codec);
+    }
+
+    private void DecodeVideo(Video video, Codec codec) {
+        codec.DecodeVideo(video.GetContent());
+    }
+}
+
+public class Video {
+
+    public void GetCodec() {
+        return this.GetFormat().GetCodec();
+    }
+}
+```
 
 
 ## Principes et méthodes
