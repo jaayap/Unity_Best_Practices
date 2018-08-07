@@ -585,22 +585,22 @@ Ainsi, les règles d’un design simple sont définis par *Kent Beck* en 1990 da
 
 Quelques année plus tard, *Robert Cecil Martin alias Oncle Bob* met en avant plusieurs grands principes : Les principes *SOLID* et les principes composants. 
 
-**Les principes SOLID sont définis comme suit : **
+**Les principes SOLID sont définis comme suit :**
 
-- <mark>S</mark>RP (Single Responsibility Principle)      
+- **<mark>S</mark>RP (Single Responsibility Principle)**      
 Ne faire qu’une seule chose mais la faire bien. Une classe doit avoir une et une seule raison de changer. 
 
-- <mark>O</mark>CP (Open-Closed Principle)      
+- **<mark>O</mark>CP (Open-Closed Principle)**      
 Une classe doit être ouverte à l'extension mais fermée à la modification (plugins)
 
-- <mark>L</mark>SP (Liskov Substitution Principle)     
+- **<mark>L</mark>SP (Liskov Substitution Principle)**     
 Toutes implémentation d’une interface doit pouvoir se substituer à une autre
 
-- <mark>I</mark>SP (interface Segregation Principle)    
+- **<mark>I</mark>SP (interface Segregation Principle)**    
 Une classe ne doit implémenter une interface que si elle à réellement le besoin de 
 remplir son contrat 
 
-- <mark>D</mark>IP (Dependency Inversion Principle)     
+- **<mark>D</mark>IP (Dependency Inversion Principle)**     
 Le code ne doit pas interagir directement avec l'extérieur mais doit passer par des 
 abstractions (et vice versa).
 
