@@ -568,10 +568,9 @@ TODO : ajouter exemple
 
 | Code qui ne respecte pas la loi | Code qui respecte la loi |
 |---------------------------------|--------------------------|
-|```cs                            |--------------------------|
-|public class VideoService {      |--------------------------|
-|```                              |                          |
-|                                 |                          |
+|```cs
+public class VideoService {     
+```                               |--------------------------| 
 
 ## Principes et méthodes
 
