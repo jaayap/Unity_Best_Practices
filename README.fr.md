@@ -596,7 +596,7 @@ Une classe doit être ouverte à l'extension mais fermée à la modification (pl
 - **<mark>L</mark>SP (Liskov Substitution Principle)**     
 Toutes implémentation d’une interface doit pouvoir se substituer à une autre
 
-- **<mark>I</mark>SP (interface Segregation Principle)**    
+- **<mark>I</mark>SP (Interface Segregation Principle)**    
 Une classe ne doit implémenter une interface que si elle à réellement le besoin de 
 remplir son contrat 
 
@@ -611,15 +611,15 @@ Les composants sont les unités du déploiement. Ils sont les plus petits morcea
 
 Les trois principes sont les suivants : 
 
-- **REP (Reuse/Release Equivalence Principle)** :   
+- **REP (Reuse/Release Equivalence Principle)**    
 Créer un code qui peut être réutilisé (plugin, code générique avec le moins de dépendance possible)
 “the granule of reuse is the granule of release” 
 "Le germe de la réutilisation est le germe de la libération"
 
-- **CCP (Common Closure Principle)** :    
+- **CCP (Common Closure Principle)**     
 Un composant (une classe, une méthode, ...)  ne doit pas avoir plusieurs raisons de changer
 
-- **CRP (Common Reuse Principle)** :       
+- **CRP (Common Reuse Principle)**        
 “Don’t force users of a component to depend on things they don’t need.” 
 “Ne forcez pas les utilisateurs d’un composant à dépendre d’une chose dont ils n’ont pas besoin” 
 
