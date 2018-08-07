@@ -27,6 +27,7 @@ Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faud
 
 - [Gestion des dépendances **(en cours)**](#gestion-des-dépendances)
   - [Les dépendances dans les TU  **(en cours)**](#les-dépendances-dans-les-tests-unitaires) 
+  - [##TU avec dépendances dans Unity **(en cours)**](#tu-avec-dépendances-dans-unity)
   - [Injection de dépendances  **(prochainement)**](#injection-de-dépendances)
   
 - [Propreté du code avec Clean Code **(en cours)**](#propreté-du-code-avec-clean-code)
@@ -477,9 +478,29 @@ Cela permet d’éviter un null exception en renseignant un objet de substitutio
   
 **Un Mock** est un objet de substitut **dans le système**, qui décide si un test unitaire passe ou échoue (exemple : une base de données qui attend une certaine requête bien précise)
 
+## TU avec dépendances dans Unity
+
 Pour créer des mocks ou des substituts avec *Unity*, vous pouvez installer **NSubstitute**, pour cela il suffit de placer le fichier **NSubstitute.dll** dans votre projet *Unity*. Vous pouvez télécharger ce fichier [ici](https://github.com/jaayap/Unity_Best_Practices/tree/master/NSubstitute/dll). 
 
-PROCHAINEMENT : Exemple de code avec TU
+**Exemple :**
+ On veut s’assurer que la méthode *InitializeObject()* du *GameManager.cs* est appelée avec le bon paramètre lors du *Start()* du script *ObjectBehaviour.cs*
+
+```cs
+[Test]
+public void WhenGameStartObjectInitialize()
+{
+    //Arrange
+    ObjectBehaviour object = new GameObject().AddComponent<ObjectBehaviour>();
+    GameManager gameManagerMock = Substitute.For<GameManager>();
+    object .GameManager = gameManagerMock;
+
+    //Act
+    object.Start();
+
+    //Assert
+    gameManagerMock.Received().InitializeObject(object);
+}
+```
 
 ## Injection de dépendances 
 
