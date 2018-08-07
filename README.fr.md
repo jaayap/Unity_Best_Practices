@@ -33,7 +33,7 @@ Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faud
   - [Par où commencer ?](#par-où-commencer-)
     - [Les noms](#les-noms)
     - [Les commentaires](#les-commentaires)
-    - [La loi de demeter](#la-loi-de-demeter)
+    - [La loi de Déméter](#la-loi-de-déméter)
   - [Principes et méthodes](#principes-et-méthodes)
   
 - [Architecture **(prochainement)**](#architecture)
@@ -525,7 +525,7 @@ Dans un code, les commentaires sont importants mais parfois utilisés de manièr
 
 Les bons commentaires sont des commentaires facultatifs, si possible, la compréhension du code ne doit pas être dépendant des commentaires. Ils doivent servir de complément d’informations, d’avertissement sur les conséquences ou à expliquer une intention.
 
-### La loi de demeter
+### La loi de Déméter
 
 La loi de Déméter (en anglais Law of Demeter ou LoD) peut s’énoncer de la manière suivante :
 “Chaque unité doit avoir une connaissance limitée des autres unités, chaque unité doit voir que les unités étroitement liées à l’unité actuelle.”
@@ -538,10 +538,9 @@ En pratique, cela veut dire qu’une méthode peut invoquer les méthodes :
 - des objets créés / instanciées dans la méthode
 - des propriétés et champs de l’objet 
 
-:plus: L'avantage de suivre la règle de Déméter est que le logiciel résultat est plus maintenable et plus adaptable. Puisque les objets sont moins dépendants de la structure interne des autres objets, ceux-ci peuvent être changés sans changer le code de leurs appelants.
+L'avantage de suivre la règle de Déméter est que le logiciel est plus maintenable et adaptable. Puisque les objets sont moins dépendants de la structure interne des autres objets, ceux-ci peuvent être changés sans changer le code de leurs appelants.
 
-:moins: L'inconvénient  de la loi de Déméter est qu'elle requiert l'écriture d'un grand nombre de petites méthodes "wrapper" pour propager les appels de méthodes à leurs composants. Cela peut augmenter le temps de développement initial, accroître l'espace mémoire utilisé, et diminuer les performances.
-TODO : vérifier info / ajouter sources
+TODO : ajouter exemple
 
 ## Principes et méthodes
 
