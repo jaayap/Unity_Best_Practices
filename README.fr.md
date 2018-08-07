@@ -2,7 +2,7 @@
 
 Ce guide a pour but de rassembler des informations sur les bonnes pratiques de développement (versionning, tests, architecture, ...) et de montrer comment les appliquer dans un projet Unity.  
   
-La mise en place des bonnes pratiques ont pour but de générer des projets plus facilement maintenable et adaptable.  
+La mise en place des bonnes pratiques a pour but de générer des projets plus facilement maintenable et adaptable.  
   
 Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faudra les apprendre et les pratiquer pour les maîtriser.
 
@@ -81,18 +81,19 @@ Cet outil est très performant et permet de travailler à plusieurs sans se souc
 
 ### Comment ça marche ?
 
-Continuer à utiliser git comme à votre habitude et si lors d’un merge, vous avez un conflit, effectuez la commande “git mergetool” qui appellera alors le smartMerge qui s’occupera dans la plupart des cas de régler vos conflits. Un exemple est donné ci-dessous, Deux branches sont créées, “Master” et “Another”, Chacune modifie la scene “sceneTest”. Ensuite Chacune est commit sur le dépôt et on essaye de “fusionner” les branches. A ce moment là, git nous dit qu’il y a conflit et lorsque l’on ouvre la scène dans Unity, on s'aperçoit qu’on a tout perdu. On exécute alors Git mergetool et on retrouve une scène qui possède tous nos objets.  
+Continuer à utiliser *git* comme à votre habitude et si lors d’un *merge*, vous avez un conflit, effectuez la commande *“git mergetool”* pour appeller le *SmartMerge* qui s’occupera, dans la plupart des cas, de régler les conflits. Un exemple est donné ci-dessous, Deux branches sont créées, *“Master”* et *“Another”*, Chacune modifie la scène *“sceneTest”*. Ensuite Chacune est *commit* sur le dépôt et on essaye de “fusionner” les branches. 
+A ce moment là, git nous dit qu’il y a un conflit et lorsque l’on ouvre la scène dans *Unity*, on s'aperçoit qu'elle est vide. On exécute alors *git mergetool* et on retrouve une scène qui possède tous nos objets.  
 
 ![Schema explicatif du Smart Merge](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/schemaSmartMergeV2.PNG?token=AHjeDgISOj3_CsXFl6gK4QxKd5kcyGPBks5baXFawA%3D%3D)
 
-Le SmartMerge possède ses limites. Il ne peut pas résoudre seul le conflit lorsque vous toucher au même objet de la scène. Dans ce cas, il vous demandera de choisir la bonne version ( la scène actuelle, l’ancienne scène ou celle de votre collègue ?)
+Le *SmartMerge* possède ses limites. Il ne peut pas résoudre seul le conflit lorsque vous toucher au même objet d'une scène. Dans ce cas, il vous demandera de choisir la bonne version (la scène actuelle, l’ancienne scène ou celle de votre collègue ?)
 
 ## Gérer les fichiers volumineux
 
-  Versionner des fichiers volumineux (png, fbx, …) peut s'avérer douloureux, GitHub vous empêche de pousser des fichiers de plus de 100 Mo et votre dépôt Git contient toutes les versions de chaque fichier.  
+  Versionner des fichiers volumineux (image, objets 3D) peut s'avérer douloureux, *GitHub* vous empêche de pousser des fichiers de plus de 100 Mo et un dépôt *Git* contient toutes les versions de chaque fichier.  
   Les révisions multiples de fichiers volumineux augmentent les temps de clonage et de récupération pour les autres utilisateurs du dépôt.  
   
-  Git demande à chaque utilisateur d'avoir autant d'espace libre sur un disque dur que d'espace consommé à tout moment. Par exemple, si une archive est de 1 Go, Git nécessite de 1 Go d'espace libre supplémentaire pour être disponible.  
+  *Git* demande à chaque utilisateur d'avoir autant d'espace libre sur un disque dur que d'espace consommé à tout moment. Par exemple, si une archive est de 1 Go, Git nécessite de 1 Go d'espace libre supplémentaire pour être disponible.  
   
   Il est conseillé de garder les fichiers suivant dans le dépôt : fichiers de code, assets qui ont besoin d’être versionné (graphiques), les fichiers de configuration (volumineux ou non) et de ne pas versionner les fichiers suivants : Bases de données, fichiers temporaires (journaux, log, …).   
   
@@ -104,7 +105,7 @@ Cependant, cette solution fonctionne **seulement** pour les fichiers **inférieu
 
 ![Image Explicative de Git LFS](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/image9.png?token=AHjeDpsdDG7nmpaEzQkxpTVyQp2cHdTmks5bWG9nwA%3D%3D)
 
-[Git LFS](https://git-lfs.github.com/), va tracker les fichiers que vous voulez, soit avec leurs noms, soit avec leurs extensions, soit avec leurs emplacements. Ensuite, ces fichiers seront automatiquement stockés sur un serveur (Large File Storage) et seulement le lien de votre fichier sera gardé. Attention, ce système ne versionne pas les fichiers trackés. Mais avez-vous vraiment besoin d’un *versionning* de vos *assets* 3D ou de vos éléments UI ? Généralement déjà versionnés en amont par les Designers.
+[Git LFS](https://git-lfs.github.com/), va *tracker* les fichiers que vous voulez, soit avec leurs noms, soit avec leurs extensions, soit avec leurs emplacements. Ensuite, ces fichiers seront automatiquement stockés sur un serveur (*Large File Storage*) et seulement le lien de votre fichier sera gardé. Attention, ce système ne versionne pas les fichiers trackés. Mais avez-vous vraiment besoin d’un *versionning* de vos *assets* 3D ou de vos éléments UI ? Généralement déjà versionnés en amont par les Designers.
 
 **Pour installer git LFS, lancer la commande :**
 ```
@@ -115,7 +116,7 @@ Git LFS  devrait s’installer automatiquement, si c’est le cas, la commande d
 >Updated git hooks.
 >Git LFS initialized.
 ```
-**Utilisez la commande suivante pour tracker les fichiers avec les extensions voulu (remplacer le *.extension par *.png ou *.fbx)**
+**Utilisez la commande suivante pour tracker les fichiers avec les extensions voulu (remplacer le *.extension par *.png, *.fbx, ...)**
 ```
 $ git lfs track "*.extension" 
 >Tracking "*.extension"
@@ -139,7 +140,7 @@ Pour comprendre le fonctionnement de [Git LFS](https://git-lfs.github.com/), je 
 [![video Btbucket Git LFS](http://img.youtube.com/vi/9gaTargV5BY/0.jpg)](http://www.youtube.com/watch?v=9gaTargV5BY "Git LFS explain")
 
 
-D’autres solutions existes avec git : Git annex, Git fat , Git media , Git Bigstore, Git sizer… //moins adapté à l’usage de unity / plus de ligne de commande / moins de documentation claire sur internet
+D’autres solutions existes avec *git* : *Git Annex*, *Git Fat* , *Git Media* , *Git Bigstore*, *Git Sizer*, … Ces dernieres sont moins documentées, plus difficiles à mettre en place et à prendre en main et semblent moins adapté à un projet *Unity*.
 
 
 # Tests unitaires & TDD
@@ -150,14 +151,14 @@ Les tests sont importants dans la réalisation d’un logiciel car ils assurent 
 Beaucoup de logiciel sont conçu sans test et les conséquences sont:  
 - beaucoup d’**anomalies**
 - des **bugs** compliqués à résoudre et parfois lancés en production.
-- un logiciel qui grossit à cause des patchs et des nouvelles fonctionnalités s’appuyant sur un code bancal. 
-En bref, un code non testé entraîne bien souvent une **dette technique**.
+- un logiciel **qui grossit** à cause des **patchs** et des nouvelles fonctionnalités s’appuyant sur un code bancal. 
+En bref, un code **non testé** entraîne bien souvent une **dette technique**.
 
 ![Image de la pyramide des tests](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/img_pyramide_des_tests.png?token=AHjeDoKKyxTJRlb2sRXe6a4YPP5RwJQTks5bYCFzwA%3D%3D)
 
 La **pyramide des tests** présente les différents **types** de tests :
 
-- Les **tests IHM** (Interface Homme-Machine) coûtent cher car il faut exécuter l’appli de bout en bout. Ces tests peuvent être automatisés mais long à être exécutés. Ces tests ne couvrent que certains scénario précis.
+- Les **tests IHM** (Interface Homme-Machine) coûtent cher car il faut exécuter l’appli de bout en bout. Ces tests peuvent être automatisés mais long à être exécutés. Ils ne couvrent que certains scénario précis.
 Quand ces tests ne sont pas automatisés, on peut engager des testeurs.
 
 - Les **tests d’intégration** sont assez simples. On s’affranchit des contraintes majeures (IHM, certaines dépendances). Ils sont également assez proches du code, ce qui facilite leur refactoring. Cependant, ils couvrent un spectre plus large de code et de ce fait, ont davantage de risques d’être impactés par une modification.
@@ -191,9 +192,9 @@ Ce dernier doit avoir la même **structure** que le projet que l’on souhaite t
 
 - Permet d’avoir une application plus **robuste**
 
-- Avoir une documentation minimale
+- Avoir une documentation minimale pour les développeurs
 
-En conclusion, plus rapidement vous saurez si un test échoue, plus vite vous pourrez corriger le problème et moins cher il vous en coûtera de le faire.
+En conclusion, plus rapidement vous saurez si un test échoue, plus vite vous pourrez corriger le problème et moins cher ce sera.
 
 ### Qu'est-ce qu'un bon test unitaire ?
 
@@ -225,7 +226,7 @@ Lorsque l'on écrit un test unitaire, il est conseillé de commencer par rédige
 #### Unity Test Runner
 
 Pour réaliser des tests unitaires, Unity met à disposition un outil appelé le [**Unity Test Runner**](https://docs.unity3d.com/Manual/testing-editortestsrunner.html)  
-Pour afficher la fenêtre "Test Runner", allez dans *Windows > Test Runner*.
+Pour afficher la fenêtre *"Test Runner"*, allez dans *Windows > Test Runner*.
 
 ![Image of Test Runner](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture1_ouvertureOnglet.PNG)  
 
@@ -245,7 +246,7 @@ On peut voir sur la capture d'écran, qu'il existe **deux modes** :
     - [UnityTest] est executé dans l'editor avec **"Editor.Application.Update"**
 
 Sélectionnez le mode qui vous intéresse puis cliquez sur le bouton *“Create PlayMode/EditMode Test Assembly Folder”*. 
-Unity va créer automatiquement un dossier Test avec un fichier *“Tests.asmdef”de type “assembly definition”*.  
+*Unity* va créer automatiquement un dossier *Test* avec un fichier *“Tests.asmdef”de type “assembly definition”*.  
   
 Une fois le dossier créé, placez-vous à l’intérieur puis cliquez sur *“Create Test Script in current folder”*.
 
@@ -337,11 +338,11 @@ public IEnumerator Methode_Unity_Test() {
 }
 ```
 
-Un Unity Test est une [**Coroutine**](https://docs.unity3d.com/Manual/Coroutines.html). Dans Unity, les Coroutines sont généralement utilisé pour gérer le rendu. Nous pouvons par exemple, **attendre une frame** (yield return null) ou un **nombre de secondes x** (yield return new WaitForSecondes(x)) pour effectuer une action.
+Un *Unity Test* est une [**Coroutine**](https://docs.unity3d.com/Manual/Coroutines.html). Dans *Unity*, les *Coroutines* sont généralement utilisé pour gérer le rendu. Nous pouvons par exemple, **attendre une frame** (*yield return null*) ou un **nombre de secondes x** (*yield return new WaitForSecondes(x)*) pour effectuer une action.
 
-Ces tests permettent donc de tester les comportements qui dépendent d'Unity. Ils s'apparentent le plus souvent à des **tests d'intégrations**
+Ces tests permettent donc de tester les comportements qui dépendent d'*Unity*. Ils s'apparentent le plus souvent à des **tests d'intégrations**
 
-Pour réaliser une assertion avec un test NUnit, il faut utiliser la classe **Assert**, quelques exemples :
+Pour réaliser une assertion avec un test *NUnit*, il faut utiliser la classe **Assert**, quelques exemples :
 
 ```cs
     Assert.IsNotNull(object);
@@ -349,18 +350,18 @@ Pour réaliser une assertion avec un test NUnit, il faut utiliser la classe **As
     Assert.AreEqual(value1, value2)
 ```
 
-**Dans le cas de Asset.AreEqual, la value1 correspond à la valeur attendue est la value2 est la valeur testée. Cet ordre est important et permet notamment d'avoir des messages d'erreurs cohérents :  Expected "value1" but was "value2".**
+**Dans le cas de *Asset.AreEqual*, la value1 correspond à la valeur attendue est la value2 est la valeur testée. Cet ordre est important et permet notamment d'avoir des messages d'erreurs cohérents :  *Expected "value1" but was "value2"*.**
 
-Unity ajoute également ses **propres assertions** (avec using UnityEngine.Assertions et UnityEngine.TestTools.Utils) comme :
-- “Assert.AreApproximatelyEqual “ et “Assert.AreNotApproximatelyEqual “ qui prennent par défaut une tolérance de  0.00001f qui permettent de comparer deux floats.
-- “ColorEqualityComparer”
-- “QuaternionEqualityComparer”
-- “Vector2EqualityComparer” ,”Vector3EqualityComparer“ et “Vector4EqualityComparer”
+*Unity* ajoute également ses **propres assertions** (avec using UnityEngine.Assertions et UnityEngine.TestTools.Utils) comme :
+- *"Assert.AreApproximatelyEqual"* et *"Assert.AreNotApproximatelyEqual"* qui prennent par défaut une tolérance de  0.00001f qui permettent de comparer deux floats.
+- *"ColorEqualityComparer"*
+- *"QuaternionEqualityComparer"*
+- *"Vector2EqualityComparer"* ,*"Vector3EqualityComparer"* et *"Vector4EqualityComparer"*
 
 
-:warning: Les méthode Awake, Start et Update doivent être passé en public pour être appelée avec les tests.
+:warning: Les méthode *Awake*, *Start* et *Update* doivent être passé en public pour être appelée avec les tests.
 
-Si tous vos tests ont le même "Arrange" vous pouvez utilisez les attributs [SetUp] et [TearDown].
+Si tous vos tests ont le même *"Arrange"* vous pouvez utilisez les attributs [SetUp] et [TearDown].
 La méthode sous l'attribut [SetUp] s'executera avant toutes les méthodes [Tests] et la méthode sous l'attribut [TearDown] s'executera aprés  toutes les méthodes [Tests].
 
 Ainsi : 
@@ -436,22 +437,22 @@ Source : Unite Austin 2017 - Testing for Sanity: Using Unity's Integrated TestRu
 ## TDD (Test-driven-developpement) ou développement piloté par les tests
 
 Le **TDD ou Développement piloté par les tests** est une technique de développement qui consiste à écrire les tests **avant** d’écrire le code. Cela garantit davantage la structure du code comme testable et maintenable.
-En utilisant la technique TDD, les tests unitaires ne servent plus à valider un code existant mais à **spécifier** le futur code implémenter.
+En utilisant la technique *TDD*, les tests unitaires ne servent plus à valider un code existant mais à **spécifier** le futur code implémenter.
 
 ![schema cycle TDD](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/RED-GREEN-REFACTO%20cycle.png?token=AHjeDtvHOiXwwhctewLgG-4a0KSUEjf7ks5bYXxlwA%3D%3D)
 
-Comme nous pouvons le voir sur le schéma ci-dessus, la méthode TDD possède **3** grandes étapes : 
+Comme nous pouvons le voir sur le schéma ci-dessus, la méthode *TDD* possède **3** grandes étapes : 
 - **RED** : On commence par écrire un test et on vérifie que ce dernier échoue (car le code n'est pas implémenté). Ce test spécifie le comportement d'une méthode (ce qu'elle doit renvoyer, ce qu'elle doit appeler, ...).
 - **GREEN** : On écrit le code minimum pour que le test passe au vert.
 - **REFACTOR** : On améliore le code sans changer son comportement.
 Puis on passe à l'écriture d'un autre test, et la boucle recommence.
 
-Dans le livre Clean Code (p.80), Oncle Bob définit les 3 lois du TDD :
+Dans le livre *Clean Code (p.80)*, Oncle Bob définit les 3 lois du *TDD* :
    1. Vous n'êtes pas autorisé à écrire du code métier tant que vous n'avez pas écrit un premier test unitaire qui échoue.
    2. Vous n'êtes pas autorisé à écrire plus qu'un test unitaire qui est suffisant pour échouer et qui ne compile pas.
    3. Vous n'êtes pas autorisé à écrire plus de code que ce qui est suffisant pour passer au vert le test unitaire.
   
-:warning: Oncle Bob, insiste sur le fait, qu'écrire des tests unitaires ou pratiquer le TDD n'est pas magique, et qu'on peut très bien continuer d'écrire du mauvais code et d'écrire des mauvais tests.
+:warning: *Oncle Bob*, insiste sur le fait, qu'écrire des tests unitaires ou pratiquer le *TDD* n'est pas magique, et qu'on peut très bien continuer d'écrire du mauvais code et d'écrire des mauvais tests.
 Il précise également que suivre les trois lois n'est pas toujours appropprié, il faut donc trouver des solutions adaptés à notre projet.
 
 
@@ -473,7 +474,7 @@ Cela permet d’éviter un null exception en renseignant un objet de substitutio
   
 **Un Mock** est un objet de substitut **dans le système**, qui décide si un test unitaire passe ou échoue (exemple : une base de données qui attend une certaine requête bien précise)
 
-Pour créer des mocks ou des substitut avec *Unity*, vous pouvez installer **NSubstitute**, pour cela il suffit de placer le fichier **NSubstitute.dll** dans votre projet *Unity*. Vous pouvez télécharger ce fichier [ici](https://github.com/jaayap/Unity_Best_Practices/tree/master/NSubstitute/dll). 
+Pour créer des mocks ou des substituts avec *Unity*, vous pouvez installer **NSubstitute**, pour cela il suffit de placer le fichier **NSubstitute.dll** dans votre projet *Unity*. Vous pouvez télécharger ce fichier [ici](https://github.com/jaayap/Unity_Best_Practices/tree/master/NSubstitute/dll). 
 
 PROCHAINEMENT : Exemple de code avec TU
 
@@ -487,7 +488,7 @@ D de SOLID (voir partie suivante)
 > « Il existe deux façons de concevoir un logiciel : une façon est de le rendre si simple qu'il n'a visiblement aucun défaut, et une autre est de le rendre si complexe qu'il n'y a pas de défaut visible. La première façon est de loin la plus difficile. » 
 > Hoare
 
-Qu’est-ce qu’un code propre ? 
+**Qu’est-ce qu’un code propre ?** 
 
 ![Image intro](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/wtfm.jpg)  
 
@@ -510,7 +511,7 @@ Un code propre permet donc de **faire évoluer** et de **maintenir** un projet.
 
 ### Les noms
 
-Lorsqu’on programme, bien trop souvent on oublie de réfléchir aux noms que nous donnons aux variables, aux méthodes et parfois même aux classes.  Ce qui peut entraîner des incompréhensions du système par d’autres développeurs et une relecture du code plus longue. Un mauvais nommage peut également impacter la maintenabilité d’une application.
+Lorsque nous développons, bien trop souvent nous oublions de réfléchir aux noms que nous donnons aux variables, aux méthodes et parfois même aux classes.  Ce qui peut entraîner des incompréhensions du système par d’autres développeurs et une relecture du code plus longue. Un mauvais nommage peut également impacter la maintenabilité d’une application.
 
 Lorsque vous programmer : 
 - Utilisez des noms qui révèlent l’intention (= noms descriptifs), pour vous aider posez vous la question “à quoi va servir cette méthode/classe/variable ? “
@@ -544,9 +545,9 @@ TODO : vérifier info / ajouter sources
 
 ## Principes et méthodes
 
-Depuis les années 1990/2000, plusieurs méthodes et principes ont été définis pour apporter une ligne directrice dans le développement de logiciel plus fiable et plus robuste. Parmis eux, beaucoup proviennent des pratiques eXtreme Programming et Clean code. Ces pratiques sont populaires aujourd’hui car elles répondent aux questions soulevé par l’agilité.
+Depuis les années 1990/2000, plusieurs méthodes et principes ont été définis pour apporter une ligne directrice dans le développement de logiciel plus fiable et plus robuste. Parmis eux, beaucoup proviennent des pratiques eXtreme Programming et Clean Code. Ces pratiques sont populaires aujourd’hui car elles répondent aux questions soulevé par l’agilité.
 
-Ainsi, les règles d’un design simple sont définis par Kent Beck en 1990 dans son livre “Extreme Programming Explained”, ces règles sont les suivantes : 
+Ainsi, les règles d’un design simple sont définis par *Kent Beck* en 1990 dans son livre *“Extreme Programming Explained”*, ces règles sont les suivantes : 
 
 1. les tests passent (signifie que le code fonctionne correctement et sous entend que le code doit être couvert par les tests)
 2. L’intention du code est claire
@@ -559,7 +560,7 @@ Ainsi, les règles d’un design simple sont définis par Kent Beck en 1990 dans
                 Essayer d'anticiper les problèmes futurs, n'est pas une bonnes idée. Il est préférable de s'occuper du présent et de ne pas faire d'hypothèse sur ce que l'application pourrait utiliser.
 
 
-Quelques année plus tard, Robert Cecil Martin alias Oncle Bob met en avant plusieurs grands principes : Les principes SOLID et les principes composants. 
+Quelques année plus tard, *Robert Cecil Martin alias Oncle Bob* met en avant plusieurs grands principes : Les principes *SOLID* et les principes composants. 
 
 **Les principes SOLID sont définis comme suit : **
 
