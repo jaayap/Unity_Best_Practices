@@ -23,7 +23,7 @@ Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faud
       - [Comment mettre en pratique Les TU avec Unity ?](#comment-mettre-en-pratique-les-tu-avec-unity-)
         - [Unity Test Runner](#unity-test-runner)
         - [Les scripts de tests](#les-scripts-de-tests)   
-  - [développement piloté par les tests (TDD)](#tdd-test-driven-developpement-ou-développement-piloté-par-les-tests)
+  - [développement piloté par les tests (TDD)](#développement-piloté-par-les-tests-tdd)
 
 - [Gestion des dépendances **(en cours)**](#gestion-des-dépendances)
   - [Les dépendances dans les TU  **(en cours)**](#les-dépendances-dans-les-tests-unitaires) 
@@ -438,7 +438,7 @@ Source : Unite Austin 2017 - Testing for Sanity: Using Unity's Integrated TestRu
 
 
 
-## TDD (Test-driven-developpement) ou développement piloté par les tests
+## Développement piloté par les tests (TDD)
 
 Le **TDD ou Développement piloté par les tests** est une technique de développement qui consiste à écrire les tests **avant** d’écrire le code. Cela garantit davantage la structure du code comme testable et maintenable.
 En utilisant la technique *TDD*, les tests unitaires ne servent plus à valider un code existant mais à **spécifier** le futur code implémenter.
