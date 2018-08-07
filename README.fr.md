@@ -566,6 +566,13 @@ L'avantage de suivre la règle de Déméter est que le logiciel est plus mainten
 
 TODO : ajouter exemple
 
+| Code qui ne respecte pas la loi | Code qui respecte la loi |
+|---------------------------------|--------------------------|
+|```cs                            |--------------------------|
+|public class VideoService {      |--------------------------|
+|```                              |                          |
+|                                 |                          |
+
 ## Principes et méthodes
 
 Depuis les années 1990/2000, plusieurs méthodes et principes ont été définis pour apporter une ligne directrice dans le développement de logiciel plus fiable et plus robuste. Parmis eux, beaucoup proviennent des pratiques eXtreme Programming et Clean Code. Ces pratiques sont populaires aujourd’hui car elles répondent aux questions soulevé par l’agilité.
