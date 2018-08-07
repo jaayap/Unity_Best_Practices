@@ -40,6 +40,9 @@ Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faud
   - [La clean architecture **(prochainement)**](#la-clean-architecture)
   - [ECS architecture **(prochainement)**](#ecs-architecture)
 
+- [A propos **(prochainement)**](#a-propos)
+- [Licence](#licence)
+
 
 # Versionning : Git & Unity
 
@@ -603,3 +606,8 @@ Créer un code qui peut être réutilisé (plugin, code générique avec le moin
 ## La Clean Architecture
 
 ## ECS Architecture
+
+# A propos
+# Licence
+
+Licence MIT
