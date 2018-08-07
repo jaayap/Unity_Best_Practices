@@ -525,7 +525,7 @@ D de SOLID (voir partie suivante)
 
 La propreté du code définit la **qualité logicielle**.
 
-**Pourquoi avoir un code simple et propre est si important ? **
+**Pourquoi avoir un code simple et propre est si important ?**
 
 Le code est le premier **environnement de travail** du développeur. Il est donc plus agréable pour le développeur de travailler avec une bonne compréhension du système et de pouvoir le faire évoluer sans tout réécrire. En effet un code propre permet de gagner du temps lorsqu’il faut faire évoluer le projet.  De plus, la qualité interne du code (structure) **influe** directement sur la qualité externe (fonctionnement) du projet. Avoir un code propre sert à **maintenir la maintenabilité**.
 
