@@ -566,11 +566,6 @@ L'avantage de suivre la règle de Déméter est que le logiciel est plus mainten
 
 TODO : ajouter exemple
 
-| Code qui ne respecte pas la loi | Code qui respecte la loi |
-|---------------------------------|--------------------------|
-|```cs
-public class VideoService {     
-```                               |--------------------------| 
 
 ## Principes et méthodes
 
