@@ -27,7 +27,7 @@ Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faud
 
 - [Gestion des dépendances **(en cours)**](#gestion-des-dépendances)
   - [Les dépendances dans les TU  **(en cours)**](#les-dépendances-dans-les-tests-unitaires) 
-  - [##TU avec dépendances dans Unity **(en cours)**](#tu-avec-dépendances-dans-unity)
+  - [TU avec dépendances dans Unity **(en cours)**](#tu-avec-dépendances-dans-unity)
   - [Injection de dépendances  **(prochainement)**](#injection-de-dépendances)
   
 - [Propreté du code avec Clean Code **(en cours)**](#propreté-du-code-avec-clean-code)
