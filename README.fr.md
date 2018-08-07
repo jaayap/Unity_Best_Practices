@@ -574,8 +574,8 @@ Ainsi, les règles d’un design simple sont définis par *Kent Beck* en 1990 da
 
 1. les tests passent (signifie que le code fonctionne correctement et sous entend que le code doit être couvert par les tests)
 2. L’intention du code est claire
-3. **DRY** principle (Don’t Repeat Yourself) :
-            Il n’y a pas de duplication de code
+3. **DRY** principle (Don’t Repeat Yourself) :      
+       Il n’y a pas de duplication de code
 4. Le code a le moins d’éléments possible :
     - **KISS : Keep it Simple & Stupid**             
                 Principe de la responsabilité unique (un élément possède qu'une seule raison d'être modifié)
