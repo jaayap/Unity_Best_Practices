@@ -577,9 +577,9 @@ Ainsi, les règles d’un design simple sont définis par *Kent Beck* en 1990 da
 3. **DRY** principle (Don’t Repeat Yourself) :
             Il n’y a pas de duplication de code
 4. Le code a le moins d’éléments possible :
-    - **KISS : Keep it Simple & Stupid**
+    - **KISS : Keep it Simple & Stupid**             
                 Principe de la responsabilité unique (un élément possède qu'une seule raison d'être modifié)
-    - **YAGNI  : You ain’t gonna need it**
+    - **YAGNI  : You ain’t gonna need it**            
                 Essayer d'anticiper les problèmes futurs, n'est pas une bonnes idée. Il est préférable de s'occuper du présent et de ne pas faire d'hypothèse sur ce que l'application pourrait utiliser.
 
 
