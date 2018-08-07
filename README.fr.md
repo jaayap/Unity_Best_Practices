@@ -587,20 +587,20 @@ Quelques année plus tard, *Robert Cecil Martin alias Oncle Bob* met en avant pl
 
 **Les principes SOLID sont définis comme suit : **
 
-- <mark>S</mark>RP (Single Responsibility Principle) 
+- <mark>S</mark>RP (Single Responsibility Principle)      
 Ne faire qu’une seule chose mais la faire bien. Une classe doit avoir une et une seule raison de changer. 
 
-- <mark>O</mark>CP (Open-Closed Principle) 
+- <mark>O</mark>CP (Open-Closed Principle)      
 Une classe doit être ouverte à l'extension mais fermée à la modification (plugins)
 
-- <mark>L</mark>SP (Liskov Substitution Principle) 
+- <mark>L</mark>SP (Liskov Substitution Principle)     
 Toutes implémentation d’une interface doit pouvoir se substituer à une autre
 
-- <mark>I</mark>SP (interface Segregation Principle) 
+- <mark>I</mark>SP (interface Segregation Principle)    
 Une classe ne doit implémenter une interface que si elle à réellement le besoin de 
-remplir son contrat
+remplir son contrat 
 
-- <mark>D</mark>IP (Dependency Inversion Principle) 
+- <mark>D</mark>IP (Dependency Inversion Principle)     
 Le code ne doit pas interagir directement avec l'extérieur mais doit passer par des 
 abstractions (et vice versa).
 
@@ -611,14 +611,15 @@ Les composants sont les unités du déploiement. Ils sont les plus petits morcea
 
 Les trois principes sont les suivants : 
 
-- **REP (Reuse/Release Equivalence Principle)** : 
+- **REP (Reuse/Release Equivalence Principle)** :   
 Créer un code qui peut être réutilisé (plugin, code générique avec le moins de dépendance possible)
 “the granule of reuse is the granule of release” 
 "Le germe de la réutilisation est le germe de la libération"
 
-- **CCP (Common Closure Principle)** : Un composant (une classe, une méthode, ...)  ne doit pas avoir plusieurs raisons de changer
+- **CCP (Common Closure Principle)** :    
+Un composant (une classe, une méthode, ...)  ne doit pas avoir plusieurs raisons de changer
 
-- **CRP (Common Reuse Principle)** : 
+- **CRP (Common Reuse Principle)** :       
 “Don’t force users of a component to depend on things they don’t need.” 
 “Ne forcez pas les utilisateurs d’un composant à dépendre d’une chose dont ils n’ont pas besoin” 
 
