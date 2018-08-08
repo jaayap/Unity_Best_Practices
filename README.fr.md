@@ -37,8 +37,8 @@ Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faud
     - [La loi de Déméter](#la-loi-de-déméter)
   - [Principes et méthodes](#principes-et-méthodes)
   
-- [Architecture **(prochainement)**](#architecture)
-  - [La clean architecture **(prochainement)**](#la-clean-architecture)
+- [Concevoir un code mieux structuré **(prochainement)**](#architecture)
+  - [Un code facilement évoluable grâce à la clean architecture **(prochainement)**](#la-clean-architecture)
   - [ECS architecture **(prochainement)**](#ecs-architecture)
 
 - [A propos **(prochainement)**](#a-propos)
