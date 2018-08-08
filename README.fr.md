@@ -37,7 +37,7 @@ Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faud
     - [La loi de Déméter](#la-loi-de-déméter)
   - [Principes et méthodes](#principes-et-méthodes)
   
-- [Concevoir un code mieux structuré **(prochainement)**](#architecture)
+- [Concevoir un code mieux structuré **(prochainement)**](#concevoir-un-code-mieux-structuré)
   - [Un code facilement évoluable grâce à la clean architecture **(prochainement)**](#la-clean-architecture)
   - [ECS architecture **(prochainement)**](#ecs-architecture)
 
@@ -665,7 +665,27 @@ Un composant (une classe, une méthode, ...)  ne doit pas avoir plusieurs raison
 “Don’t force users of a component to depend on things they don’t need.” 
 “Ne forcez pas les utilisateurs d’un composant à dépendre d’une chose dont ils n’ont pas besoin” 
 
-# Architecture
+# Concevoir un code mieux structuré
+
+Il existe plusieurs architecture logicielle permettant d'avoir une structure de code adaptable et maintenable.
+La mise en place d'une bonne architecture doit permettre de : 
+  - Séparer les responsabilités
+  - Rendre le code facilement testable
+  - Rendre le code facilement modifiable et maintenable dans le temps 
+  - Séparer les parties facilement testable (fonctions métier → stable)  et les parties difficilement testable (infrastructure → volatile)
+  
+> “Architecture is not about tools and building materials, architecture is about usage.” 
+> Robert C. Martin (Oncle Bob)
+
+Une bonne architecture doit supporter :
+  - Les cas d’utilisation (=l’intention) et le fonctionnement du système
+  - La maintenance du système
+  - Le développement du système
+  - Et le déploiement du système
+   
+Elle est centré sur les cas d’utilisation, les architectes logiciel peuvent donc décrire les structures qui les supportent en toute sécurité sans devenir dépendant des frameworks, des outils ou de l’environnement.   
+Le choix d’un framework (bases de données, serveur web, …) ne doit pas impacter l’architecture.   
+Oncle bob dit ***“les framework sont des produits commerciaux, tout est fait pour que ce soit simple à utiliser mais tout n'est pas une bonne idée.”***
 
 ## La Clean Architecture
 
