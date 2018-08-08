@@ -38,7 +38,7 @@ Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faud
   - [Principes et méthodes](#principes-et-méthodes)
   
 - [Concevoir un code mieux structuré **(prochainement)**](#concevoir-un-code-mieux-structuré)
-  - [Un code facilement évoluable grâce à la clean architecture **(prochainement)**](#la-clean-architecture)
+  - [Un code facilement évolutif grâce à la clean architecture **(prochainement)**](#la-clean-architecture)
   - [ECS architecture **(prochainement)**](#ecs-architecture)
 
 - [A propos **(prochainement)**](#a-propos)
