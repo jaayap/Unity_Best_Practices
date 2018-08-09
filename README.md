@@ -5,7 +5,7 @@
 
 # __Plan :__
 
-- [Versionning : Git & Unity](#versionning--git--unity)
+- [Versioning : Git & Unity](#versioning--git--unity)
   - [.gitignore](#gitignore)
   - [Store file in YAML](#store-file-in-yaml)
   - [Merge with Smart Merge](#merge-with-smart-merge)
@@ -25,7 +25,7 @@
 - [Architecture **(Soon)**](#architecture)
 
 
-# Versionning : Git & Unity
+# Versioning : Git & Unity
 
 You want use *git* for your *Unity* project ? But sometimes, scenes or prefab crash ! In fact, two person modify same file in same time provoke many conflict and by default, git don't solve this problems.   
 You open your scene and you see that it is empty. A solution exist for that and this is what I present below.
