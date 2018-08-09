@@ -1,4 +1,4 @@
-# Propreté du code avec Clean Code
+﻿# Propreté du code avec Clean Code
 
 > « Il existe deux façons de concevoir un logiciel : une façon est de le rendre si simple qu'il n'a visiblement aucun défaut, et une autre est de le rendre si complexe qu'il n'y a pas de défaut visible. La première façon est de loin la plus difficile. » 
 > Hoare
@@ -22,6 +22,8 @@ Le code est le premier **environnement de travail** du développeur. Il est donc
 
 Un code propre permet donc de **faire évoluer** et de **maintenir** un projet.
 
+[Retour au menu](Fr/Summary.md)
+
 ## Par où commencer ? 
 
 ### Les noms
@@ -35,11 +37,15 @@ Lorsque vous programmer :
 - Choisissez des mots facile à prononcer.
 - Evitez de placer des valeurs sans les nommer (magic number)
 
+[Retour au menu](Fr/Summary.md)
+
 ### Les commentaires
 
 Dans un code, les commentaires sont importants mais parfois utilisés de manière abusives (écrire un commentaire pour expliquer tout le fonctionnement d’un algorithme plutôt que de le réécrire de manière simple et compréhensible). 
 
 Les bons commentaires sont des commentaires facultatifs, si possible, la compréhension du code ne doit pas être dépendante des commentaires. Ils doivent servir de complément d’information, d’avertissement sur les conséquences ou à expliquer une intention.
+
+[Retour au menu](Fr/Summary.md)
 
 ### La loi de Déméter
 
@@ -99,6 +105,7 @@ public class Video {
 }
 ```
 
+[Retour au menu](Fr/Summary.md)
 
 ## Principes et méthodes
 
@@ -156,3 +163,5 @@ Un composant (une classe, une méthode, ...)  ne doit pas avoir plusieurs raison
 - **CRP (Common Reuse Principle)**        
 “Don’t force users of a component to depend on things they don’t need.” 
 “Ne forcez pas les utilisateurs d’un composant à dépendre d’une chose dont ils n’ont pas besoin” 
+
+[Retour au menu](Fr/Summary.md)

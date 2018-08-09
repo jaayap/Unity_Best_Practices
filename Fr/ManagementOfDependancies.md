@@ -1,4 +1,4 @@
- Gestion des dépendances
+﻿# Gestion des dépendances
 
 ## Les dépendances dans les tests unitaires 
 
@@ -38,7 +38,11 @@ public void WhenGameStartObjectInitialize()
 }
 ```
 
+[Retour au menu](Fr/Summary.md)
+
 ## Injection de dépendances 
 
 D de SOLID (voir partie suivante)
  => Zenject
+
+[Retour au menu](Fr/Summary.md)

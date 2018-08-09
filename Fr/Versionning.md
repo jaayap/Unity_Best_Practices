@@ -1,4 +1,4 @@
-# Versionning : Git & Unity
+﻿# Versionning : Git & Unity
 
 Si vous utiliser *git* pour versionner vos projets *Unity*, vous avez du remarquez que parfois les fichiers tels que les scènes et les *prefabs* subissent des régressions lors des merges. Deux personnes modifiant ainsi le même fichier en même temps provoquent un conflit que git, par défaut n’arrive pas à résoudre. Vous retrouvez alors votre scène entièrement vide ou votre *prefab* tout cassé. 
 Voici la solution que j’ai choisi d’adopter.
@@ -8,6 +8,8 @@ Voici la solution que j’ai choisi d’adopter.
 Il est important d’ajouter un fichier **.gitignore** à votre dépôt. Il permettra à git d’ignorer certains fichiers générés par *Unity* et par votre IDE (dans l’exemple Visual Studio, mais vous pouvez modifier le *gitignore* pour l’adapter aux outils que vous utilisez). Dans certains projets, il est pertinent d’ajouter des dossiers de votre projet afin de ne pas les enregistrer dans le dépôt en ligne, un *asset* de l’*asset store* par exemple (peut peser lourd dans l’archive, ce qui ralenti considérablement l’équipe lorsqu’elle doit mettre à jour le dépôt ou le récupérer).
 
 [voir dépot .gitignore Unity](https://github.com/github/gitignore/blob/master/Unity.gitignore)
+
+[Retour au menu](Fr/Summary.md)
 
 ## Enregistrer des fichiers en YAML
 
@@ -44,6 +46,8 @@ A ce moment là, git nous dit qu’il y a un conflit et lorsque l’on ouvre la 
 ![Schema explicatif du Smart Merge](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/schemaSmartMergeV2.PNG?token=AHjeDgISOj3_CsXFl6gK4QxKd5kcyGPBks5baXFawA%3D%3D)
 
 Le *SmartMerge* possède ses limites. Il ne peut pas résoudre seul le conflit lorsque vous toucher au même objet d'une scène. Dans ce cas, il vous demandera de choisir la bonne version (la scène actuelle, l’ancienne scène ou celle de votre collègue ?)
+
+[Retour au menu](Fr/Summary.md)
 
 ## Gérer les fichiers volumineux
 
@@ -98,3 +102,4 @@ Pour comprendre le fonctionnement de [Git LFS](https://git-lfs.github.com/), je 
 
 D’autres solutions existes avec *git* : *Git Annex*, *Git Fat* , *Git Media* , *Git Bigstore*, *Git Sizer*, … Ces dernières sont moins documentées, plus difficiles à mettre en place et à prendre en main et semblent moins adaptées à un projet *Unity*.
 
+[Retour au menu](Fr/Summary.md)
