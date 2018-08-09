@@ -91,17 +91,17 @@ Pour afficher la fenêtre *"Test Runner"*, allez dans *Windows > Test Runner*.
 On peut voir sur la capture d'écran, qu'il existe **deux modes** :
 
 - **PlayMode** :
-  - Permet d'executer des tests sur **plusieurs frames**
-  - Comportement Awake(), Start(), ... sont executés **automatiquement**
+  - Permet d'exécuter des tests sur **plusieurs frames**
+  - Comportement Awake(), Start(), ... sont exécutés **automatiquement**
   - Sert davantage pour les **tests d'intégration**
   - [UnityTest] = exécuté comme une **Coroutine classique**
-  - Ouvre une **scène** de test pour executé les tests (:warning: pensez à bien **enregistrer** votre scène avant de lancer les tests car votre scène sera écrasée au lancement des tests)
+  - Ouvre une **scène** de test pour exécuter les tests (:warning: pensez à bien **enregistrer** votre scène avant de lancer les tests car votre scène sera écrasée au lancement des tests)
 
 - **EditMode** :
-  - Chaque test est executé en **une frame**
+  - Chaque test est exécuté en **une frame**
   - Il faut appeler **explicitement** les méthodes Awake() et Start(), ce qui necessite de les passer en **public**.
   - **Doit être placés dans un dossier Editor**
-  - [UnityTest] est executé dans l'editor avec **"Editor.Application.Update"**
+  - [UnityTest] est exécuté dans l'editor avec **"Editor.Application.Update"**
 
 Sélectionnez le mode qui vous intéresse puis cliquez sur le bouton *“Create PlayMode/EditMode Test Assembly Folder”*. 
 *Unity* va créer automatiquement un dossier *Test* avec un fichier *“Tests.asmdef”de type “assembly definition”*.  
@@ -222,7 +222,7 @@ Pour réaliser une assertion avec un test *NUnit*, il faut utiliser la classe **
 :warning: Les méthode *Awake*, *Start* et *Update* doivent être passé en public pour être appelée avec les tests.
 
 Si tous vos tests ont le même *"Arrange"* vous pouvez utilisez les attributs [SetUp] et [TearDown].
-La méthode sous l'attribut [SetUp] s'executera avant toutes les méthodes [Tests] et la méthode sous l'attribut [TearDown] s'executera aprés  toutes les méthodes [Tests].
+La méthode sous l'attribut [SetUp] s'exécutera avant toutes les méthodes [Tests] et la méthode sous l'attribut [TearDown] s'exécutera aprés  toutes les méthodes [Tests].
 
 Ainsi : 
 ```cs
