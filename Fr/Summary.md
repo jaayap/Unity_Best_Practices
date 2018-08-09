@@ -9,10 +9,10 @@ Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faud
 # __Plan :__
 
 - [Versioning : Git & Unity](Versioning.md/#versioning--git--unity)
-  - [Créer un .gitignore](Versionning.md/#créer-un-gitignore)
-  - [Enregistrer des fichiers en YAML](Versionning.md/#enregistrer-des-fichiers-en-yaml)
-  - [Merger avec l'outil Smart Merge](Versionning.md/#merger-avec-loutil-smart-merge)
-  - [Gérer les fichiers volumineux (images, objets 3D, ...)](Versionning.md/#gérer-les-fichiers-volumineux)
+  - [Créer un .gitignore](Versioning.md/#créer-un-gitignore)
+  - [Enregistrer des fichiers en YAML](Versioning.md/#enregistrer-des-fichiers-en-yaml)
+  - [Merger avec l'outil Smart Merge](Versioning.md/#merger-avec-loutil-smart-merge)
+  - [Gérer les fichiers volumineux (images, objets 3D, ...)](Versioning.md/#gérer-les-fichiers-volumineux)
         
 - [Tests unitaires & TDD](Unit_Test_And_TDD.md/#tests-unitaires--tdd)
   - [Tour d'horizon sur les tests](Unit_Test_And_TDD.md/#tour-dhorizon-sur-les-tests)
