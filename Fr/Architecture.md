@@ -20,13 +20,13 @@ Elle est centré sur les cas d’utilisation, les architectes logiciel peuvent d
 Le choix d’un framework (bases de données, serveur web, …) ne doit pas impacter l’architecture.   
 Oncle bob dit ***“les framework sont des produits commerciaux, tout est fait pour que ce soit simple à utiliser mais tout n'est pas une bonne idée.”***
 
-[Retour au menu](Fr/Summary.md)
+[Retour au menu](Summary.md)
 
 ## La Clean Architecture
 
-[Retour au menu](Fr/Summary.md)
+[Retour au menu](Summary.md)
 
 ## ECS Architecture
 
 
-[Retour au menu](Fr/Summary.md) 
+[Retour au menu](Summary.md) 

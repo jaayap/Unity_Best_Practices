@@ -9,7 +9,7 @@ Il est important d’ajouter un fichier **.gitignore** à votre dépôt. Il perm
 
 [voir dépot .gitignore Unity](https://github.com/github/gitignore/blob/master/Unity.gitignore)
 
-[Retour au menu](Fr/Summary.md)
+[Retour au menu](Summary.md)
 
 ## Enregistrer des fichiers en YAML
 
@@ -47,7 +47,7 @@ A ce moment là, git nous dit qu’il y a un conflit et lorsque l’on ouvre la 
 
 Le *SmartMerge* possède ses limites. Il ne peut pas résoudre seul le conflit lorsque vous toucher au même objet d'une scène. Dans ce cas, il vous demandera de choisir la bonne version (la scène actuelle, l’ancienne scène ou celle de votre collègue ?)
 
-[Retour au menu](Fr/Summary.md)
+[Retour au menu](Summary.md)
 
 ## Gérer les fichiers volumineux
 
@@ -102,4 +102,4 @@ Pour comprendre le fonctionnement de [Git LFS](https://git-lfs.github.com/), je 
 
 D’autres solutions existes avec *git* : *Git Annex*, *Git Fat* , *Git Media* , *Git Bigstore*, *Git Sizer*, … Ces dernières sont moins documentées, plus difficiles à mettre en place et à prendre en main et semblent moins adaptées à un projet *Unity*.
 
-[Retour au menu](Fr/Summary.md)
+[Retour au menu](Summary.md)

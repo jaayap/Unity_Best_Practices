@@ -27,7 +27,7 @@ Pour le moment nous nous intéresserons aux **tests unitaires et au TDD (test-dr
 
 Pour en savoir plus sur les tests, je vous conseille [l'article sur la pyramide des tests du blog d'OCTO Technology](https://blog.octo.com/la-pyramide-des-tests-par-la-pratique-1-5) , [ou une de leurs publications, Culture Code](https://www.octo.com/fr/publications/20-culture-code).
 
-[Retour au menu](Fr/Summary.md)
+[Retour au menu](Summary.md)
 
 ## Tests Unitaires (TU)
 
@@ -77,7 +77,7 @@ Un test se décompose en **3 parties** :
 
 Lorsque l'on écrit un test unitaire, il est conseillé de commencer par rédiger l'**Assert**, qui est la réponse à la question : **Qu'est-ce qu'on veut tester?**
 
-[Retour au menu](Fr/Summary.md)
+[Retour au menu](Summary.md)
 
 ### Comment mettre en pratique les TU avec Unity ?
 
@@ -166,7 +166,7 @@ Aujourd'hui, *Unity* ne permet pas de lancer les tests en lignes de commande.
 Les tests appelant des *MonoBehaviour* ne peuvent pas être éxécuté depuis [*Visual Studio*](https://visualstudio.microsoft.com/).  
 Si vous utilisez [***Rider***](https://www.jetbrains.com/dotnet/promo/unity/), vous pourrer les lancer directement dans son interface.
 
-[Retour au menu](Fr/Summary.md)
+[Retour au menu](Summary.md)
 
 #### Les Scripts de tests
 
@@ -292,7 +292,7 @@ public class MaClassTest {
 Source : Unite Austin 2017 - Testing for Sanity: Using Unity's Integrated TestRunner, https://www.youtube.com/watch?v=MWS4aSO7HAo
 
 
-[Retour au menu](Fr/Summary.md)
+[Retour au menu](Summary.md)
 
 ## Développement piloté par les tests (TDD)
 
@@ -321,4 +321,4 @@ Il précise également que suivre les trois lois n'est pas toujours appropprié,
 TODO : exercice à trou (suite ou reprise du même exo) TU avec TDD. 
 
 
-[Retour au menu](Fr/Summary.md)
+[Retour au menu](Summary.md)

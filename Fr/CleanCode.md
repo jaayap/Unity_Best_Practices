@@ -22,7 +22,7 @@ Le code est le premier **environnement de travail** du développeur. Il est donc
 
 Un code propre permet donc de **faire évoluer** et de **maintenir** un projet.
 
-[Retour au menu](Fr/Summary.md)
+[Retour au menu](Summary.md)
 
 ## Par où commencer ? 
 
@@ -37,7 +37,7 @@ Lorsque vous programmer :
 - Choisissez des mots facile à prononcer.
 - Evitez de placer des valeurs sans les nommer (magic number)
 
-[Retour au menu](Fr/Summary.md)
+[Retour au menu](Summary.md)
 
 ### Les commentaires
 
@@ -45,7 +45,7 @@ Dans un code, les commentaires sont importants mais parfois utilisés de manièr
 
 Les bons commentaires sont des commentaires facultatifs, si possible, la compréhension du code ne doit pas être dépendante des commentaires. Ils doivent servir de complément d’information, d’avertissement sur les conséquences ou à expliquer une intention.
 
-[Retour au menu](Fr/Summary.md)
+[Retour au menu](Summary.md)
 
 ### La loi de Déméter
 
@@ -105,7 +105,7 @@ public class Video {
 }
 ```
 
-[Retour au menu](Fr/Summary.md)
+[Retour au menu](Summary.md)
 
 ## Principes et méthodes
 
@@ -164,4 +164,4 @@ Un composant (une classe, une méthode, ...)  ne doit pas avoir plusieurs raison
 “Don’t force users of a component to depend on things they don’t need.” 
 “Ne forcez pas les utilisateurs d’un composant à dépendre d’une chose dont ils n’ont pas besoin” 
 
-[Retour au menu](Fr/Summary.md)
+[Retour au menu](Summary.md)
