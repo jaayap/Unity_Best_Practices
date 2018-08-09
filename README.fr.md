@@ -47,12 +47,12 @@ Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faud
 
 # Versionning : Git & Unity
 
-Si vous utiliser *git* pour versionner vos projets *Unity*, vous avez du remarquez que parfois les fichiers tels que les scènes et les prefabs subissent des régressions lors des merges. Deux personnes modifiant ainsi le même fichier en même temps provoquent un conflit que git, par défaut n’arrive pas à résoudre. Vous retrouvez alors votre scène entièrement vide ou votre *prefab* tout cassé. 
+Si vous utiliser *git* pour versionner vos projets *Unity*, vous avez du remarquez que parfois les fichiers tels que les scènes et les *prefabs* subissent des régressions lors des merges. Deux personnes modifiant ainsi le même fichier en même temps provoquent un conflit que git, par défaut n’arrive pas à résoudre. Vous retrouvez alors votre scène entièrement vide ou votre *prefab* tout cassé. 
 Voici la solution que j’ai choisi d’adopter.
 
 ## Créer un .gitignore
 
-Il est important d’ajouter un fichier **.gitignore** à votre archive. Il permettra à git d’ignorer certains fichiers temporaires générés par *Unity* et par votre IDE (dans l’exemple visual studio, mais vous pouvez modifier le *gitignore* pour l’adapter aux outils que vous utilisé). Dans certains projets, il est pertinent d’ajouter des dossiers de votre projet afin de ne pas les enregistrer dans le dépôt en ligne, un *asset* de l’*asset store* par exemple (peut peser lourd dans l’archive, ce qui ralenti considérablement l’équipe lorsqu’elle doit mettre à jour le dépôt ou le récupérer).
+Il est important d’ajouter un fichier **.gitignore** à votre dépôt. Il permettra à git d’ignorer certains fichiers générés par *Unity* et par votre IDE (dans l’exemple Visual Studio, mais vous pouvez modifier le *gitignore* pour l’adapter aux outils que vous utilisez). Dans certains projets, il est pertinent d’ajouter des dossiers de votre projet afin de ne pas les enregistrer dans le dépôt en ligne, un *asset* de l’*asset store* par exemple (peut peser lourd dans l’archive, ce qui ralenti considérablement l’équipe lorsqu’elle doit mettre à jour le dépôt ou le récupérer).
 
 [voir dépot .gitignore Unity](https://github.com/github/gitignore/blob/master/Unity.gitignore)
 
@@ -85,7 +85,7 @@ Cet outil est très performant et permet de travailler à plusieurs sans se souc
 
 ### Comment ça marche ?
 
-Continuer à utiliser *git* comme à votre habitude et si lors d’un *merge*, vous avez un conflit, effectuez la commande *“git mergetool”* pour appeller le *SmartMerge* qui s’occupera, dans la plupart des cas, de régler les conflits. Un exemple est donné ci-dessous, Deux branches sont créées, *“Master”* et *“Another”*, Chacune modifie la scène *“sceneTest”*. Ensuite Chacune est *commit* sur le dépôt et on essaye de “fusionner” les branches. 
+Continuez à utiliser *git* comme à votre habitude et si lors d’un *merge*, vous avez un conflit, effectuez la commande *“git mergetool”* pour appeller le *SmartMerge* qui s’occupera, dans la plupart des cas, de régler les conflits. Un exemple est donné ci-dessous, deux branches sont créées, *“Master”* et *“Another”*, Chacune modifie la scène *“sceneTest”*. Ensuite chacune est *commit* sur le dépôt et on essaye de “fusionner” les branches.  
 A ce moment là, git nous dit qu’il y a un conflit et lorsque l’on ouvre la scène dans *Unity*, on s'aperçoit qu'elle est vide. On exécute alors *git mergetool* et on retrouve une scène qui possède tous nos objets.  
 
 ![Schema explicatif du Smart Merge](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/schemaSmartMergeV2.PNG?token=AHjeDgISOj3_CsXFl6gK4QxKd5kcyGPBks5baXFawA%3D%3D)
@@ -112,39 +112,38 @@ Cependant, cette solution fonctionne **seulement** pour les fichiers **inférieu
 [Git LFS](https://git-lfs.github.com/), va *tracker* les fichiers que vous voulez, soit avec leurs noms, soit avec leurs extensions, soit avec leurs emplacements. Ensuite, ces fichiers seront automatiquement stockés sur un serveur (*Large File Storage*) et seulement le lien de votre fichier sera gardé. Attention, ce système ne versionne pas les fichiers trackés. Mais avez-vous vraiment besoin d’un *versionning* de vos *assets* 3D ou de vos éléments UI ? Généralement déjà versionnés en amont par les Designers.
 
 **Pour installer git LFS, lancer la commande :**
-```
-$ git lfs install
+```sh
+git lfs install
 ```
 Git LFS  devrait s’installer automatiquement, si c’est le cas, la commande devrait retourner ce message :
-```
+```sh
 >Updated git hooks.
 >Git LFS initialized.
 ```
 **Utilisez la commande suivante pour tracker les fichiers avec les extensions voulu (remplacer le *.extension par *.png, *.fbx, ...)**
-```
-$ git lfs track "*.extension" 
+
+```sh
+git lfs track "*.extension" 
 >Tracking "*.extension"
 ```
 
 **Assurez vous que votre projet possède un *.gitattributes***
 
-```
-$ git add .gitattributes
+```sh
+git add .gitattributes
 ```
 et voilà le tour est joué, à présent vous pouvez ajouter vos fichiers et *commit* comme vous le faisiez avant, la différence est que *Git* va envoyer les fichiers trackés sur [Git LFS](https://git-lfs.github.com/).  
 
 Si vous utilisez github, la notification ***“stored with Git LFS”*** devrait apparaître dans l’interface web lorsque vous ouvrez votre fichier.
 
-
 ![Image of Github Stored with Git LFS](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/image7.png?token=AHjeDnlpMeQpTc27ikncn_j53g50GMEOks5bWG4gwA%3D%3D)
-
 
 Pour comprendre le fonctionnement de [Git LFS](https://git-lfs.github.com/), je vous conseille de regarder la vidéo proposé par bitbucket : 
 
 [![video Btbucket Git LFS](http://img.youtube.com/vi/9gaTargV5BY/0.jpg)](http://www.youtube.com/watch?v=9gaTargV5BY "Git LFS explain")
 
 
-D’autres solutions existes avec *git* : *Git Annex*, *Git Fat* , *Git Media* , *Git Bigstore*, *Git Sizer*, … Ces dernieres sont moins documentées, plus difficiles à mettre en place et à prendre en main et semblent moins adapté à un projet *Unity*.
+D’autres solutions existes avec *git* : *Git Annex*, *Git Fat* , *Git Media* , *Git Bigstore*, *Git Sizer*, … Ces dernières sont moins documentées, plus difficiles à mettre en place et à prendre en main et semblent moins adaptées à un projet *Unity*.
 
 
 # Tests unitaires & TDD
@@ -152,7 +151,7 @@ D’autres solutions existes avec *git* : *Git Annex*, *Git Fat* , *Git Media* ,
 ## Tour d'horizon sur les tests
   
 Les tests sont importants dans la réalisation d’un logiciel car ils assurent une **qualité logicielle minimale**. 
-Beaucoup de logiciel sont conçu sans test et les conséquences sont:  
+Beaucoup de logiciels sont conçus sans test et les conséquences sont:  
 - beaucoup d’**anomalies**
 - des **bugs** compliqués à résoudre et parfois lancés en production.
 - un logiciel **qui grossit** à cause des **patchs** et des nouvelles fonctionnalités s’appuyant sur un code bancal. 
@@ -162,35 +161,34 @@ En bref, un code **non testé** entraîne bien souvent une **dette technique**.
 
 La **pyramide des tests** présente les différents **types** de tests :
 
-- Les **tests IHM** (Interface Homme-Machine) coûtent cher car il faut exécuter l’appli de bout en bout. Ces tests peuvent être automatisés mais long à être exécutés. Ils ne couvrent que certains scénario précis.
-Quand ces tests ne sont pas automatisés, on peut engager des testeurs.
+- Les **tests IHM** (Interface Homme-Machine) coûtent cher car il faut exécuter l’appli de bout en bout. Ces tests peuvent être automatisés mais long à être exécutés. Ils ne couvrent que certains scénarios précis. Quand ces tests ne sont pas automatisés, on peut engager des testeurs.
 
 - Les **tests d’intégration** sont assez simples. On s’affranchit des contraintes majeures (IHM, certaines dépendances). Ils sont également assez proches du code, ce qui facilite leur refactoring. Cependant, ils couvrent un spectre plus large de code et de ce fait, ont davantage de risques d’être impactés par une modification.
 
-- Les **tests unitaires** sont simples à mettre en œuvre lorsqu’ils sont faits au fur et à mesure du code, ils permettent de couvrir une majeure partie du code à faible coût. Ils peuvent être **automatisés** et **rapide à exécuter**. Il est fortement recommandé de commencer par rédiger des tests unitaires, ils sont la **base** des tests et permettent de repérer rapidement les régressions ou les mauvais comportements du logiciel.
+- Les **tests unitaires** sont simples à mettre en œuvre lorsqu’ils sont faits au fur et à mesure du code, ils permettent de couvrir une majeure partie du code à faible coût. Ils peuvent être **automatisés** et sont **rapides à exécuter**. Il est fortement recommandé de commencer par rédiger des tests unitaires, ils sont la **base** des tests et permettent de repérer rapidement les régressions ou les mauvais comportements du logiciel.
 
-:warning: **Attention** : Séparer les tests unitaires (rapide) des tests d’intégrations (plus lent).
+:warning: **Attention** : Il faut séparer les tests unitaires (rapide) des tests d’intégrations (plus lent).
 
-Pour le moment nous nous intéresserons aux **tests unitaires et au TDD (test driven development)**.
+Pour le moment nous nous intéresserons aux **tests unitaires et au TDD (test-driven development)**.
 
 **Rédiger des tests unitaires sert à vérifier le comportement du code, tandis qu’avec l’approche TDD, qui consiste à écrire les tests en premier, rédiger des tests unitaires sert à spécifier comment le code doit fonctionner**.
 
-Pour en savoir plus sur les tests, je vous conseille [l'article sur la pyramide des tests du blog d'OCTO Technology](https://blog.octo.com/la-pyramide-des-tests-par-la-pratique-1-5) , [ou une de leurs publications, culture code](https://www.octo.com/fr/publications/20-culture-code).
+Pour en savoir plus sur les tests, je vous conseille [l'article sur la pyramide des tests du blog d'OCTO Technology](https://blog.octo.com/la-pyramide-des-tests-par-la-pratique-1-5) , [ou une de leurs publications, Culture Code](https://www.octo.com/fr/publications/20-culture-code).
 
 ## Tests Unitaires (TU)
 
 Les **tests unitaires** peuvent être regroupés dans un **projet de tests**.  
-Ce dernier doit avoir la même **structure** que le projet que l’on souhaite tester. Ainsi, **Une classe de l’application = Une classe de tests**.
+Ce dernier doit avoir la même **structure** que le projet que l’on souhaite tester. Ainsi, **Une classe de l’application = Une classe de test**.
 
 ### Pourquoi écrire un test unitaire ?
 
-- Être sur de ne **pas** faire de **retour en arrière**, de ne pas avoir cassé un code en le modifiant avant la mise en production
+- Être sûr de ne **pas** faire de **retour en arrière**, de ne pas avoir cassé un code en le modifiant avant la mise en production
 
--  **Réduire les bugs** dans les fonctionnalités (déjà implémentés ou nouvelles)
+-  **Réduire les bugs** dans les fonctionnalités (déjà implémentées ou nouvelles)
 
 - **Refacto en toute quiétude** : ils réduisent la peur de faire des **modifications** et d’**ajouter de nouvelles fonctionnalités** dans le programme ou l’application.
 
-- Traiter **en amont** des tests interfaces et utilisateurs certains mauvais comportements et donc de les **corriger plus tôt**.
+- Traiter **en amont** des tests d'interface et des utilisateurs certains mauvais comportements et donc de les **corriger plus tôt**.
 
 - Avoir un **feedback rapide** sur le code que les developpeurs viennent d'ajouter ou modifier.
 
@@ -232,29 +230,29 @@ Lorsque l'on écrit un test unitaire, il est conseillé de commencer par rédige
 Pour réaliser des tests unitaires, Unity met à disposition un outil appelé le [**Unity Test Runner**](https://docs.unity3d.com/Manual/testing-editortestsrunner.html)  
 Pour afficher la fenêtre *"Test Runner"*, allez dans *Windows > Test Runner*.
 
-![Image of Test Runner](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture1_ouvertureOnglet.PNG)  
+![Image of Test Runner](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture1_ouvertureOnglet.PNG)
 
 On peut voir sur la capture d'écran, qu'il existe **deux modes** :
 
- - **PlayMode** : 
-    - permet d'executer des tests sur **plusieurs frames**
-    - comportement Awake(), Start(), ... sont executés **automatiquement**
-    - Sert davantage pour les **tests d'intégration**
-    - [UnityTest] = exécuté comme une **Coroutine classique**
-    - Ouvre une **scène** de test pour executé les tests (:warning: pensez à bien **enregistrer** votre scène avant de lancer les tests car votre scène sera écrasée au lancement des tests)
+- **PlayMode** :
+  - permet d'executer des tests sur **plusieurs frames**
+  - comportement Awake(), Start(), ... sont executés **automatiquement**
+  - Sert davantage pour les **tests d'intégration**
+  - [UnityTest] = exécuté comme une **Coroutine classique**
+  - Ouvre une **scène** de test pour executé les tests (:warning: pensez à bien **enregistrer** votre scène avant de lancer les tests car votre scène sera écrasée au lancement des tests)
 
-  - **EditMode** :
-    - Chaque test est executé en **une frame**
-    - Il faut appeler **explicitement** les méthodes Awake() et Start(), ce qui necessite de les passer en **public**.
-    - **Doit être placés dans un dossier Editor**
-    - [UnityTest] est executé dans l'editor avec **"Editor.Application.Update"**
+- **EditMode** :
+  - Chaque test est executé en **une frame**
+  - Il faut appeler **explicitement** les méthodes Awake() et Start(), ce qui necessite de les passer en **public**.
+  - **Doit être placés dans un dossier Editor**
+  - [UnityTest] est executé dans l'editor avec **"Editor.Application.Update"**
 
 Sélectionnez le mode qui vous intéresse puis cliquez sur le bouton *“Create PlayMode/EditMode Test Assembly Folder”*. 
 *Unity* va créer automatiquement un dossier *Test* avec un fichier *“Tests.asmdef”de type “assembly definition”*.  
   
 Une fois le dossier créé, placez-vous à l’intérieur puis cliquez sur *“Create Test Script in current folder”*.
 
-![Image of Test Runner create script](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture2_btn_create_script.PNG)  
+![Image of Test Runner create script](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture2_btn_create_script.PNG)
 
 Unity va alors créer un fichier *template C#* avec le code suivant :
 
@@ -282,15 +280,15 @@ public class NewTestScript {
 }
 ```
 
-Ces deux tests devraient apparaître dans le Test Runner : 
+Ces deux tests devraient apparaître dans le Test Runner :
 
 ![Image of Test Runner tests with test](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture3_tests.PNG)
 
-Si vous cliquer sur **“Run All”**, les tests vont se lancer, vu que ces tests n’ont pas d’assertion, les tests devrait passer au **vert** directement. 
+Si vous cliquez sur **“Run All”**, les tests vont se lancer, vu que ces tests n’ont pas d’assertion, les tests devrait passer au **vert** directement. 
 
 ![Image of Test Runner tests green tests](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture4_green_tests.PNG)
 
-Maintenant, si nous remplaçons le premier test par celui ci : 
+Maintenant, si nous remplaçons le premier test par celui ci :
 
 ```cs
     [Test]
@@ -304,12 +302,12 @@ le test devrait être **rouge** car 3 et 4 ne sont pas égaux :
 
 ![Image of Test Runner tests red test](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture5_red_tests.PNG)
 
-Si vous cliquez sur le test en question, vous pouvez voir un message d’erreur et pourquoi le test a échoué (dans l’exemple : Expected : 4, But was : 3) : 
+Si vous cliquez sur le test en question, vous pouvez voir un message d’erreur et pourquoi le test a échoué (dans l’exemple : Expected : 4, But was : 3) :
 
 ![Image of Test Runner tests red test explanation](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture5_red_tests_with_error_msg.PNG)
 
 Aujourd'hui, *Unity* ne permet pas de lancer les tests en lignes de commande.
-Les tests appelant des *MonoBehaviour* ne peuvent pas être éxécuté depuis [*Visual Studio*](https://visualstudio.microsoft.com/). 
+Les tests appelant des *MonoBehaviour* ne peuvent pas être éxécuté depuis [*Visual Studio*](https://visualstudio.microsoft.com/).  
 Si vous utilisez [***Rider***](https://www.jetbrains.com/dotnet/promo/unity/), vous pourrer les lancer directement dans son interface.
 
 #### Les Scripts de tests
@@ -344,7 +342,7 @@ public IEnumerator Methode_Unity_Test() {
 
 Un *Unity Test* est une [**Coroutine**](https://docs.unity3d.com/Manual/Coroutines.html). Dans *Unity*, les *Coroutines* sont généralement utilisé pour gérer le rendu. Nous pouvons par exemple, **attendre une frame** (*yield return null*) ou un **nombre de secondes x** (*yield return new WaitForSecondes(x)*) pour effectuer une action.
 
-Ces tests permettent donc de tester les comportements qui dépendent d'*Unity*. Ils s'apparentent le plus souvent à des **tests d'intégrations**
+Ces tests permettent donc de tester les comportements qui dépendent d'*Unity*. Ils s'apparentent le plus souvent à des **tests d'intégration**
 
 Pour réaliser une assertion avec un test *NUnit*, il faut utiliser la classe **Assert**, quelques exemples :
 
@@ -441,17 +439,19 @@ Source : Unite Austin 2017 - Testing for Sanity: Using Unity's Integrated TestRu
 ## Développement piloté par les tests (TDD)
 
 Le **TDD ou Développement piloté par les tests** est une technique de développement qui consiste à écrire les tests **avant** d’écrire le code. Cela garantit davantage la structure du code comme testable et maintenable.
-En utilisant la technique *TDD*, les tests unitaires ne servent plus à valider un code existant mais à **spécifier** le futur code implémenter.
+En utilisant le *TDD*, les tests unitaires ne servent plus à valider un code existant mais à **spécifier** le futur code implémenté.
 
 ![schema cycle TDD](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/RED-GREEN-REFACTO%20cycle.png?token=AHjeDtvHOiXwwhctewLgG-4a0KSUEjf7ks5bYXxlwA%3D%3D)
 
-Comme nous pouvons le voir sur le schéma ci-dessus, la méthode *TDD* possède **3** grandes étapes : 
+Comme nous pouvons le voir sur le schéma ci-dessus, le *TDD* possède **3** grandes étapes : 
 - **RED** : On commence par écrire un test et on vérifie que ce dernier échoue (car le code n'est pas implémenté). Ce test spécifie le comportement d'une méthode (ce qu'elle doit renvoyer, ce qu'elle doit appeler, ...).
 - **GREEN** : On écrit le code minimum pour que le test passe au vert.
 - **REFACTOR** : On améliore le code sans changer son comportement.
+
 Puis on passe à l'écriture d'un autre test, et la boucle recommence.
 
 Dans le livre *Clean Code (p.80)*, Oncle Bob définit les 3 lois du *TDD* :
+
    1. Vous n'êtes pas autorisé à écrire du code métier tant que vous n'avez pas écrit un premier test unitaire qui échoue.
    2. Vous n'êtes pas autorisé à écrire plus qu'un test unitaire qui est suffisant pour échouer et qui ne compile pas.
    3. Vous n'êtes pas autorisé à écrire plus de code que ce qui est suffisant pour passer au vert le test unitaire.
@@ -466,7 +466,7 @@ TODO : exercice à trou (suite ou reprise du même exo) TU avec TDD.
 
 ## Les dépendances dans les tests unitaires 
 
-Dans la pratique, un TU ne dois jamais s’appuyer sur **une dépendance extérieure** (service web, base de données, librairie, …). En effet, cela peut entraîner un **biais** et peut rendre les TU plus difficiles à maintenir dans le temps. 
+Dans la pratique, un TU ne doit jamais s’appuyer sur **une dépendance extérieure** (service web, base de données, librairie, …). En effet, cela peut entraîner un **biais** et peut rendre les TU plus difficiles à maintenir dans le temps.  
 Une dépendance extérieure aura tendance à **rallonger le temps d'exécution**.
 
 Pour être sûr de tester un seul comportement, sans aucune dépendance, il est possible de créer **des bouchons (mock ou stub)** pour remplacer une classe.
@@ -517,11 +517,11 @@ D de SOLID (voir partie suivante)
 ![Image intro](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/wtfm.jpg)  
 
 - Un code propre doit être agréable à lire.
-- Un code propre doit prêter attention aux détails et doit être est focalisé.
+- Un code propre doit prêter attention aux détails et doit être focalisé.
 - Chaque fonction, chaque classe, chaque objet doit avoir une attitude simple qui reste entièrement indépendante, et non polluée par les détails non nécessaires.
 - Un code non testé n’est pas un code propre, peu importe s’il est lisible et accessible.
 - Ne contient pas de duplication.
-- Évident, simple et convaincant: quand on lit un code propre, on ne doit dépenser trop d’effort pour le comprendre.
+- Évident, simple et convaincant: quand on lit un code propre, on ne doit pas dépenser trop d’effort pour le comprendre.
 
 La propreté du code définit la **qualité logicielle**.
 
@@ -538,6 +538,7 @@ Un code propre permet donc de **faire évoluer** et de **maintenir** un projet.
 Lorsque nous développons, bien trop souvent nous oublions de réfléchir aux noms que nous donnons aux variables, aux méthodes et parfois même aux classes.  Ce qui peut entraîner des incompréhensions du système par d’autres développeurs et une relecture du code plus longue. Un mauvais nommage peut également impacter la maintenabilité d’une application.
 
 Lorsque vous programmer : 
+
 - Utilisez des noms qui révèlent l’intention (= noms descriptifs), pour vous aider posez vous la question “à quoi va servir cette méthode/classe/variable ? “
 - Essayer de choisir qu’un seul mot par concept. Par exemple, si une classe sert à instancier un objet ne mélangez pas, “create”, “instantiate”, generate”, … Mais choisissez un seul mot qui  correspond à ce que vous faites ou le mot utilisé par le métier.
 - Choisissez des mots facile à prononcer.
@@ -547,7 +548,7 @@ Lorsque vous programmer :
 
 Dans un code, les commentaires sont importants mais parfois utilisés de manière abusives (écrire un commentaire pour expliquer tout le fonctionnement d’un algorithme plutôt que de le réécrire de manière simple et compréhensible). 
 
-Les bons commentaires sont des commentaires facultatifs, si possible, la compréhension du code ne doit pas être dépendant des commentaires. Ils doivent servir de complément d’informations, d’avertissement sur les conséquences ou à expliquer une intention.
+Les bons commentaires sont des commentaires facultatifs, si possible, la compréhension du code ne doit pas être dépendante des commentaires. Ils doivent servir de complément d’information, d’avertissement sur les conséquences ou à expliquer une intention.
 
 ### La loi de Déméter
 
