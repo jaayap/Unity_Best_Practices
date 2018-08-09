@@ -8,7 +8,7 @@ Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faud
 
 # __Plan :__
 
-- [Versionning : Git & Unity](Versionning.md/#versionning--git--unity)
+- [Versioning : Git & Unity](Versioning.md/#versioning--git--unity)
   - [Créer un .gitignore](Versionning.md/#créer-un-gitignore)
   - [Enregistrer des fichiers en YAML](Versionning.md/#enregistrer-des-fichiers-en-yaml)
   - [Merger avec l'outil Smart Merge](Versionning.md/#merger-avec-loutil-smart-merge)
