@@ -41,13 +41,5 @@ Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faud
   - [Un code facilement évolutif grâce à la clean architecture **(prochainement)**](Architecture.md/#la-clean-architecture)
   - [ECS architecture **(prochainement)**](Architecture.md/#ecs-architecture)
 
-- [A propos **(prochainement)**](#a-propos)
+- [A propos **(prochainement)**](#)
 - [Licence](../LICENSE)
-
-
-
-
-# A propos
-# Licence
-
-Licence MIT
