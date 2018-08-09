@@ -1,24 +1,24 @@
-# Concevoir un code mieux structuré
+# Concevoir un code mieux structurÃ©
 
 Il existe plusieurs architecture logicielle permettant d'avoir une structure de code adaptable et maintenable.
 La mise en place d'une bonne architecture doit permettre de : 
-  - Séparer les responsabilités
+  - SÃ©parer les responsabilitÃ©s
   - Rendre le code facilement testable
   - Rendre le code facilement modifiable et maintenable dans le temps 
-  - Séparer les parties facilement testable (fonctions métier ? stable)  et les parties difficilement testable (infrastructure ? volatile)
+  - SÃ©parer les parties facilement testable (fonctions mÃ©tier ? stable)  et les parties difficilement testable (infrastructure ? volatile)
   
-> “Architecture is not about tools and building materials, architecture is about usage.” 
+> â€œArchitecture is not about tools and building materials, architecture is about usage.â€ 
 > Robert C. Martin (Oncle Bob)
 
 Une bonne architecture doit supporter :
-  - Les cas d’utilisation (=l’intention) et le fonctionnement du système
-  - La maintenance du système
-  - Le développement du système
-  - Et le déploiement du système
+  - Les cas dâ€™utilisation (=lâ€™intention) et le fonctionnement du systÃ¨me
+  - La maintenance du systÃ¨me
+  - Le dÃ©veloppement du systÃ¨me
+  - Et le dÃ©ploiement du systÃ¨me
    
-Elle est centré sur les cas d’utilisation, les architectes logiciel peuvent donc décrire les structures qui les supportent en toute sécurité sans devenir dépendant des frameworks, des outils ou de l’environnement.   
-Le choix d’un framework (bases de données, serveur web, …) ne doit pas impacter l’architecture.   
-Oncle bob dit ***“les framework sont des produits commerciaux, tout est fait pour que ce soit simple à utiliser mais tout n'est pas une bonne idée.”***
+Elle est centrÃ© sur les cas dâ€™utilisation, les architectes logiciel peuvent donc dÃ©crire les structures qui les supportent en toute sÃ©curitÃ© sans devenir dÃ©pendant des frameworks, des outils ou de lâ€™environnement.   
+Le choix dâ€™un framework (bases de donnÃ©es, serveur web, â€¦) ne doit pas impacter lâ€™architecture.   
+Oncle bob dit ***â€œles framework sont des produits commerciaux, tout est fait pour que ce soit simple Ã  utiliser mais tout n'est pas une bonne idÃ©e.â€***
 
 ## La Clean Architecture
 

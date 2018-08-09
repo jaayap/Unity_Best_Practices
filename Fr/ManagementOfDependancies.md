@@ -1,25 +1,25 @@
- Gestion des dépendances
+ Gestion des dÃ©pendances
 
-## Les dépendances dans les tests unitaires 
+## Les dÃ©pendances dans les tests unitaires 
 
-Dans la pratique, un TU ne doit jamais s’appuyer sur **une dépendance extérieure** (service web, base de données, librairie, …). En effet, cela peut entraîner un **biais** et peut rendre les TU plus difficiles à maintenir dans le temps.  
-Une dépendance extérieure aura tendance à **rallonger le temps d'exécution**.
+Dans la pratique, un TU ne doit jamais sâ€™appuyer sur **une dÃ©pendance extÃ©rieure** (service web, base de donnÃ©es, librairie, â€¦). En effet, cela peut entraÃ®ner un **biais** et peut rendre les TU plus difficiles Ã  maintenir dans le temps.  
+Une dÃ©pendance extÃ©rieure aura tendance Ã  **rallonger le temps d'exÃ©cution**.
 
-Pour être sûr de tester un seul comportement, sans aucune dépendance, il est possible de créer **des bouchons (mock ou stub)** pour remplacer une classe.
-Cela permet d’éviter un null exception en renseignant un objet de substitution, ou encore de vérifier qu’une fonction est bien appelée sans exécuter son code.
+Pour Ãªtre sÃ»r de tester un seul comportement, sans aucune dÃ©pendance, il est possible de crÃ©er **des bouchons (mock ou stub)** pour remplacer une classe.
+Cela permet dâ€™Ã©viter un null exception en renseignant un objet de substitution, ou encore de vÃ©rifier quâ€™une fonction est bien appelÃ©e sans exÃ©cuter son code.
 
-**Quelle est la différence entre Stub et Mock ?**
+**Quelle est la diffÃ©rence entre Stub et Mock ?**
 
-**Un Stub** est un objet que vous pouvez contrôler, qui sert de substitut **à une dépendance extérieure** (exemple : un faux service web qui renvoie toujours la même information)  
+**Un Stub** est un objet que vous pouvez contrÃ´ler, qui sert de substitut **Ã  une dÃ©pendance extÃ©rieure** (exemple : un faux service web qui renvoie toujours la mÃªme information)  
   
-**Un Mock** est un objet de substitut **dans le système**, qui décide si un test unitaire passe ou échoue (exemple : une base de données qui attend une certaine requête bien précise)
+**Un Mock** est un objet de substitut **dans le systÃ¨me**, qui dÃ©cide si un test unitaire passe ou Ã©choue (exemple : une base de donnÃ©es qui attend une certaine requÃªte bien prÃ©cise)
 
-## TU avec dépendances dans Unity
+## TU avec dÃ©pendances dans Unity
 
-Pour créer des mocks ou des substituts avec *Unity*, vous pouvez installer **NSubstitute**, pour cela il suffit de placer le fichier **NSubstitute.dll** dans votre projet *Unity*. Vous pouvez télécharger ce fichier [ici](https://github.com/jaayap/Unity_Best_Practices/tree/master/NSubstitute/dll). 
+Pour crÃ©er des mocks ou des substituts avec *Unity*, vous pouvez installer **NSubstitute**, pour cela il suffit de placer le fichier **NSubstitute.dll** dans votre projet *Unity*. Vous pouvez tÃ©lÃ©charger ce fichier [ici](https://github.com/jaayap/Unity_Best_Practices/tree/master/NSubstitute/dll). 
 
 **Exemple :**
- On veut s’assurer que la méthode *InitializeObject()* du *GameManager.cs* est appelée avec le bon paramètre lors du *Start()* du script *ObjectBehaviour.cs*
+ On veut sâ€™assurer que la mÃ©thode *InitializeObject()* du *GameManager.cs* est appelÃ©e avec le bon paramÃ¨tre lors du *Start()* du script *ObjectBehaviour.cs*
 
 ```cs
 [Test]
@@ -38,7 +38,7 @@ public void WhenGameStartObjectInitialize()
 }
 ```
 
-## Injection de dépendances 
+## Injection de dÃ©pendances 
 
 D de SOLID (voir partie suivante)
  => Zenject

@@ -1,24 +1,24 @@
 # Versionning : Git & Unity
 
-Si vous utiliser *git* pour versionner vos projets *Unity*, vous avez du remarquez que parfois les fichiers tels que les scËnes et les *prefabs* subissent des rÈgressions lors des merges. Deux personnes modifiant ainsi le mÍme fichier en mÍme temps provoquent un conflit que git, par dÈfaut níarrive pas ‡ rÈsoudre. Vous retrouvez alors votre scËne entiËrement vide ou votre *prefab* tout cassÈ. 
-Voici la solution que jíai choisi díadopter.
+Si vous utiliser *git* pour versionner vos projets *Unity*, vous avez du remarquez que parfois les fichiers tels que les sc√®nes et les *prefabs* subissent des r√©gressions lors des merges. Deux personnes modifiant ainsi le m√™me fichier en m√™me temps provoquent un conflit que git, par d√©faut n‚Äôarrive pas √† r√©soudre. Vous retrouvez alors votre sc√®ne enti√®rement vide ou votre *prefab* tout cass√©. 
+Voici la solution que j‚Äôai choisi d‚Äôadopter.
 
-## CrÈer un .gitignore
+## Cr√©er un .gitignore
 
-Il est important díajouter un fichier **.gitignore** ‡ votre dÈpÙt. Il permettra ‡ git díignorer certains fichiers gÈnÈrÈs par *Unity* et par votre IDE (dans líexemple Visual Studio, mais vous pouvez modifier le *gitignore* pour líadapter aux outils que vous utilisez). Dans certains projets, il est pertinent díajouter des dossiers de votre projet afin de ne pas les enregistrer dans le dÈpÙt en ligne, un *asset* de lí*asset store* par exemple (peut peser lourd dans líarchive, ce qui ralenti considÈrablement líÈquipe lorsquíelle doit mettre ‡ jour le dÈpÙt ou le rÈcupÈrer).
+Il est important d‚Äôajouter un fichier **.gitignore** √† votre d√©p√¥t. Il permettra √† git d‚Äôignorer certains fichiers g√©n√©r√©s par *Unity* et par votre IDE (dans l‚Äôexemple Visual Studio, mais vous pouvez modifier le *gitignore* pour l‚Äôadapter aux outils que vous utilisez). Dans certains projets, il est pertinent d‚Äôajouter des dossiers de votre projet afin de ne pas les enregistrer dans le d√©p√¥t en ligne, un *asset* de l‚Äô*asset store* par exemple (peut peser lourd dans l‚Äôarchive, ce qui ralenti consid√©rablement l‚Äô√©quipe lorsqu‚Äôelle doit mettre √† jour le d√©p√¥t ou le r√©cup√©rer).
 
-[voir dÈpot .gitignore Unity](https://github.com/github/gitignore/blob/master/Unity.gitignore)
+[voir d√©pot .gitignore Unity](https://github.com/github/gitignore/blob/master/Unity.gitignore)
 
 ## Enregistrer des fichiers en YAML
 
 ![Image of Unity Project Settings](https://s3.amazonaws.com/gamasutra/UnityVersionControlSettings.png)
 
-Passer le mode díenregistrement des assets en ìForce Textî (voir image ci-dessus). Vos fichiers síenregistrent maintenant au format YAML.
-Cela permet ‡ Git de mieux gÈrer les conflits, mais cela peut s'avÈrer insuffisant.
+Passer le mode d‚Äôenregistrement des assets en ‚ÄúForce Text‚Äù (voir image ci-dessus). Vos fichiers s‚Äôenregistrent maintenant au format YAML.
+Cela permet √† Git de mieux g√©rer les conflits, mais cela peut s'av√©rer insuffisant.
 
-## Merger avec líoutil Smart Merge
+## Merger avec l‚Äôoutil Smart Merge
 
-Depuis la version 5.0 de *Unity*, un **UnityYAMLMerge tool** est fourni avec son installation. Pour líutiliser, il suffit de copier/ coller les lignes suivantes dans le fichier **.git/config** :
+Depuis la version 5.0 de *Unity*, un **UnityYAMLMerge tool** est fourni avec son installation. Pour l‚Äôutiliser, il suffit de copier/ coller les lignes suivantes dans le fichier **.git/config** :
 
 ```
 [merge]
@@ -30,45 +30,45 @@ keepTempories = true
 keepBackup = false
 ```
 
-Pensez ‡ modifier le lien "*C:\\ ...*" selon l'emplacement de votre installation Unity, Si vous travaillez en Èquipe, il est prÈfÈrable d'utilisez le mÍme lien.  
+Pensez √† modifier le lien "*C:\\ ...*" selon l'emplacement de votre installation Unity, Si vous travaillez en √©quipe, il est pr√©f√©rable d'utilisez le m√™me lien.  
 :warning: **Attention : n'oublier pas de mettre des doubles '\\\\' et non des simples '\\' ou '/'.**  
-*[Ce merge tool peut Ítre utilisÈ avec díautres outils (Perforce, SVN, Mercurial, et SourceTree) , je vous conseille de vous rÈfÈrez ‡ la documentation](https://docs.unity3d.com/Manual/SmartMerge.html)*  
+*[Ce merge tool peut √™tre utilis√© avec d‚Äôautres outils (Perforce, SVN, Mercurial, et SourceTree) , je vous conseille de vous r√©f√©rez √† la documentation](https://docs.unity3d.com/Manual/SmartMerge.html)*  
   
-Cet outil est trËs performant et permet de travailler ‡ plusieurs sans se soucier de tout perdre (fonctionne avec les scËnes et les prefabs).
+Cet outil est tr√®s performant et permet de travailler √† plusieurs sans se soucier de tout perdre (fonctionne avec les sc√®nes et les prefabs).
 
-### Comment Áa marche ?
+### Comment √ßa marche ?
 
-Continuez ‡ utiliser *git* comme ‡ votre habitude et si lors díun *merge*, vous avez un conflit, effectuez la commande *ìgit mergetoolî* pour appeller le *SmartMerge* qui síoccupera, dans la plupart des cas, de rÈgler les conflits. Un exemple est donnÈ ci-dessous, deux branches sont crÈÈes, *ìMasterî* et *ìAnotherî*, Chacune modifie la scËne *ìsceneTestî*. Ensuite chacune est *commit* sur le dÈpÙt et on essaye de ìfusionnerî les branches.  
-A ce moment l‡, git nous dit quíil y a un conflit et lorsque líon ouvre la scËne dans *Unity*, on s'aperÁoit qu'elle est vide. On exÈcute alors *git mergetool* et on retrouve une scËne qui possËde tous nos objets.  
+Continuez √† utiliser *git* comme √† votre habitude et si lors d‚Äôun *merge*, vous avez un conflit, effectuez la commande *‚Äúgit mergetool‚Äù* pour appeller le *SmartMerge* qui s‚Äôoccupera, dans la plupart des cas, de r√©gler les conflits. Un exemple est donn√© ci-dessous, deux branches sont cr√©√©es, *‚ÄúMaster‚Äù* et *‚ÄúAnother‚Äù*, Chacune modifie la sc√®ne *‚ÄúsceneTest‚Äù*. Ensuite chacune est *commit* sur le d√©p√¥t et on essaye de ‚Äúfusionner‚Äù les branches.  
+A ce moment l√†, git nous dit qu‚Äôil y a un conflit et lorsque l‚Äôon ouvre la sc√®ne dans *Unity*, on s'aper√ßoit qu'elle est vide. On ex√©cute alors *git mergetool* et on retrouve une sc√®ne qui poss√®de tous nos objets.  
 
 ![Schema explicatif du Smart Merge](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/schemaSmartMergeV2.PNG?token=AHjeDgISOj3_CsXFl6gK4QxKd5kcyGPBks5baXFawA%3D%3D)
 
-Le *SmartMerge* possËde ses limites. Il ne peut pas rÈsoudre seul le conflit lorsque vous toucher au mÍme objet d'une scËne. Dans ce cas, il vous demandera de choisir la bonne version (la scËne actuelle, líancienne scËne ou celle de votre collËgue ?)
+Le *SmartMerge* poss√®de ses limites. Il ne peut pas r√©soudre seul le conflit lorsque vous toucher au m√™me objet d'une sc√®ne. Dans ce cas, il vous demandera de choisir la bonne version (la sc√®ne actuelle, l‚Äôancienne sc√®ne ou celle de votre coll√®gue ?)
 
-## GÈrer les fichiers volumineux
+## G√©rer les fichiers volumineux
 
-  Versionner des fichiers volumineux (image, objets 3D) peut s'avÈrer douloureux, *GitHub* vous empÍche de pousser des fichiers de plus de 100 Mo et un dÈpÙt *Git* contient toutes les versions de chaque fichier.  
-  Les rÈvisions multiples de fichiers volumineux augmentent les temps de clonage et de rÈcupÈration pour les autres utilisateurs du dÈpÙt.  
+  Versionner des fichiers volumineux (image, objets 3D) peut s'av√©rer douloureux, *GitHub* vous emp√™che de pousser des fichiers de plus de 100 Mo et un d√©p√¥t *Git* contient toutes les versions de chaque fichier.  
+  Les r√©visions multiples de fichiers volumineux augmentent les temps de clonage et de r√©cup√©ration pour les autres utilisateurs du d√©p√¥t.  
   
-  *Git* demande ‡ chaque utilisateur d'avoir autant d'espace libre sur un disque dur que d'espace consommÈ ‡ tout moment. Par exemple, si une archive est de 1 Go, Git nÈcessite de 1 Go d'espace libre supplÈmentaire pour Ítre disponible.  
+  *Git* demande √† chaque utilisateur d'avoir autant d'espace libre sur un disque dur que d'espace consomm√© √† tout moment. Par exemple, si une archive est de 1 Go, Git n√©cessite de 1 Go d'espace libre suppl√©mentaire pour √™tre disponible.  
   
-  Il est conseillÈ de garder les fichiers suivant dans le dÈpÙt : fichiers de code, assets qui ont besoin díÍtre versionnÈ (graphiques), les fichiers de configuration (volumineux ou non) et de ne pas versionner les fichiers suivants : Bases de donnÈes, fichiers temporaires (journaux, log, Ö).   
+  Il est conseill√© de garder les fichiers suivant dans le d√©p√¥t : fichiers de code, assets qui ont besoin d‚Äô√™tre versionn√© (graphiques), les fichiers de configuration (volumineux ou non) et de ne pas versionner les fichiers suivants : Bases de donn√©es, fichiers temporaires (journaux, log, ‚Ä¶).   
   
-  Si le dÈpÙt que vous utilisez est compatible avec [Git LFS](https://git-lfs.github.com/), je vous recommande de líutiliser. ([Git LFS](https://git-lfs.github.com/) est compatible avec GitHub / Bitbucket / Gitlab depuis la version 8). [Git LFS est une extension de Git et est open source](https://github.com/git-lfs/git-lfs?utm_source=gitlfs_site&utm_medium=repo_link&utm_campaign=gitlfs).  
+  Si le d√©p√¥t que vous utilisez est compatible avec [Git LFS](https://git-lfs.github.com/), je vous recommande de l‚Äôutiliser. ([Git LFS](https://git-lfs.github.com/) est compatible avec GitHub / Bitbucket / Gitlab depuis la version 8). [Git LFS est une extension de Git et est open source](https://github.com/git-lfs/git-lfs?utm_source=gitlfs_site&utm_medium=repo_link&utm_campaign=gitlfs).  
 
-Cependant, cette solution fonctionne **seulement** pour les fichiers **infÈrieurs ‡ 2Go**.
+Cependant, cette solution fonctionne **seulement** pour les fichiers **inf√©rieurs √† 2Go**.
 
-### Comment Áa marche ?
+### Comment √ßa marche ?
 
 ![Image Explicative de Git LFS](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/image9.png?token=AHjeDpsdDG7nmpaEzQkxpTVyQp2cHdTmks5bWG9nwA%3D%3D)
 
-[Git LFS](https://git-lfs.github.com/), va *tracker* les fichiers que vous voulez, soit avec leurs noms, soit avec leurs extensions, soit avec leurs emplacements. Ensuite, ces fichiers seront automatiquement stockÈs sur un serveur (*Large File Storage*) et seulement le lien de votre fichier sera gardÈ. Attention, ce systËme ne versionne pas les fichiers trackÈs. Mais avez-vous vraiment besoin díun *versionning* de vos *assets* 3D ou de vos ÈlÈments UI ? GÈnÈralement dÈj‡ versionnÈs en amont par les Designers.
+[Git LFS](https://git-lfs.github.com/), va *tracker* les fichiers que vous voulez, soit avec leurs noms, soit avec leurs extensions, soit avec leurs emplacements. Ensuite, ces fichiers seront automatiquement stock√©s sur un serveur (*Large File Storage*) et seulement le lien de votre fichier sera gard√©. Attention, ce syst√®me ne versionne pas les fichiers track√©s. Mais avez-vous vraiment besoin d‚Äôun *versionning* de vos *assets* 3D ou de vos √©l√©ments UI ? G√©n√©ralement d√©j√† versionn√©s en amont par les Designers.
 
 **Pour installer git LFS, lancer la commande :**
 ```sh
 git lfs install
 ```
-Git LFS  devrait síinstaller automatiquement, si cíest le cas, la commande devrait retourner ce message :
+Git LFS  devrait s‚Äôinstaller automatiquement, si c‚Äôest le cas, la commande devrait retourner ce message :
 ```sh
 >Updated git hooks.
 >Git LFS initialized.
@@ -80,21 +80,21 @@ git lfs track "*.extension"
 >Tracking "*.extension"
 ```
 
-**Assurez vous que votre projet possËde un *.gitattributes***
+**Assurez vous que votre projet poss√®de un *.gitattributes***
 
 ```sh
 git add .gitattributes
 ```
-et voil‡ le tour est jouÈ, ‡ prÈsent vous pouvez ajouter vos fichiers et *commit* comme vous le faisiez avant, la diffÈrence est que *Git* va envoyer les fichiers trackÈs sur [Git LFS](https://git-lfs.github.com/).  
+et voil√† le tour est jou√©, √† pr√©sent vous pouvez ajouter vos fichiers et *commit* comme vous le faisiez avant, la diff√©rence est que *Git* va envoyer les fichiers track√©s sur [Git LFS](https://git-lfs.github.com/).  
 
-Si vous utilisez github, la notification ***ìstored with Git LFSî*** devrait apparaÓtre dans líinterface web lorsque vous ouvrez votre fichier.
+Si vous utilisez github, la notification ***‚Äústored with Git LFS‚Äù*** devrait appara√Ætre dans l‚Äôinterface web lorsque vous ouvrez votre fichier.
 
 ![Image of Github Stored with Git LFS](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/image7.png?token=AHjeDnlpMeQpTc27ikncn_j53g50GMEOks5bWG4gwA%3D%3D)
 
-Pour comprendre le fonctionnement de [Git LFS](https://git-lfs.github.com/), je vous conseille de regarder la vidÈo proposÈ par bitbucket : 
+Pour comprendre le fonctionnement de [Git LFS](https://git-lfs.github.com/), je vous conseille de regarder la vid√©o propos√© par bitbucket : 
 
 [![video Btbucket Git LFS](http://img.youtube.com/vi/9gaTargV5BY/0.jpg)](http://www.youtube.com/watch?v=9gaTargV5BY "Git LFS explain")
 
 
-Díautres solutions existes avec *git* : *Git Annex*, *Git Fat* , *Git Media* , *Git Bigstore*, *Git Sizer*, Ö Ces derniËres sont moins documentÈes, plus difficiles ‡ mettre en place et ‡ prendre en main et semblent moins adaptÈes ‡ un projet *Unity*.
+D‚Äôautres solutions existes avec *git* : *Git Annex*, *Git Fat* , *Git Media* , *Git Bigstore*, *Git Sizer*, ‚Ä¶ Ces derni√®res sont moins document√©es, plus difficiles √† mettre en place et √† prendre en main et semblent moins adapt√©es √† un projet *Unity*.
 

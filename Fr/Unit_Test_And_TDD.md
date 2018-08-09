@@ -3,111 +3,111 @@
 
 ## Tour d'horizon sur les tests
   
-Les tests sont importants dans la réalisation d’un logiciel car ils assurent une **qualité logicielle minimale**. 
-Beaucoup de logiciels sont conçus sans test et les conséquences sont:  
-- beaucoup d’**anomalies**
-- des **bugs** compliqués à résoudre et parfois lancés en production.
-- un logiciel **qui grossit** à cause des **patchs** et des nouvelles fonctionnalités s’appuyant sur un code bancal. 
-En bref, un code **non testé** entraîne bien souvent une **dette technique**.
+Les tests sont importants dans la rÃ©alisation dâ€™un logiciel car ils assurent une **qualitÃ© logicielle minimale**. 
+Beaucoup de logiciels sont conÃ§us sans test et les consÃ©quences sont:  
+- beaucoup dâ€™**anomalies**
+- des **bugs** compliquÃ©s Ã  rÃ©soudre et parfois lancÃ©s en production.
+- un logiciel **qui grossit** Ã  cause des **patchs** et des nouvelles fonctionnalitÃ©s sâ€™appuyant sur un code bancal. 
+En bref, un code **non testÃ©** entraÃ®ne bien souvent une **dette technique**.
 
 ![Image de la pyramide des tests](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/img_pyramide_des_tests.png?token=AHjeDoKKyxTJRlb2sRXe6a4YPP5RwJQTks5bYCFzwA%3D%3D)
 
-La **pyramide des tests** présente les différents **types** de tests :
+La **pyramide des tests** prÃ©sente les diffÃ©rents **types** de tests :
 
-- Les **tests IHM** (Interface Homme-Machine) coûtent cher car il faut exécuter l’appli de bout en bout. Ces tests peuvent être automatisés mais long à être exécutés. Ils ne couvrent que certains scénarios précis. Quand ces tests ne sont pas automatisés, on peut engager des testeurs.
+- Les **tests IHM** (Interface Homme-Machine) coÃ»tent cher car il faut exÃ©cuter lâ€™appli de bout en bout. Ces tests peuvent Ãªtre automatisÃ©s mais long Ã  Ãªtre exÃ©cutÃ©s. Ils ne couvrent que certains scÃ©narios prÃ©cis. Quand ces tests ne sont pas automatisÃ©s, on peut engager des testeurs.
 
-- Les **tests d’intégration** sont assez simples. On s’affranchit des contraintes majeures (IHM, certaines dépendances). Ils sont également assez proches du code, ce qui facilite leur refactoring. Cependant, ils couvrent un spectre plus large de code et de ce fait, ont davantage de risques d’être impactés par une modification.
+- Les **tests dâ€™intÃ©gration** sont assez simples. On sâ€™affranchit des contraintes majeures (IHM, certaines dÃ©pendances). Ils sont Ã©galement assez proches du code, ce qui facilite leur refactoring. Cependant, ils couvrent un spectre plus large de code et de ce fait, ont davantage de risques dâ€™Ãªtre impactÃ©s par une modification.
 
-- Les **tests unitaires** sont simples à mettre en œuvre lorsqu’ils sont faits au fur et à mesure du code, ils permettent de couvrir une majeure partie du code à faible coût. Ils peuvent être **automatisés** et sont **rapides à exécuter**. Il est fortement recommandé de commencer par rédiger des tests unitaires, ils sont la **base** des tests et permettent de repérer rapidement les régressions ou les mauvais comportements du logiciel.
+- Les **tests unitaires** sont simples Ã  mettre en Å“uvre lorsquâ€™ils sont faits au fur et Ã  mesure du code, ils permettent de couvrir une majeure partie du code Ã  faible coÃ»t. Ils peuvent Ãªtre **automatisÃ©s** et sont **rapides Ã  exÃ©cuter**. Il est fortement recommandÃ© de commencer par rÃ©diger des tests unitaires, ils sont la **base** des tests et permettent de repÃ©rer rapidement les rÃ©gressions ou les mauvais comportements du logiciel.
 
-:warning: **Attention** : Il faut séparer les tests unitaires (rapide) des tests d’intégrations (plus lent).
+:warning: **Attention** : Il faut sÃ©parer les tests unitaires (rapide) des tests dâ€™intÃ©grations (plus lent).
 
-Pour le moment nous nous intéresserons aux **tests unitaires et au TDD (test-driven development)**.
+Pour le moment nous nous intÃ©resserons aux **tests unitaires et au TDD (test-driven development)**.
 
-**Rédiger des tests unitaires sert à vérifier le comportement du code, tandis qu’avec l’approche TDD, qui consiste à écrire les tests en premier, rédiger des tests unitaires sert à spécifier comment le code doit fonctionner**.
+**RÃ©diger des tests unitaires sert Ã  vÃ©rifier le comportement du code, tandis quâ€™avec lâ€™approche TDD, qui consiste Ã  Ã©crire les tests en premier, rÃ©diger des tests unitaires sert Ã  spÃ©cifier comment le code doit fonctionner**.
 
 Pour en savoir plus sur les tests, je vous conseille [l'article sur la pyramide des tests du blog d'OCTO Technology](https://blog.octo.com/la-pyramide-des-tests-par-la-pratique-1-5) , [ou une de leurs publications, Culture Code](https://www.octo.com/fr/publications/20-culture-code).
 
 ## Tests Unitaires (TU)
 
-Les **tests unitaires** peuvent être regroupés dans un **projet de tests**.  
-Ce dernier doit avoir la même **structure** que le projet que l’on souhaite tester. Ainsi, **Une classe de l’application = Une classe de test**.
+Les **tests unitaires** peuvent Ãªtre regroupÃ©s dans un **projet de tests**.  
+Ce dernier doit avoir la mÃªme **structure** que le projet que lâ€™on souhaite tester. Ainsi, **Une classe de lâ€™application = Une classe de test**.
 
-### Pourquoi écrire un test unitaire ?
+### Pourquoi Ã©crire un test unitaire ?
 
-- Être sûr de ne **pas** faire de **retour en arrière**, de ne pas avoir cassé un code en le modifiant avant la mise en production
+- ÃŠtre sÃ»r de ne **pas** faire de **retour en arriÃ¨re**, de ne pas avoir cassÃ© un code en le modifiant avant la mise en production
 
--  **Réduire les bugs** dans les fonctionnalités (déjà implémentées ou nouvelles)
+-  **RÃ©duire les bugs** dans les fonctionnalitÃ©s (dÃ©jÃ  implÃ©mentÃ©es ou nouvelles)
 
-- **Refacto en toute quiétude** : ils réduisent la peur de faire des **modifications** et d’**ajouter de nouvelles fonctionnalités** dans le programme ou l’application.
+- **Refacto en toute quiÃ©tude** : ils rÃ©duisent la peur de faire des **modifications** et dâ€™**ajouter de nouvelles fonctionnalitÃ©s** dans le programme ou lâ€™application.
 
-- Traiter **en amont** des tests d'interface et des utilisateurs certains mauvais comportements et donc de les **corriger plus tôt**.
+- Traiter **en amont** des tests d'interface et des utilisateurs certains mauvais comportements et donc de les **corriger plus tÃ´t**.
 
 - Avoir un **feedback rapide** sur le code que les developpeurs viennent d'ajouter ou modifier.
 
-- Permet d’avoir une application plus **robuste**
+- Permet dâ€™avoir une application plus **robuste**
 
-- Avoir une documentation minimale pour les développeurs
+- Avoir une documentation minimale pour les dÃ©veloppeurs
 
-En conclusion, plus rapidement vous saurez si un test échoue, plus vite vous pourrez corriger le problème et moins cher ce sera.
+En conclusion, plus rapidement vous saurez si un test Ã©choue, plus vite vous pourrez corriger le problÃ¨me et moins cher ce sera.
 
 ### Qu'est-ce qu'un bon test unitaire ?
 
 Un bon test unitaire :
-- est **entièrement automatisé**
-- retourne **toujours le même résultat** si le code n’est pas modifié
-- test qu’**un seul concept** ou **une seule logique** de l’application
-- test qu’**une seule méthode à la fois**
+- est **entiÃ¨rement automatisÃ©**
+- retourne **toujours le mÃªme rÃ©sultat** si le code nâ€™est pas modifiÃ©
+- test quâ€™**un seul concept** ou **une seule logique** de lâ€™application
+- test quâ€™**une seule mÃ©thode Ã  la fois**
 - porte un **nom clair et significatif**
 
-### Comment écrire un test unitaire ? 
+### Comment Ã©crire un test unitaire ? 
 
-Différentes conventions de nommage existent :
+DiffÃ©rentes conventions de nommage existent :
 - Should_ExpectedBehavior_When_StateUnderTest
 - When_StateUnderTest_Expect_ExpectedBehavior
 
-Attention à **ne pas avoir le nom de la méthode dans le nom du test** car difficile à maintenir. En cas de refactorisation du nom de la méthode, le test ne veut plus rien dire.
-Un test unitaire exprime une intention, c'est à dire, qu'il test une fonctionnalité, et non son implémentation.
+Attention Ã  **ne pas avoir le nom de la mÃ©thode dans le nom du test** car difficile Ã  maintenir. En cas de refactorisation du nom de la mÃ©thode, le test ne veut plus rien dire.
+Un test unitaire exprime une intention, c'est Ã  dire, qu'il test une fonctionnalitÃ©, et non son implÃ©mentation.
 
-Un test se décompose en **3 parties** : 
-- **Arrange** est l’étape d’initialisation
-- **Act** correspond à l’appel de la méthode testée
-- **Assert** est l’étape de vérification du comportement de la méthode testée
+Un test se dÃ©compose en **3 parties** : 
+- **Arrange** est lâ€™Ã©tape dâ€™initialisation
+- **Act** correspond Ã  lâ€™appel de la mÃ©thode testÃ©e
+- **Assert** est lâ€™Ã©tape de vÃ©rification du comportement de la mÃ©thode testÃ©e
 
-Lorsque l'on écrit un test unitaire, il est conseillé de commencer par rédiger l'**Assert**, qui est la réponse à la question : **Qu'est-ce qu'on veut tester?**
+Lorsque l'on Ã©crit un test unitaire, il est conseillÃ© de commencer par rÃ©diger l'**Assert**, qui est la rÃ©ponse Ã  la question : **Qu'est-ce qu'on veut tester?**
 
 ### Comment mettre en pratique les TU avec Unity ?
 
 #### Unity Test Runner
 
-Pour réaliser des tests unitaires, Unity met à disposition un outil appelé le [**Unity Test Runner**](https://docs.unity3d.com/Manual/testing-editortestsrunner.html)  
-Pour afficher la fenêtre *"Test Runner"*, allez dans *Windows > Test Runner*.
+Pour rÃ©aliser des tests unitaires, Unity met Ã  disposition un outil appelÃ© le [**Unity Test Runner**](https://docs.unity3d.com/Manual/testing-editortestsrunner.html)  
+Pour afficher la fenÃªtre *"Test Runner"*, allez dans *Windows > Test Runner*.
 
 ![Image of Test Runner](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture1_ouvertureOnglet.PNG)
 
-On peut voir sur la capture d'écran, qu'il existe **deux modes** :
+On peut voir sur la capture d'Ã©cran, qu'il existe **deux modes** :
 
 - **PlayMode** :
   - permet d'executer des tests sur **plusieurs frames**
-  - comportement Awake(), Start(), ... sont executés **automatiquement**
-  - Sert davantage pour les **tests d'intégration**
-  - [UnityTest] = exécuté comme une **Coroutine classique**
-  - Ouvre une **scène** de test pour executé les tests (:warning: pensez à bien **enregistrer** votre scène avant de lancer les tests car votre scène sera écrasée au lancement des tests)
+  - comportement Awake(), Start(), ... sont executÃ©s **automatiquement**
+  - Sert davantage pour les **tests d'intÃ©gration**
+  - [UnityTest] = exÃ©cutÃ© comme une **Coroutine classique**
+  - Ouvre une **scÃ¨ne** de test pour executÃ© les tests (:warning: pensez Ã  bien **enregistrer** votre scÃ¨ne avant de lancer les tests car votre scÃ¨ne sera Ã©crasÃ©e au lancement des tests)
 
 - **EditMode** :
-  - Chaque test est executé en **une frame**
-  - Il faut appeler **explicitement** les méthodes Awake() et Start(), ce qui necessite de les passer en **public**.
-  - **Doit être placés dans un dossier Editor**
-  - [UnityTest] est executé dans l'editor avec **"Editor.Application.Update"**
+  - Chaque test est executÃ© en **une frame**
+  - Il faut appeler **explicitement** les mÃ©thodes Awake() et Start(), ce qui necessite de les passer en **public**.
+  - **Doit Ãªtre placÃ©s dans un dossier Editor**
+  - [UnityTest] est executÃ© dans l'editor avec **"Editor.Application.Update"**
 
-Sélectionnez le mode qui vous intéresse puis cliquez sur le bouton *“Create PlayMode/EditMode Test Assembly Folder”*. 
-*Unity* va créer automatiquement un dossier *Test* avec un fichier *“Tests.asmdef”de type “assembly definition”*.  
+SÃ©lectionnez le mode qui vous intÃ©resse puis cliquez sur le bouton *â€œCreate PlayMode/EditMode Test Assembly Folderâ€*. 
+*Unity* va crÃ©er automatiquement un dossier *Test* avec un fichier *â€œTests.asmdefâ€de type â€œassembly definitionâ€*.  
   
-Une fois le dossier créé, placez-vous à l’intérieur puis cliquez sur *“Create Test Script in current folder”*.
+Une fois le dossier crÃ©Ã©, placez-vous Ã  lâ€™intÃ©rieur puis cliquez sur *â€œCreate Test Script in current folderâ€*.
 
 ![Image of Test Runner create script](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture2_btn_create_script.PNG)
 
-Unity va alors créer un fichier *template C#* avec le code suivant :
+Unity va alors crÃ©er un fichier *template C#* avec le code suivant :
 
 ```cs
 using UnityEngine;
@@ -133,15 +133,15 @@ public class NewTestScript {
 }
 ```
 
-Ces deux tests devraient apparaître dans le Test Runner :
+Ces deux tests devraient apparaÃ®tre dans le Test Runner :
 
 ![Image of Test Runner tests with test](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture3_tests.PNG)
 
-Si vous cliquez sur **“Run All”**, les tests vont se lancer, vu que ces tests n’ont pas d’assertion, les tests devrait passer au **vert** directement. 
+Si vous cliquez sur **â€œRun Allâ€**, les tests vont se lancer, vu que ces tests nâ€™ont pas dâ€™assertion, les tests devrait passer au **vert** directement. 
 
 ![Image of Test Runner tests green tests](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture4_green_tests.PNG)
 
-Maintenant, si nous remplaçons le premier test par celui ci :
+Maintenant, si nous remplaÃ§ons le premier test par celui ci :
 
 ```cs
     [Test]
@@ -151,25 +151,25 @@ Maintenant, si nous remplaçons le premier test par celui ci :
     }
 ```
 
-le test devrait être **rouge** car 3 et 4 ne sont pas égaux :
+le test devrait Ãªtre **rouge** car 3 et 4 ne sont pas Ã©gaux :
 
 ![Image of Test Runner tests red test](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture5_red_tests.PNG)
 
-Si vous cliquez sur le test en question, vous pouvez voir un message d’erreur et pourquoi le test a échoué (dans l’exemple : Expected : 4, But was : 3) :
+Si vous cliquez sur le test en question, vous pouvez voir un message dâ€™erreur et pourquoi le test a Ã©chouÃ© (dans lâ€™exemple : Expected : 4, But was : 3) :
 
 ![Image of Test Runner tests red test explanation](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture5_red_tests_with_error_msg.PNG)
 
 Aujourd'hui, *Unity* ne permet pas de lancer les tests en lignes de commande.
-Les tests appelant des *MonoBehaviour* ne peuvent pas être éxécuté depuis [*Visual Studio*](https://visualstudio.microsoft.com/).  
+Les tests appelant des *MonoBehaviour* ne peuvent pas Ãªtre Ã©xÃ©cutÃ© depuis [*Visual Studio*](https://visualstudio.microsoft.com/).  
 Si vous utilisez [***Rider***](https://www.jetbrains.com/dotnet/promo/unity/), vous pourrer les lancer directement dans son interface.
 
 #### Les Scripts de tests
 
-**Le nom de la classe de test doit avoir en préfixe ou en suffixe *“Test”*, selon vos préférences.**  
-Veillez à ce que votre code soit harmonisé, ainsi si vous choisissez de mettre “Test” en suffixe, faites le sur toutes vos classes de tests.  
+**Le nom de la classe de test doit avoir en prÃ©fixe ou en suffixe *â€œTestâ€*, selon vos prÃ©fÃ©rences.**  
+Veillez Ã  ce que votre code soit harmonisÃ©, ainsi si vous choisissez de mettre â€œTestâ€ en suffixe, faites le sur toutes vos classes de tests.  
 
-Par défaut Unity inclus le framework de test unitaire C#  **[NUnit](https://nunit.org/)** pour les tests unitaires.
-Devant chaque méthode de test l’attribut **[Test]** doit apparaître :
+Par dÃ©faut Unity inclus le framework de test unitaire C#  **[NUnit](https://nunit.org/)** pour les tests unitaires.
+Devant chaque mÃ©thode de test lâ€™attribut **[Test]** doit apparaÃ®tre :
 
 ```cs
 [Test]
@@ -180,7 +180,7 @@ public void Methode_Test() {
 }
 ```
 
-Avec le **using UnityEngine.TestTools;**, vous pouvez créer des **"Unity Tests"** :
+Avec le **using UnityEngine.TestTools;**, vous pouvez crÃ©er des **"Unity Tests"** :
 
 ```cs
 [UnityTest]
@@ -193,11 +193,11 @@ public IEnumerator Methode_Unity_Test() {
 }
 ```
 
-Un *Unity Test* est une [**Coroutine**](https://docs.unity3d.com/Manual/Coroutines.html). Dans *Unity*, les *Coroutines* sont généralement utilisé pour gérer le rendu. Nous pouvons par exemple, **attendre une frame** (*yield return null*) ou un **nombre de secondes x** (*yield return new WaitForSecondes(x)*) pour effectuer une action.
+Un *Unity Test* est une [**Coroutine**](https://docs.unity3d.com/Manual/Coroutines.html). Dans *Unity*, les *Coroutines* sont gÃ©nÃ©ralement utilisÃ© pour gÃ©rer le rendu. Nous pouvons par exemple, **attendre une frame** (*yield return null*) ou un **nombre de secondes x** (*yield return new WaitForSecondes(x)*) pour effectuer une action.
 
-Ces tests permettent donc de tester les comportements qui dépendent d'*Unity*. Ils s'apparentent le plus souvent à des **tests d'intégration**
+Ces tests permettent donc de tester les comportements qui dÃ©pendent d'*Unity*. Ils s'apparentent le plus souvent Ã  des **tests d'intÃ©gration**
 
-Pour réaliser une assertion avec un test *NUnit*, il faut utiliser la classe **Assert**, quelques exemples :
+Pour rÃ©aliser une assertion avec un test *NUnit*, il faut utiliser la classe **Assert**, quelques exemples :
 
 ```cs
     Assert.IsNotNull(object);
@@ -205,19 +205,19 @@ Pour réaliser une assertion avec un test *NUnit*, il faut utiliser la classe **A
     Assert.AreEqual(value1, value2)
 ```
 
-**Dans le cas de *Asset.AreEqual*, la value1 correspond à la valeur attendue est la value2 est la valeur testée. Cet ordre est important et permet notamment d'avoir des messages d'erreurs cohérents :  *Expected "value1" but was "value2"*.**
+**Dans le cas de *Asset.AreEqual*, la value1 correspond Ã  la valeur attendue est la value2 est la valeur testÃ©e. Cet ordre est important et permet notamment d'avoir des messages d'erreurs cohÃ©rents :  *Expected "value1" but was "value2"*.**
 
-*Unity* ajoute également ses **propres assertions** (avec using UnityEngine.Assertions et UnityEngine.TestTools.Utils) comme :
-- *"Assert.AreApproximatelyEqual"* et *"Assert.AreNotApproximatelyEqual"* qui prennent par défaut une tolérance de  0.00001f qui permettent de comparer deux floats.
+*Unity* ajoute Ã©galement ses **propres assertions** (avec using UnityEngine.Assertions et UnityEngine.TestTools.Utils) comme :
+- *"Assert.AreApproximatelyEqual"* et *"Assert.AreNotApproximatelyEqual"* qui prennent par dÃ©faut une tolÃ©rance de  0.00001f qui permettent de comparer deux floats.
 - *"ColorEqualityComparer"*
 - *"QuaternionEqualityComparer"*
 - *"Vector2EqualityComparer"* ,*"Vector3EqualityComparer"* et *"Vector4EqualityComparer"*
 
 
-:warning: Les méthode *Awake*, *Start* et *Update* doivent être passé en public pour être appelée avec les tests.
+:warning: Les mÃ©thode *Awake*, *Start* et *Update* doivent Ãªtre passÃ© en public pour Ãªtre appelÃ©e avec les tests.
 
-Si tous vos tests ont le même *"Arrange"* vous pouvez utilisez les attributs [SetUp] et [TearDown].
-La méthode sous l'attribut [SetUp] s'executera avant toutes les méthodes [Tests] et la méthode sous l'attribut [TearDown] s'executera aprés  toutes les méthodes [Tests].
+Si tous vos tests ont le mÃªme *"Arrange"* vous pouvez utilisez les attributs [SetUp] et [TearDown].
+La mÃ©thode sous l'attribut [SetUp] s'executera avant toutes les mÃ©thodes [Tests] et la mÃ©thode sous l'attribut [TearDown] s'executera aprÃ©s  toutes les mÃ©thodes [Tests].
 
 Ainsi : 
 ```cs
@@ -289,28 +289,28 @@ Source : Unite Austin 2017 - Testing for Sanity: Using Unity's Integrated TestRu
 
 
 
-## Développement piloté par les tests (TDD)
+## DÃ©veloppement pilotÃ© par les tests (TDD)
 
-Le **TDD ou Développement piloté par les tests** est une technique de développement qui consiste à écrire les tests **avant** d’écrire le code. Cela garantit davantage la structure du code comme testable et maintenable.
-En utilisant le *TDD*, les tests unitaires ne servent plus à valider un code existant mais à **spécifier** le futur code implémenté.
+Le **TDD ou DÃ©veloppement pilotÃ© par les tests** est une technique de dÃ©veloppement qui consiste Ã  Ã©crire les tests **avant** dâ€™Ã©crire le code. Cela garantit davantage la structure du code comme testable et maintenable.
+En utilisant le *TDD*, les tests unitaires ne servent plus Ã  valider un code existant mais Ã  **spÃ©cifier** le futur code implÃ©mentÃ©.
 
 ![schema cycle TDD](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/RED-GREEN-REFACTO%20cycle.png?token=AHjeDtvHOiXwwhctewLgG-4a0KSUEjf7ks5bYXxlwA%3D%3D)
 
-Comme nous pouvons le voir sur le schéma ci-dessus, le *TDD* possède **3** grandes étapes : 
-- **RED** : On commence par écrire un test et on vérifie que ce dernier échoue (car le code n'est pas implémenté). Ce test spécifie le comportement d'une méthode (ce qu'elle doit renvoyer, ce qu'elle doit appeler, ...).
-- **GREEN** : On écrit le code minimum pour que le test passe au vert.
-- **REFACTOR** : On améliore le code sans changer son comportement.
+Comme nous pouvons le voir sur le schÃ©ma ci-dessus, le *TDD* possÃ¨de **3** grandes Ã©tapes : 
+- **RED** : On commence par Ã©crire un test et on vÃ©rifie que ce dernier Ã©choue (car le code n'est pas implÃ©mentÃ©). Ce test spÃ©cifie le comportement d'une mÃ©thode (ce qu'elle doit renvoyer, ce qu'elle doit appeler, ...).
+- **GREEN** : On Ã©crit le code minimum pour que le test passe au vert.
+- **REFACTOR** : On amÃ©liore le code sans changer son comportement.
 
-Puis on passe à l'écriture d'un autre test, et la boucle recommence.
+Puis on passe Ã  l'Ã©criture d'un autre test, et la boucle recommence.
 
-Dans le livre *Clean Code (p.80)*, Oncle Bob définit les 3 lois du *TDD* :
+Dans le livre *Clean Code (p.80)*, Oncle Bob dÃ©finit les 3 lois du *TDD* :
 
-   1. Vous n'êtes pas autorisé à écrire du code métier tant que vous n'avez pas écrit un premier test unitaire qui échoue.
-   2. Vous n'êtes pas autorisé à écrire plus qu'un test unitaire qui est suffisant pour échouer et qui ne compile pas.
-   3. Vous n'êtes pas autorisé à écrire plus de code que ce qui est suffisant pour passer au vert le test unitaire.
+   1. Vous n'Ãªtes pas autorisÃ© Ã  Ã©crire du code mÃ©tier tant que vous n'avez pas Ã©crit un premier test unitaire qui Ã©choue.
+   2. Vous n'Ãªtes pas autorisÃ© Ã  Ã©crire plus qu'un test unitaire qui est suffisant pour Ã©chouer et qui ne compile pas.
+   3. Vous n'Ãªtes pas autorisÃ© Ã  Ã©crire plus de code que ce qui est suffisant pour passer au vert le test unitaire.
   
-:warning: *Oncle Bob*, insiste sur le fait, qu'écrire des tests unitaires ou pratiquer le *TDD* n'est pas magique, et qu'on peut très bien continuer d'écrire du mauvais code et d'écrire des mauvais tests.
-Il précise également que suivre les trois lois n'est pas toujours appropprié, il faut donc trouver des solutions adaptés à notre projet.
+:warning: *Oncle Bob*, insiste sur le fait, qu'Ã©crire des tests unitaires ou pratiquer le *TDD* n'est pas magique, et qu'on peut trÃ¨s bien continuer d'Ã©crire du mauvais code et d'Ã©crire des mauvais tests.
+Il prÃ©cise Ã©galement que suivre les trois lois n'est pas toujours approppriÃ©, il faut donc trouver des solutions adaptÃ©s Ã  notre projet.
 
 
-TODO : exercice à trou (suite ou reprise du même exo) TU avec TDD. 
+TODO : exercice Ã  trou (suite ou reprise du mÃªme exo) TU avec TDD. 
