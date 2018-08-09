@@ -42,7 +42,7 @@ Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faud
   - [ECS architecture **(prochainement)**](Architecture.md/#ecs-architecture)
 
 - [A propos **(prochainement)**](#a-propos)
-- [Licence](./LICENSE)
+- [Licence](./blob/master/LICENSE)
 
 
 
