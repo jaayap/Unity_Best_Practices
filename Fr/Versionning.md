@@ -7,7 +7,6 @@ Voici la solution que j’ai choisi d’adopter.
 
 Il est important d’ajouter un fichier **.gitignore** à votre dépôt. Il permettra à git d’ignorer certains fichiers générés par *Unity* et par votre IDE (dans l’exemple Visual Studio, mais vous pouvez modifier le *gitignore* pour l’adapter aux outils que vous utilisez). Dans certains projets, il est pertinent d’ajouter des dossiers de votre projet afin de ne pas les enregistrer dans le dépôt en ligne, un *asset* de l’*asset store* par exemple (peut peser lourd dans l’archive, ce qui ralenti considérablement l’équipe lorsqu’elle doit mettre à jour le dépôt ou le récupérer).
 
-[voir dépot .gitignore Unity](https://github.com/github/gitignore/blob/master/Unity.gitignore)
 <a href="https://github.com/github/gitignore/blob/master/Unity.gitignore" target="_blank">voir dépot .gitignore Unity</a>
 
 [Retour au menu](Summary.md)
