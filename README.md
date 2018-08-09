@@ -1,5 +1,5 @@
 ﻿
-### [Consulter le site en français](FR/README.fr.md) 
+### [Consulter le site en français](Fr/README.fr.md) 
 
 # Introduction
 
