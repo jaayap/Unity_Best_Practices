@@ -124,7 +124,7 @@ Ainsi, les règles d’un design simple sont définis par *Kent Beck* en 1990 da
                 Essayer d'anticiper les problèmes futurs, n'est pas une bonnes idée. Il est préférable de s'occuper du présent et de ne pas faire d'hypothèse sur ce que l'application pourrait utiliser.
 
 
-Quelques année plus tard, *Robert Cecil Martin alias Oncle Bob* met en avant plusieurs grands principes : Les principes *SOLID* et les principes composants. 
+Quelques années plus tard, *Robert Cecil Martin alias Oncle Bob* met en avant plusieurs grands principes : Les principes *SOLID* et les principes *Composants*. 
 
 **Les principes SOLID sont définis comme suit :**
 
