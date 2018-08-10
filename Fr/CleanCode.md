@@ -121,7 +121,7 @@ Ainsi, les règles d’un design simple sont définis par *Kent Beck* en 1990 da
     - **KISS : Keep it Simple & Stupid**             
                 Principe de la responsabilité unique (un élément possède qu'une seule raison d'être modifié)
     - **YAGNI  : You ain’t gonna need it**            
-                Essayer d'anticiper les problèmes futurs, n'est pas une bonnes idée. Il est préférable de s'occuper du présent et de ne pas faire d'hypothèse sur ce que l'application pourrait utiliser.
+                Essayer d'anticiper les problèmes futurs, n'est pas une bonne idée. Il est préférable de s'occuper du présent et de ne pas faire d'hypothèse sur ce que l'application pourrait utiliser.
 
 
 Quelques années plus tard, *Robert Cecil Martin alias Oncle Bob* met en avant plusieurs grands principes : Les principes *SOLID* et les principes *Composants*. 
