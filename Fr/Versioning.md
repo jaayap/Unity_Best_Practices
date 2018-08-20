@@ -15,8 +15,11 @@ Il est important d’ajouter un fichier **.gitignore** à votre dépôt. Il perm
 
 ![Image of Unity Project Settings](https://s3.amazonaws.com/gamasutra/UnityVersionControlSettings.png)
 
-Passer le mode d’enregistrement des assets en “Force Text” (voir image ci-dessus). Vos fichiers s’enregistrent maintenant au format YAML.
+Passer le mode d’enregistrement des assets en “Force Text” (voir image ci-dessus). Vos fichiers s’enregistrent maintenant au format YAML ("YAML Ain’t Markup Language").
 Cela permet à Git de mieux gérer les conflits, mais cela peut s'avérer insuffisant.
+
+Par défaut, Unity enregistre les fichiers en format binaire afin d’avoir un projet le moins lourd possible. C’est donc une optimisation à utiliser si vous ne souhaitez pas versionner votre projet. Unity ne cite pas d’inconvénient à passer en YAML et le conseil pour toutes personnes utilisant un logiciel de versionning tel que Git. Il faut noter tout de même que pour chaque fichier binaire correspond plusieurs fichiers YAML.
+
 
 ## Merger avec l’outil Smart Merge
 
