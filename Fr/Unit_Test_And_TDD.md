@@ -44,7 +44,7 @@ Ce dernier doit avoir la même **structure** que le projet que l’on souhaite t
 
 - Traiter **en amont** des tests d'interface et des utilisateurs certains mauvais comportements et donc de les **corriger plus tôt**.
 
-- Avoir un **feedback rapide** sur le code que les developpeurs viennent d'ajouter ou modifier.
+- Avoir un **feedback rapide** sur le code que les développeurs viennent d'ajouter ou modifier.
 
 - Permet d’avoir une application plus **robuste**
 
@@ -67,7 +67,8 @@ Différentes conventions de nommage existent :
 - Should_ExpectedBehavior_When_StateUnderTest
 - When_StateUnderTest_Expect_ExpectedBehavior
 
-Attention à **ne pas avoir le nom de la méthode dans le nom du test** car difficile à maintenir. En cas de refactorisation du nom de la méthode, le test ne veut plus rien dire.
+Attention à ne pas avoir le nom de la méthode dans le nom du test car en cas de refactorisation du nom de la méthode, il faut également penser à modifier le nom du test sinon le test ne veut plus rien dire. Le test peut alors être plus difficile à maintenir et demande plus de rigueur lors de la refacto.
+
 Un test unitaire exprime une intention, c'est à dire, qu'il test une fonctionnalité, et non son implémentation.
 
 Un test se décompose en **3 parties** : 
@@ -162,9 +163,8 @@ Si vous cliquez sur le test en question, vous pouvez voir un message d’erreur 
 
 ![Image of Test Runner tests red test explanation](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture5_red_tests_with_error_msg.PNG)
 
-Aujourd'hui, *Unity* ne permet pas de lancer les tests en lignes de commande.
-Les tests appelant des *MonoBehaviour* ne peuvent pas être éxécuté depuis [*Visual Studio*](https://visualstudio.microsoft.com/).  
-Si vous utilisez [***Rider***](https://www.jetbrains.com/dotnet/promo/unity/), vous pourrer les lancer directement dans son interface.
+Aujourd'hui, *Unity* permet de lancer les tests en |lignes de commande](https://docs.unity3d.com/Manual/PlaymodeTestFramework.html).
+Vous pouvez également lancer les tests depuis votre IDE ([*Visual Studio*](https://visualstudio.microsoft.com/), [*Rider*](https://www.jetbrains.com/dotnet/promo/unity/) , ...).
 
 [Retour au menu](Summary.md)
 
@@ -198,7 +198,11 @@ public IEnumerator Methode_Unity_Test() {
 }
 ```
 
-Un *Unity Test* est une [**Coroutine**](https://docs.unity3d.com/Manual/Coroutines.html). Dans *Unity*, les *Coroutines* sont généralement utilisé pour gérer le rendu. Nous pouvons par exemple, **attendre une frame** (*yield return null*) ou un **nombre de secondes x** (*yield return new WaitForSecondes(x)*) pour effectuer une action.
+Un *Unity Test* est une [**Coroutine**](https://docs.unity3d.com/Manual/Coroutines.html). 
+Dans Unity, les Coroutines sont généralement utilisé pour réaliser des traitements asynchrones. 
+Nous pouvons par exemple, **attendre une frame** (yield return null) ou un **nombre de secondes x** (yield return new WaitForSecondes(x)) pour effectuer une action. 
+Pour en savoir plus sur les Coroutines, je vous conseille de lire [l’article de SoftFluant : Asynchronisme dans Unity : coroutines et async-await](https://www.softfluent.fr/blog/expertise/2018/02/14/Asynchronisme-dans-Unity-coroutines-et-async-await).
+  
 
 Ces tests permettent donc de tester les comportements qui dépendent d'*Unity*. Ils s'apparentent le plus souvent à des **tests d'intégration**
 
@@ -287,6 +291,17 @@ public class MaClassTest {
   }
 
 ```
+
+:warning: Si vous souhaitez instancier un objet qui dérive de MonoBehaviour, il est préférable de le créer de la manière suivante :
+```cs
+MonComponent monComponent = new GameObject.AddComponent<MonComponent>();
+```
+Si vous utilisez, 
+
+```cs MonComponent monComponent = new MonComponent()```
+
+Unity vous affichera un warning dans la console car conventionnellement, un Monobehaviour ne peut pas exister sans GameObject.
+
 
 
 Source : Unite Austin 2017 - Testing for Sanity: Using Unity's Integrated TestRunner, https://www.youtube.com/watch?v=MWS4aSO7HAo
