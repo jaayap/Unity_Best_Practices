@@ -291,14 +291,17 @@ public class MaClassTest {
   }
 
 ```
-
+      
+     
 :warning: Si vous souhaitez instancier un objet qui dérive de MonoBehaviour, il est préférable de le créer de la manière suivante :
 ```cs
 MonComponent monComponent = new GameObject.AddComponent<MonComponent>();
 ```
 Si vous utilisez, 
 
-```cs MonComponent monComponent = new MonComponent()```
+```cs 
+MonComponent monComponent = new MonComponent()
+```
 
 Unity vous affichera un warning dans la console car conventionnellement, un Monobehaviour ne peut pas exister sans GameObject.
 
