@@ -16,7 +16,7 @@ Une bonne architecture doit supporter :
   - Le développement du système
   - Et le déploiement du système
    
-Elle est centrée sur les cas d’utilisation, les architectes logiciel peuvent donc décrire les structures qui les supportent en toute sécurité sans devenir dépendant des frameworks, des outils ou de l’environnement.   
+Elle est centrée sur les cas d’utilisation, les architectes logiciel peuvent donc décrirent les structures qui les supportent en toute sécurité sans devenir dépendant des frameworks, des outils ou de l’environnement.   
 Le choix d’un framework (bases de données, serveur web, …) ne doit pas impacter l’architecture.   
 Oncle bob dit ***“les framework sont des produits commerciaux, tout est fait pour que ce soit simple à utiliser mais tout n'est pas une bonne idée.”***
 
@@ -33,7 +33,7 @@ schéma repris du livre “Clean Architecture” Robert C. Martin
   
 L’Architecture Hexagonale  est composée de deux couches : 
 - **Le Domain** : Il contient le modèle de données conceptuel. Il est relatif au métier et implémente les règles de gestion. Il ne contient pas les Entrées/Sorties de l’application.
-- **L’Infrastructure** : Partie dite “port and adapters”, elle contient une couche d’abstraction (adapters) et implémente les spécificités liées aux entrées/Sortie (ports).
+- **L’Infrastructure** : Partie dite “port and adapters”, elle contient une couche d’abstraction (adapters) et implémente les spécificités liées aux entrées/sortie (ports).  
 
 Cette Architecture permet de séparer ce qui est important, le coeur de l’application, le ***Domain*** de ce qui ne l’est pas, ***l’infrastructure***. Et rend le ***Domain*** indépendant de ***l’infrastructure***.
 
@@ -57,7 +57,7 @@ Les couches extérieures peuvent dépendre des couches intérieures mais pas l�
 
 La Clean Architecture définit 4 couches : 
 
-- **« Enterprise Business Rules » ou « Entities »**, parfois appelé **Domain** par association à l’architecture hexagonale, est la partie la plus importante d’une application. Elle correspond aux règles métiers. Au cours d’un développement logiciel, c’est la partie la plus sujette à modification.  
+- **“Enterprise Business Rules” ou “Entities”**, parfois appelé **Domain** par association à l’architecture hexagonale, est la partie la plus importante d’une application. Elle correspond aux règles métiers. Au cours d’un développement logiciel, c’est la partie la plus sujette à modification.  
 **Cette couche est fermée, elle ne peut communiquer qu’avec elle-même.**
 
 - **“Application Business Rules” ou “Use Cases”** : Les *Use Cases* correspondent aux fonctionnalités de l’application, ainsi une fonctionnalité = un “Use Case” (ou cas d’usage).
