@@ -43,11 +43,15 @@ Il existe d’autres architectures similaires comme [l’**Onion Architecture** 
 
 **Toutes ces architectures produisent un code métier :**
 
-**- Indépendant des frameworks** 
-**- Testable unitairement. Les règles métiers peuvent être testé sans élément extérieur (UI, base de données, serveur web, ...)**
-**- Indépendant de l’UI (User Interface), L'interface doit pouvoir changer facilement, sans impacter le reste de l’application.**
-**- Indépendant des bases de données (mySQL, SQL ,  MongoDB, …)**
-**- Indépendant de tout élément extérieur, pour être résilient peu importe l’infrastructure sur laquelle on la déploie**
+**- Indépendant des frameworks**  
+
+**- Testable unitairement. Les règles métiers peuvent être testé sans élément extérieur (UI, base de données, serveur web, ...)**  
+
+**- Indépendant de l’UI (User Interface), L'interface doit pouvoir changer facilement, sans impacter le reste de l’application.**  
+
+**- Indépendant des bases de données (mySQL, SQL ,  MongoDB, …)**  
+
+**- Indépendant de tout élément extérieur, pour être résilient peu importe l’infrastructure sur laquelle on la déploie**  
 
 La Clean Architecture a été créer et expliqué par Oncle bob dans un article de blog [“The Clean Architecture”](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html) en 2012. Plus tard, il écrit le livre, devenue référence, [“Clean Architecture: A Craftsman's Guide to Software Structure and Design” (2017)](https://www.amazon.fr/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164)
 
