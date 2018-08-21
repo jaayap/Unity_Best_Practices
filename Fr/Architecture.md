@@ -95,7 +95,7 @@ La Clean Architecture peut être utilisé sur tout type de projet. La maîtriser
 
 [Retour au menu](Summary.md)
 
-### Les interfaces 
+### Comprendre les interfaces 
 
 Dans la Clean Architecture, les interfaces reviennent systématiquement. 
 Une définition très scolaire d’une interface est qu’elle permet le polymorphisme or ce n’est qu’un exemple d’usage secondaire d’une interface. Les interfaces permettent de créer une abstraction entre deux objets, elles servent de contrats entre ces deux derniers. Cet usage correspond à l’inversion de contrôle (D de SOLID).
@@ -129,7 +129,7 @@ La classe ExampleImpl est une implémentation IExemple, c’est ici que l’on v
 
 [Retour au menu](Summary.md)
 
-### La Clean Architecture dans Unity
+### Appliquer la Clean Architecture dans Unity
 
 La Clean Architecture peut s’appliquer à tout développement logiciel peu importe les outils utilisés.  Elle permet de créer des applications maintenable dans le temps mais peut également répondre à d’autre besoins : 
 Créer une application qui comporte plusieurs versions (version PC, version mobile). Nous ne souhaitons pas dupliquer le code métier qui est identique aux deux versions mais pouvons modifier le code correspondant aux interactions et à l’interface (couche Infrastructure).
