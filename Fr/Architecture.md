@@ -101,7 +101,7 @@ Dans la Clean Architecture, les interfaces reviennent systématiquement.
 Une définition très scolaire d’une interface est qu’elle permet le polymorphisme or ce n’est qu’un exemple d’usage secondaire d’une interface. Les interfaces permettent de créer une abstraction entre deux objets, elles servent de contrats entre ces deux derniers. Cet usage correspond à l’inversion de contrôle (D de SOLID).
 
 L’intérêt des interfaces est de séparer ce que vous voulez faire de comment vous allez le faire.
-Elles peuvent aussi servir à “mapper” une dépendance extérieure ou une fonction lié à Unity (ex : Random / Instantiate) pour utiliser le vocabulaire choisi par l’équipe dans le Domain. Avec des interfaces, le code est plus facile à tester car on peut substituer la dépendance  (bouchon, voir chapitre “gestion des dépendances dans les TU” - link).
+Elles peuvent aussi servir à “mapper” une dépendance extérieure ou une fonction lié à Unity (ex : Random / Instantiate) pour utiliser le vocabulaire choisi par l’équipe dans le Domain. Avec des interfaces, le code est plus facile à tester car on peut substituer la dépendance  (voir chapitre [Les dépendances dans les TU](ManagementOfDependancies.md/#les-dépendances-dans-les-tests-unitaires)).
 
 D’autres usages des interfaces : 
 Ne pas attendre que la classe X soit finie pour développer la classe  Y. 
