@@ -40,7 +40,10 @@ Ce guide requiert des bases de programmation C# et une connaissance du logiciel 
   - [Principes et méthodes](CleanCode.md/#principes-et-méthodes)
   
 - [Concevoir un code mieux structuré **(prochainement)**](Architecture.md/#concevoir-un-code-mieux-structuré)
-  - [Un code facilement évolutif grâce à la clean architecture **(prochainement)**](Architecture.md/#la-clean-architecture)
+  - [Un code facilement évolutif grâce à la Clean Architecture **(prochainement)**](Architecture.md/#un-code-facilement-evolutif-grace-a-la-clean-architecture)
+      - [Comprendre la Clean Architecture](Architecture.md/#comprendre-la-clean-architecture)
+      - [Comprendre les interfaces](Architecture.md/#comprendre-les-interfaces)
+      - [Appliquer la Clean Architecture dans Unity](Architecture.md/#appliquer-la-clean-architecture-dans-unity)
   - [ECS architecture **(prochainement)**](Architecture.md/#ecs-architecture)
 
 - [A propos **(prochainement)**](#)
