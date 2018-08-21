@@ -1,10 +1,12 @@
 ### [Consult this site in english](https://jaayap.github.io/Unity_Best_Practices/)
 
-Ce guide a pour but de rassembler des informations sur les bonnes pratiques de développement (versionning, tests, architecture, ...) et de montrer comment les appliquer dans un projet Unity.  
+Ce **guide** a pour but de rassembler des informations sur les **bonnes pratiques de développement** (versionning, tests, architecture, ...) et de montrer comment les **appliquer dans un projet Unity**.  
   
 La mise en place des bonnes pratiques a pour but de générer des projets plus facilement maintenable et adaptable.  
   
-Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faudra les apprendre et les pratiquer pour les maîtriser.
+Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faudra les apprendre et les pratiquer pour les maîtriser.  
+  
+Ce guide requiert des bases de programmation C# et une connaissance du logiciel Unity.  
 
 # __Plan :__
 
