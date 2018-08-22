@@ -193,7 +193,140 @@ You can launch tests with your IDE ([*Visual Studio*](https://visualstudio.micro
 
 #### Tests Scripts
 
-The Class name must be prefix or suffix by "Test".
+The Class name must be prefix or suffix by "Test". By default, Unity use the C# unit test framework **NUnit**. 
+
+Before each method of test, the attribute [Test] must be write :
+
+```cs
+[Test]
+public void Method_Test() {
+ 
+    ...
+ 
+}
+```
+
+With **UnityEngine.TestTools;** you can write **"Unity Tests"** :
+
+```cs
+[UnityTest]
+public IEnumerator Methode_Unity_Test() {
+ 
+    ...
+    yield return null;
+    ...
+ 
+}
+```
+
+A *Unity Test* is a [**Coroutine**](https://docs.unity3d.com/Manual/Coroutines.html).
+Usually Coroutines are use for Asynchronous processing. For example, with a Coroutine, you can wait a frame (yield return null) or wait x seconds (yield return new WaitForSecondes(x)) before or during or after instructions.
+
+To realise an assertion with NUnit, you must use the Assert class, few example: 
+```cs
+    Assert.IsNotNull(object);
+    Assert.IsTrue(boolean);
+    Assert.AreEqual(value1, value2)
+```
+
+For "Assert.AreEqual", value1 is the expected value and value2 is the tested value. 
+It's important for have good error message ("Expected "value1" But was "value2").
+
+
+Unity have add their own assertions (with using UnityEngine.Assertions; and UnityEngine.TestTools.Utils;) like :
+
+- "Assert.AreApproximatelyEqual" and "Assert.AreNotApproximatelyEqual" with a default tolerance equals to 0.00001f. They can be used for comporare two float like position in x axis.
+- "ColorEqualityComparer"
+- "QuaternionEqualityComparer"
+- "Vector2EqualityComparer" ,"Vector3EqualityComparer" et "Vector4EqualityComparer"
+
+
+If your tests have the same "Arrange" part, therefore you can use [SetUp] and [TearDown] attributes. the [SetUp] method is executed **before** all [Test] methods and the [TearDown] method is executed **after** all [Test] methods
+
+If we have :
+```cs
+public class MyTestClass {
+  [Test]
+  public void Method_Test_0() {
+    //Arrange
+    GameManager game = new GameManager();
+    ...
+    //Act
+    ...
+    //Assert
+    ...
+  }
+
+  [Test]
+  public void Method_Test_1() {
+    //Arrange
+    GameManager game = new GameManager();
+    ...
+    //Act
+    ...
+    //Assert
+    ...
+  }
+}
+```
+
+we can write : 
+
+```cs
+public class MyTestClass {
+  
+  GameManager game;
+  
+  [SetUp]
+  public void Init(){
+    game = new GameManager();
+  }
+  
+  [TearDown]
+  public void Dispose() {
+    Destroy(game);
+  }
+
+  [Test]
+  public void Method_Test_0() {
+    //Arrange
+    ...
+    //Act
+    ...
+    //Assert
+    ...
+  }
+
+  [Test]
+  public void Method_Test_1() {
+    //Arrange
+    ...
+    //Act
+    ...
+    //Assert
+    ...
+  }
+
+```
+
+:warning: if you want instantiate a Monobehaviour object, it's better to write :
+
+```cs
+MyComponent myComponent = new GameObject.AddComponent<MonComponent>();
+
+```
+
+then :
+
+```cs
+MyComponent myComponent = new MonComponent();
+
+```
+
+Source : Unite Austin 2017 - Testing for Sanity: Using Unity's Integrated TestRunner, https://www.youtube.com/watch?v=MWS4aSO7HAo
+
+[Back to summary](Summary.md)
+
 
 ## Test-driven-developpement (TDD)
 
