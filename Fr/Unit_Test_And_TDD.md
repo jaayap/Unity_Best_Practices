@@ -226,7 +226,7 @@ Pour réaliser une assertion avec un test *NUnit*, il faut utiliser la classe **
 :warning: Les méthode *Awake*, *Start* et *Update* doivent être passé en public pour être appelée avec les tests.
 
 Si tous vos tests ont le même *"Arrange"* vous pouvez utilisez les attributs [SetUp] et [TearDown].
-La méthode sous l'attribut [SetUp] s'exécutera avant toutes les méthodes [Tests] et la méthode sous l'attribut [TearDown] s'exécutera aprés  toutes les méthodes [Tests].
+La méthode sous l'attribut [SetUp] s'exécutera avant toutes les méthodes [Test] et la méthode sous l'attribut [TearDown] s'exécutera aprés  toutes les méthodes [Test].
 
 Ainsi : 
 ```cs
