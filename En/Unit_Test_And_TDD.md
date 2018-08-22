@@ -86,7 +86,7 @@ When you write a test,  you can begin by the Assert step. The assert is the answ
 
 ### Unity Test Runner
 
-For make unit test, Unity created a tool call [Unity Test Runner](https://docs.unity3d.com/Manual/testing-editortestsrunner.html)
+For make unit test, Unity created a tool call [Unity Test Runner](https://docs.unity3d.com/Manual/testing-editortestsrunner.html).  
 To display Test Runner window, *Windows > Tests Runner*.
 
 ![Image of Test Runner](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture1_ouvertureOnglet.PNG)
@@ -97,13 +97,13 @@ There are two modes :
 
 - **PlayMode** :
   
-	- Tests are execute in *many frames*
+	- Tests are execute in **many frames**
 	- Behaviour Awake(), Start(), ... are automatically executed
 	- Is use for **Integration tests**
  
 	- [UnityTest] is execute like a **Coroutine**
  
-	- open a **tests scene** for tests executions(:warning: **Save** your scene before launch tests)
+	- Open a **tests scene** for tests executions (:warning: **Save** your scene before launch tests)
 
 
 
@@ -112,7 +112,7 @@ There are two modes :
 	- Tests are execute in **one frame**
  
  	- Call **explicitly**  Awake() and Start() methods, which requires to pass them in **public**.
-	- **Tests Must be placed in Editor folder**
+	- **Tests must be placed in Editor folder**
   
 	- [UnityTest] is executed in editor with **"Editor.Application.Update"**
 
@@ -184,9 +184,9 @@ this test must be **red** because 3 and 4 are not equals.
 
 
 
-Today, *Unity* allow to launch tests in |command lines](https://docs.unity3d.com/Manual/PlaymodeTestFramework.html).
+Today, *Unity* allow to launch tests in [command lines](https://docs.unity3d.com/Manual/PlaymodeTestFramework.html).
 
-You can launch tests with your IDE([*Visual Studio*](https://visualstudio.microsoft.com/), [*Rider*](https://www.jetbrains.com/dotnet/promo/unity/) , ...) too.
+You can launch tests with your IDE ([*Visual Studio*](https://visualstudio.microsoft.com/), [*Rider*](https://www.jetbrains.com/dotnet/promo/unity/) , ...) too.
 
 
 [Back to summary](Summary.md)
