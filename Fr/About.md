@@ -1,4 +1,4 @@
-Ce Github à été crée dans le cadre de mon stage chez [OCTO Technology (Paris, France)](https://www.octo.com/fr). 
+Ce Github a été crée dans le cadre de mon stage chez [OCTO Technology (Paris, France)](https://www.octo.com/fr). 
 Vous trouverez ici, le bilan de mes recherches sur le sujet “Bonnes pratiques de développement avec Unity/C#”.
 
 Je souhaite d'ailleurs remercier toutes les personnes qui m’ont aidées à lancer ce projet, 
