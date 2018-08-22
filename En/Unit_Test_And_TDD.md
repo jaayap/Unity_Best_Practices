@@ -32,7 +32,8 @@ We interest to unit testing and test driven developpement (TDD)
 
 Write a unit test serves to check behaviour code and with TDD, write a unit test tell us how code must work.
 
-//Add source "pour en savoir plus"
+
+[Back to summary](Summary.md)
 
 ## Unit tests
 
@@ -41,10 +42,10 @@ A Sofware Class = A Test Class.
 
 ### Why you should be write unit tests ?
 
-- To be sure
+- To be sure not to go back
 - Reduce bugs in features (new or old)
 - Easy refactoring code and fear about modification or new features in the project.
-- Quickly feedback
+- Have a quickly feedback
 - more "robust" application
 - minimal documentation
 
@@ -65,8 +66,10 @@ Different naming convention exist :
 - Should_ExpectedBehavior_When_StateUnderTest
 - When_StateUnderTest_Expect_ExpectedBehavior
 
-Be carreful to not have the name of the method in the name of the test because it's more difficult to maintaain.
-When you change the method name, the name of the test does not mean anything anymore.
+Be carreful to not have the name of the method in the name of the test because
+when you change the method name, the name of the test does not mean anything anymore. The test can be more difficult to maintain.   
+
+
 A unit test express an intention, it test a feature and no an implementation.
 
 A test have decomposed in three part :
@@ -74,17 +77,131 @@ A test have decomposed in three part :
 - **Act** : call of tested method
 - **Assert** : verification step
 
-When you write a test,  you can begin by the Assert step. The assert is the answer of "What do you want to test?"
+When you write a test,  you can begin by the Assert step. The assert is the answer of **"What do you want to test?"**
 
+[Back to summary](Summary.md)
 
 ## How to put unit tests into practice with Unity ?
 
+
+### Unity Test Runner
+
+For make unit test, Unity created a tool call [Unity Test Runner](https://docs.unity3d.com/Manual/testing-editortestsrunner.html)
+To display Test Runner window, *Windows > Tests Runner*.
+
+![Image of Test Runner](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture1_ouvertureOnglet.PNG)
+
+
+There are two modes : 
+
+
+- **PlayMode** :
+  
+	- Tests are execute in *many frames*
+	- Behaviour Awake(), Start(), ... are automatically executed
+	- Is use for **Integration tests**
+ 
+	- [UnityTest] is execute like a **Coroutine**
+ 
+	- open a **tests scene** for tests executions(:warning: **Save** your scene before launch tests)
+
+
+
+- **EditMode** :
+  
+	- Tests are execute in **one frame**
+ 
+ 	- Call **explicitly**  Awake() and Start() methods, which requires to pass them in **public**.
+	- **Tests Must be placed in Editor folder**
+  
+	- [UnityTest] is executed in editor with **"Editor.Application.Update"**
+
+
+Select your favorite mode and click on *“Create PlayMode/EditMode Test Assembly Folder”*.
+
+*Unity* create *Test folder* with *“Tests.asmdef file” (asmdef =“assembly definition”)*.  
+  
+
+
+Once the folder has been created, go inside and click on *“Create Test Script in current folder”*.
+
+
+
+![Image of Test Runner create script](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture2_btn_create_script.PNG)
+
+
+A .cs file is create by Unity with the code bellow : 
+
+```cs
+
+
+using UnityEngine;
+using UnityEngine.TestTools;
+using NUnit.Framework;
+using System.Collections;
+
+public class NewTestScript {
+
+    [Test]
+    public void NewTestScriptSimplePasses() {
+        // Use the Assert class to test conditions.
+    }
+
+    // A UnityTest behaves like a coroutine in PlayMode
+    // and allows you to yield null to skip a frame in EditMode
+    [UnityTest]
+    public IEnumerator NewTestScriptWithEnumeratorPasses() {
+        // Use the Assert class to test conditions.
+        // yield to skip a frame
+        yield return null;
+    }
+}
+```
+
+This tests must be display in the Test Runner :
+
+![Image of Test Runner tests with test](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture3_tests.PNG)
+
+
+if you click on "Run All", tests pass **green**.
+
+![Image of Test Runner tests green tests](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture4_green_tests.PNG)
+
+
+Now, if you replace the first test by : 
+
+```cs
+    [Test]
+    public void NewTestScriptSimplePasses() {
+        // Use the Assert class to test conditions.
+        Assert.AreEqual(4, 3);
+    }
+```
+
+this test must be **red** because 3 and 4 are not equals.
+
+![Image of Test Runner tests red test explanation](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture5_red_tests_with_error_msg.PNG)
+
+
+
+Today, *Unity* allow to launch tests in |command lines](https://docs.unity3d.com/Manual/PlaymodeTestFramework.html).
+
+You can launch tests with your IDE([*Visual Studio*](https://visualstudio.microsoft.com/), [*Rider*](https://www.jetbrains.com/dotnet/promo/unity/) , ...) too.
+
+
+[Back to summary](Summary.md)
+
+#### Tests Scripts
+
 The Class name must be prefix or suffix by "Test".
 
-
-
-
-
-
-
 ## Test-driven-developpement (TDD)
+
+
+
+
+For more precision about TDD : 
+- [TDD good habits manifesto](https://github.com/neomatrix369/refactoring-developer-habits/blob/master/02-outcome-of-collation/tdd-manifesto/tdd-good-habits-manifesto.md)
+- [Mastering TDD](https://codurance.com/practices/extreme-programming/2016/06/14/mastering-TDD/)
+
+[Back to summary](Summary.md)

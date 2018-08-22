@@ -1,5 +1,12 @@
 ﻿### [Consulter le site en français](../Fr/Summary.md)
 
+This **guide** aims to gather knowledge about **bests development practices**, **software Craftmanship**, ... and show how to apply them in a **Unity project**. 
+
+The implementation of good practices aims to generate more easily maintainable and adaptable projects.  
+If you have never used good development practices, you will need to learn and practice them to master them.  
+
+This guide requires C # programming basics and knowledge of Unity software.
+
 # __Plan :__
 
 - [Versioning : Git & Unity](Versioning.md/#versioning--git--unity)

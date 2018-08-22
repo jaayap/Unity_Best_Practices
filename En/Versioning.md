@@ -1,12 +1,12 @@
 ﻿# Versioning : Git & Unity
 
-You want use *git* for your *Unity* project ? But sometimes, scenes or prefab crash ! In fact, two person modify same file in same time provoke many conflict and by default, git don't solve this problems.   
+You want use *git* for your *Unity* project ? But sometimes, scenes or prefab crash ! In fact, two person modify same file in same time provoke many conflicts and by default, git don't solve this problems.   
 You open your scene and you see that it is empty. A solution exist for that and this is what I present below.
 
 ## Create a .gitignore
 
 This is important to add a **.gitignore** file to your project. This file will allow to ignore unity tempory file and IDE tempory file.  
-Moreover, you can add folder to ignore, for exemple, an asset folder from the *asset store* can weight a lot and slow down your archive.
+Moreover, you can add folder to ignore, for exemple, an asset folder from the *asset store* can weight a lot and slow down your repository.
 
 [see .gitignore Unity](https://github.com/github/gitignore/blob/master/Unity.gitignore)
 
@@ -14,7 +14,11 @@ Moreover, you can add folder to ignore, for exemple, an asset folder from the *a
 
 ![Image of Unity Project Settings](https://s3.amazonaws.com/gamasutra/UnityVersionControlSettings.png)
 
-Pass asset serialization mode in “Force Text”. This option convert binary file to YAML file.
+Pass asset serialization mode in “Force Text”. This option converts binary files to YAML("YAML Ain’t Markup Language") files.
+Git is more perform with YAML but sometimes is not enough.  
+
+By default, Unity store files in Binary format because it is lighter and more optimized.  
+
 
 ## Merge with Smart Merge
 
@@ -32,11 +36,11 @@ keepBackup = false
 ```
 
 Modify the "*C:\\ ...*" link to adapt with your Unity location. If you work in team, you can use the same location for easy maintenable problem.  
-**Warning : don't forget to use '\\\\' and no '\\' ou '/'.**  
+:warning: **Warning : don't forget to use '\\\\' and no '\\' ou '/'.**  
 
 *[this merge tool can be used with other tools (Perforce,SVN, Mercurial, SourceTree) , see documentation](https://docs.unity3d.com/Manual/SmartMerge.html)*  
 
-This tool is very perform and allowed to work in team without minim risk of loss scene or prefab.
+This tool is very perform and allowed to work in team without risk of loss *scene* or *Prefab* files.
   
 ### How it's works ?
 
@@ -56,11 +60,11 @@ In this cases, you will be able to choose the good version (your scene or collea
 ## Manage Large files
 
   Versionning large files (.png, .fbx, ...) can be hard. Github don't accept files that weigh more than 100 MB and git keep all versions of all your files. Versionning large files make clone and recuperation for other user longer.  
-  Git imposed to each user to have as much free space as used space (For exemple, if your project is 1 GB, Git need 2 GB).  
-  If your project is compatible with [Git LFS](https://git-lfs.github.com/), use it ! (GitHub / Bitbucket / Gitlab since 8.0 version)
+  Git imposed to each user to have as much free space as used space (For example, if your project is 1 GB, Git need 2 GB).  
+  If your project is compatible with [Git LFS](https://git-lfs.github.com/), use it ! (Git LFS can be use with GitHub / Bitbucket / Gitlab since 8.0 version)
   [Git LFS is a open source git extention](https://github.com/git-lfs/git-lfs?utm_source=gitlfs_site&utm_medium=repo_link&utm_campaign=gitlfs).  
   
-  :!: **Warning**, this solution works **only** for file **less than 2 GB**.
+  :warning: **Warning**, this solution works **only** for file **less than 2 GB**.
   
 ### How git LFS works ?
 
@@ -101,6 +105,6 @@ For understand [Git LFS](https://git-lfs.github.com/), you can watch the bitbuck
 [![video Btbucket Git LFS](http://img.youtube.com/vi/9gaTargV5BY/0.jpg)](http://www.youtube.com/watch?v=9gaTargV5BY "Git LFS explain")
 
 
-Other solution for large file in git project : Git annex, Git fat , Git media , Git Bigstore, Git sizer… 
-But they have few or no documentation and they don't really adapt to Unity project's needs.
+Other solution for large file in git project : *Git annex, Git fat , Git media , Git Bigstore, Git sizer*, … 
+But they have few or no documentation and they don't really adapt to *Unity* project's needs.
 
