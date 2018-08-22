@@ -328,10 +328,20 @@ Source : Unite Austin 2017 - Testing for Sanity: Using Unity's Integrated TestRu
 [Back to summary](Summary.md)
 
 
-## Test-driven-developpement (TDD)
+## Test-driven developpement (TDD)
+
+TDD or Test-driven developpement is a developpement method which consists in writing tests before code.
+With TDD, unit test is not to validate behaviour but to specify behaviour of the future code.
+
+TDD can be resume like this :
+
+![schema cycle TDD](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/RED-GREEN-REFACTO%20cycle.png?token=AHjeDtvHOiXwwhctewLgG-4a0KSUEjf7ks5bYXxlwA%3D%3D)
 
 
-
+In the book "The Clean Coder", Oncle bob define the 3 laws of TDD (p.80) :
+- 1. You are not allowed to write any production code until you have first written a failing test
+- 2. You are not allowed to write more of a unit test than sufficiant to fail -- and not compiling is failing
+- 3. You are not allowed to write more production code that is sufficiant to pass the currently failing unit test
 
 For more precision about TDD : 
 - [TDD good habits manifesto](https://github.com/neomatrix369/refactoring-developer-habits/blob/master/02-outcome-of-collation/tdd-manifesto/tdd-good-habits-manifesto.md)
