@@ -1,6 +1,6 @@
 ﻿### [Consulter le site en français](../Fr/Summary.md)
 
-This **guide** aims to gather knowledge about **bests development practices**, **software Craftmanship**, ... and show how to apply them in a **Unity project**. 
+This **guide** aims to gather knowledges about **bests development practices**, **software Craftmanship**, ... and show how to apply them in a **Unity project**. 
 
 The implementation of good practices aims to generate more easily maintainable and adaptable projects.  
 If you have never used good development practices, you will need to learn and practice them to master them.  
