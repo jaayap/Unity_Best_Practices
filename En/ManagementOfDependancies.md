@@ -10,8 +10,8 @@ This makes it possible to avoid a null exeption by informing a substitution obje
 
 What is the difference between Stub and Mock ?
 
-A Stub is an object that you can control, which serves as a substitute for an external dependency (example : a fake web service that always returns the same result).
-A Mock is a substitute object in the system, which decides whether a unit test pass or fail (example : a database waiting for a specific request)
+- A Stub is an object that you can control, which serves as a substitute for an external dependency (example : a fake web service that always returns the same result).
+- A Mock is a substitute object in the system, which decides whether a unit test pass or fail (example : a database waiting for a specific request)
 
 ## Unit test and dependancies in Unity
 
