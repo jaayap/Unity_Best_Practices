@@ -52,5 +52,5 @@ Mon but n’est pas de vous imposer une méthode stricte pour vos projets mais d
 - [Concevoir un code mieux structuré avec une aproche par composants **(prochainement)**](Architecture.md/#)
   - [ECS (Entity-Component-System) architecture **(prochainement)**](Architecture.md/#ecs-architecture)
 
-- [A propos](#)
+- [A propos](About.md)
 - [Licence](../LICENSE)
