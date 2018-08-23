@@ -43,12 +43,14 @@ Mon but n’est pas de vous imposer une méthode stricte pour vos projets mais d
     - [La loi de Déméter](CleanCode.md/#la-loi-de-déméter)
   - [Principes et méthodes](CleanCode.md/#principes-et-méthodes)
   
-- [Concevoir un code mieux structuré **(prochainement)**](Architecture.md/#concevoir-un-code-mieux-structuré)
-  - [Un code facilement évolutif grâce à la Clean Architecture **(prochainement)**](Architecture.md/#un-code-facilement-evolutif-grace-a-la-clean-architecture)
+- [Concevoir un code mieux structuré avec une aproche par couche **(en cours)**](Architecture.md/#concevoir-un-code-mieux-structuré)
+  - [Un code facilement évolutif grâce à la Clean Architecture **(en cours)**](Architecture.md/#un-code-facilement-evolutif-grace-a-la-clean-architecture)
       - [Comprendre la Clean Architecture](Architecture.md/#comprendre-la-clean-architecture)
       - [Comprendre les interfaces](Architecture.md/#comprendre-les-interfaces)
       - [Appliquer la Clean Architecture dans Unity](Architecture.md/#appliquer-la-clean-architecture-dans-unity)
-  - [ECS architecture **(prochainement)**](Architecture.md/#ecs-architecture)
+      
+- [Concevoir un code mieux structuré avec une aproche par composants **(prochainement)**](Architecture.md/#)
+  - [ECS (Entity-Component-System) architecture **(prochainement)**](Architecture.md/#ecs-architecture)
 
-- [A propos **(prochainement)**](#)
+- [A propos](#)
 - [Licence](../LICENSE)
