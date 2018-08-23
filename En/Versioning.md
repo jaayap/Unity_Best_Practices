@@ -1,4 +1,4 @@
-﻿# Versioning : Git & Unity
+# Versioning : Git & Unity
 
 You want to use *git* for your *Unity* project, but sometimes, scenes or prefab crash ! In fact, two people modify the same file in the same time provoke many conflicts and by default, git don't solve this problem.   
 You open your scene and you see that it is empty. A solution exists for that and this is what I present below.
@@ -6,7 +6,7 @@ You open your scene and you see that it is empty. A solution exists for that and
 ## Create a .gitignore
 
 This is important to add a **.gitignore** file to your project. This file will allow to ignore unity temporary file and IDE temporary file.  
-Moreover, you can add a folder to ignore, for exemple, an asset folder from the *asset store* can weigh a lot and slow down your repository.
+Moreover, you can add a folder to ignore, for example, an asset folder from the *asset store* can weigh a lot and slow down your repository.
 
 [see .gitignore Unity](https://github.com/github/gitignore/blob/master/Unity.gitignore)
 
