@@ -18,7 +18,7 @@ Il est important d’ajouter un fichier **.gitignore** à votre dépôt. Il perm
 Passer le mode d’enregistrement des assets en “Force Text” (voir image ci-dessus). Vos fichiers s’enregistrent maintenant au format YAML ("YAML Ain’t Markup Language").
 Cela permet à Git de mieux gérer les conflits, mais cela peut s'avérer insuffisant.
 
-Par défaut, Unity enregistre les fichiers en format binaire afin d’avoir un projet le moins lourd possible. C’est donc une optimisation à utiliser si vous ne souhaitez pas versionner votre projet. Unity ne cite pas d’inconvénient à passer en YAML et le conseil pour toutes personnes utilisant un logiciel de versionning tel que Git. Il faut noter tout de même que pour chaque fichier binaire correspond plusieurs fichiers YAML.
+Par défaut, Unity enregistre les fichiers en format binaire afin d’avoir un projet le moins lourd possible. C’est donc une optimisation à utiliser si vous ne souhaitez pas versionner votre projet. Unity ne cite pas d’inconvénient à passer en YAML et le conseil pour toutes personnes utilisant un logiciel de versioning tel que Git. Il faut noter tout de même que pour chaque fichier binaire correspond plusieurs fichiers YAML.
 
 
 ## Merger avec l’outil Smart Merge
@@ -69,7 +69,7 @@ Cependant, cette solution fonctionne **seulement** pour les fichiers **inférieu
 
 ![Image Explicative de Git LFS](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/image9.png?token=AHjeDpsdDG7nmpaEzQkxpTVyQp2cHdTmks5bWG9nwA%3D%3D)
 
-[Git LFS](https://git-lfs.github.com/), va *tracker* les fichiers que vous voulez, soit avec leurs noms, soit avec leurs extensions, soit avec leurs emplacements. Ensuite, ces fichiers seront automatiquement stockés sur un serveur (*Large File Storage*) et seulement le lien de votre fichier sera gardé. Attention, ce système ne versionne pas les fichiers trackés. Mais avez-vous vraiment besoin d’un *versionning* de vos *assets* 3D ou de vos éléments UI ? Généralement déjà versionnés en amont par les Designers.
+[Git LFS](https://git-lfs.github.com/), va *tracker* les fichiers que vous voulez, soit avec leurs noms, soit avec leurs extensions, soit avec leurs emplacements. Ensuite, ces fichiers seront automatiquement stockés sur un serveur (*Large File Storage*) et seulement le lien de votre fichier sera gardé. Attention, ce système ne versionne pas les fichiers trackés. Mais avez-vous vraiment besoin d’un *versioning* de vos *assets* 3D ou de vos éléments UI ? Généralement déjà versionnés en amont par les Designers.
 
 **Pour installer git LFS, lancer la commande :**
 ```sh
