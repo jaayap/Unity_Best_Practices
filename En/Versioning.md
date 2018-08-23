@@ -38,15 +38,15 @@ keepBackup = false
 Modify the "*C:\\ ...*" link to adapt with your Unity location. If you work in a team, you can use the same location for easy maintainable problem.  
 :warning: **Warning : don't forget to use '\\\\' and no '\\' or '/'.**  
 
-*[this merge tool can be used with other tools (Perforce,SVN, Mercurial, SourceTree) , see documentation](https://docs.unity3d.com/Manual/SmartMerge.html)*  
+*[This merge tool can be used with other tools (Perforce, SVN, Mercurial, SourceTree), see documentation](https://docs.unity3d.com/Manual/SmartMerge.html)*  
 
 This tool is very performing and allowed to work in team without risk of loss *scene* or *Prefab* files.
   
 ### How it's works ?
 
-use git as usual and when your merge crash, use the smartmerge command :  "git mergetool". 
+Use git as usual and when your *merge* command crash, use the smartmerge command:  "git mergetool". 
 
-In this following example, Two branches are creating "Master" and "Another". Each branch modify "sceneTest" scene and commit. After, we try to merge and it crash. And now,  Our "sceneTest" is empty. Then we tap "git mergetool" and we find our scene with the twice modification.
+In this following example, Two branches are creating "Master" and "Another". Each branch modify "sceneTest" scene and commit. After, we try to merge and it crashes. And now,  Our "sceneTest" is empty. Then we tap "git mergetool" and we find our scene with the twice modification.
 
 ![Schema of Smart Merge](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/schemaSmartMergeVEn.PNG?token=AHjeDo_HuX2ADdAr7MqXYrBe-x9zlMyXks5bXzY1wA%3D%3D)
 
@@ -59,10 +59,10 @@ In this case, you will be able to choose the best version (your scene or colleag
 
 ## Manage Large files
 
-  Versionning large files (.png, .fbx, ...) can be hard. Github don't accept files that weigh more than 100 MB and git keep all versions of all your files. Versionning large files, make clone and recuperation for another user longer.  
+  Versioning large files (.png, .fbx, ...) can be hard. GitHub don't accept files that weigh more than 100 MB and git keep all versions of all your files. Versioning large files, make clone and recuperation for another user longer.  
   Git imposed to each user to have as much free space as used space (For example, if your project is 1 GB, Git need 2 GB).  
   If your project is compatible with [Git LFS](https://git-lfs.github.com/), use it ! (Git LFS can be used with GitHub / Bitbucket / Gitlab since 8.0 version)
-  [Git LFS is a open source git extention](https://github.com/git-lfs/git-lfs?utm_source=gitlfs_site&utm_medium=repo_link&utm_campaign=gitlfs).  
+  [Git LFS is an open source git extension](https://github.com/git-lfs/git-lfs?utm_source=gitlfs_site&utm_medium=repo_link&utm_campaign=gitlfs).  
   
   :warning: **Warning**, this solution works **only** for file **less than 2 GB**.
   
