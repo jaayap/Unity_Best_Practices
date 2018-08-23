@@ -29,7 +29,7 @@ This guide requires C# programming basics and knowledge of Unity software.
       - [Tests Scripts](Unit_Test_And_TDD.md/#tests-scripts)
 - [Test-driven-developpement (TDD)](Unit_Test_And_TDD.md/#test-driven-developpement-tdd)
  
-- [Management of dependencies **(In progress)**](ManagementOfDependancies.md/#)
+- [Management of dependencies **(In progress)**](ManagementOfDependencies.md/#management-of-dependencies)
 
 - [Clean Code **(Soon)**](#clean-code)
 - [Architecture **(Soon)**](#architecture)
