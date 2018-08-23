@@ -8,7 +8,7 @@ Si vous n’avez jamais utilisé les bonnes pratiques de développement, il faud
   
 Ce guide requiert des bases de programmation C# et une connaissance du logiciel Unity.   
   
-:warning: Les pratiques présentées dans ce guide ne sont pas des uniques solutions et ne sont pas toujours adaptés à votre projet ou à votre équipe. Certaines personnes peuvent obtenir de meilleurs résultats en suivant leurs propres méthodes acquisent avec leur expérience. 
+:warning: Les pratiques présentées dans ce guide ne sont pas des uniques solutions et ne sont pas toujours adaptés à votre projet ou à votre équipe. Certaines personnes peuvent obtenir de meilleurs résultats en suivant leurs propres méthodes acquises avec leur expérience. 
 Mon but n’est pas de vous imposer une méthode stricte pour vos projets mais de vous amener à réfléchir sur des problématiques courantes et à vous donner des bases théoriques et pratiques sur les solutions que j’ai étudié.
 
 
