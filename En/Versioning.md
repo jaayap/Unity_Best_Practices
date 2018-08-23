@@ -68,10 +68,10 @@ In this case, you will be able to choose the best version (your scene or colleag
   
 ### How git LFS works ?
 
-![Image Explicative de Git LFS](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/image9.png?token=AHjeDpsdDG7nmpaEzQkxpTVyQp2cHdTmks5bWG9nwA%3D%3D)
+![Image of Git LFS](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/image9.png?token=AHjeDpsdDG7nmpaEzQkxpTVyQp2cHdTmks5bWG9nwA%3D%3D)
 
 [Git LFS](https://git-lfs.github.com/) track chosen files by name, extensions, folder location, ...  
-Chosen files will be stocked in a LFS server automatically and git keep only links to their files. This system don't versionning track files, but in most projects, assets 3D or 2D are already versioned by Designers.  
+Chosen files will be stocked in a LFS server automatically and git keep only links to their files. This system don't versioning track files, but in most projects, assets 3D or 2D are already versioned by Designers.  
 
 **For install git LFS, write the command :**
 
@@ -83,7 +83,7 @@ Git LFS is installed automatically and return this message :
 >Updated git hooks.
 >Git LFS initialized.
 ```
-**use the following command to track your file (here all .png file)**
+**Use the following command to track your file (here all .png file)**
 ```
 $ git lfs track "*.extension" 
 >Tracking "*.png"
@@ -95,14 +95,14 @@ $ git lfs track "*.extension"
 $ git add .gitattributes
 ```
 
-if you use *GitHub*, the notification “stored with Git LFS” appears in your tracked files.
+If you use *GitHub*, the notification “stored with Git LFS” appears in your tracked files.
 
 ![Image of Github Stored with Git LFS](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/image7.png?token=AHjeDnlpMeQpTc27ikncn_j53g50GMEOks5bWG4gwA%3D%3D)
 
 
 For understand [Git LFS](https://git-lfs.github.com/), you can watch the Bitbucket video: 
 
-[![video Btbucket Git LFS](http://img.youtube.com/vi/9gaTargV5BY/0.jpg)](http://www.youtube.com/watch?v=9gaTargV5BY "Git LFS explain")
+[![video Bitbucket Git LFS](http://img.youtube.com/vi/9gaTargV5BY/0.jpg)](http://www.youtube.com/watch?v=9gaTargV5BY "Git LFS explain")
 
 
 Another solution for large file in git project : *Git annex, Git fat , Git media , Git Bigstore, Git sizer*, … 
