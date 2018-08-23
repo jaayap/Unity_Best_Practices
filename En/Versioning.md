@@ -1,7 +1,7 @@
 ﻿# Versioning : Git & Unity
 
-You want use *git* for your *Unity* project ? But sometimes, scenes or prefab crash ! In fact, two person modify same file in same time provoke many conflicts and by default, git don't solve this problems.   
-You open your scene and you see that it is empty. A solution exist for that and this is what I present below.
+You want to use *git* for your *Unity* project, but sometimes, scenes or prefab crash ! In fact, two people modify the same file in the same time provoke many conflicts and by default, git don't solve this problem.   
+You open your scene and you see that it is empty. A solution exists for that and this is what I present below.
 
 ## Create a .gitignore
 
