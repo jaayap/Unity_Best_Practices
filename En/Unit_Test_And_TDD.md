@@ -1,6 +1,6 @@
-﻿# Unit Tests & TDD
+# Unit Tests & TDD
 
-## Test : introduction
+## Tests : introduction
 
 Tests are important in software development because they assure a **minimal software quality**
 A lot of software are designed without testing and the consequences are:
