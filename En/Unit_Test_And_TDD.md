@@ -14,9 +14,9 @@ Most of the time, an untested code leads to **technical debt**.
 
 The tests pyramid presents different **type** of tests : 
 
-- **HMI (Human-machine interface) tests** are expensive because the application must be launched entierely.
-    This tests can be automatised but to long to execute. They cover a few of scenario.
-    Sometimes, we haven't automatised test and we engage tester.
+- **HMI (Human-machine interface) tests** are expensive because the application must be launched entirely.
+    This tests can be automatized but to long to execute. They cover a few of scenario.
+    Sometimes, we haven't automatized test and we engage tester.
 
 - **Integration tests** are easy. They are close to the code, so refactor is easier.
     They cover much code and they can impact directly by modification
@@ -37,8 +37,8 @@ Write a unit test serves to check the behaviour code and with TDD, write a unit 
 
 ## Unit tests
 
-Unit tests are in a test project. And it must have the same architecture than the software who test.
-A Sofware Class = A Test Class.
+Unit tests are in a test project. And it must have the same architecture as the software who test.
+A Software Class = A Test Class.
 
 ### Why you should write unit tests?
 
@@ -54,7 +54,7 @@ In fact, more quickly you know tests fail, more quickly you can correct the prob
 ### What is a good unit test?
 
 A good unit test:
-- is fully automatised
+- is fully automatized
 - return systematically the same result
 - test one concept or one logic 
 - name is clear and easy to understand
@@ -66,8 +66,7 @@ Different naming convention exists:
 - Should_ExpectedBehavior_When_StateUnderTest
 - When_StateUnderTest_Expect_ExpectedBehavior
 
-Be careful to not have the name of the method in the name of the test because
-when you change the method name, the name of the test does not mean anything anymore. The test can be more difficult to maintain.   
+Be careful to not have the name of the method in the name of the test because when you change the method name, the name of the test does not mean anything anymore. The test can be more difficult to maintain.   
 
 
 A unit test expresses an intention, it tests a feature and no an implementation.
@@ -77,7 +76,7 @@ A test has decomposed into three parts :
 - **Act** : call of testing method
 - **Assert** : verification step
 
-When you write a test,  you can begin by the Assert step. The assert is the answer of **"What do you want to test?"**
+When you write a test,  you can begin by the Assert step. The assertion is the answer of **"What do you want to test?"**
 
 [Back to summary](Summary.md)
 
@@ -184,7 +183,7 @@ this test must be **red** because 3 and 4 are not equals.
 
 
 
-Today, *Unity* allow to launch tests in [command lines](https://docs.unity3d.com/Manual/PlaymodeTestFramework.html).
+Today, *Unity* allow launching tests in [command lines](https://docs.unity3d.com/Manual/PlaymodeTestFramework.html).
 
 You can launch tests with your IDE ([*Visual Studio*](https://visualstudio.microsoft.com/), [*Rider*](https://www.jetbrains.com/dotnet/promo/unity/) , ...) too.
 
@@ -222,7 +221,7 @@ public IEnumerator Methode_Unity_Test() {
 A *Unity Test* is a [**Coroutine**](https://docs.unity3d.com/Manual/Coroutines.html).
 Usually Coroutines are used for make Asynchronous processing. For example, with a Coroutine, you can wait a frame (yield return null) or wait x seconds (yield return new WaitForSecondes(x)) before or during or after instructions.
 
-To realise an assertion with NUnit, you must use the Assert class, few examples: 
+To realize an assertion with NUnit, you must use the Assert class, few examples: 
 ```cs
     Assert.IsNotNull(object);
     Assert.IsTrue(boolean);
@@ -241,7 +240,7 @@ Unity have added their own assertions (with using UnityEngine.Assertions; and Un
 - "Vector2EqualityComparer" ,"Vector3EqualityComparer" et "Vector4EqualityComparer"
 
 
-If your tests have the same "Arrange" part, therefore you can use [SetUp] and [TearDown] attributes. the [SetUp] method is executed **before** all [Test] methods and the [TearDown] method is executed **after** all [Test] methods
+If your tests have the same "Arrange" part, therefore you can use [SetUp] and [TearDown] attributes. the [SetUp] method is executed **before** all [Test] methods and the [TearDown] method is executed **after** all [Test] methods.
 
 If we have:
 ```cs
@@ -309,7 +308,7 @@ public class MyTestClass {
 
 ```
 
-:warning: if you want instantiate a Monobehaviour object, it's better to write:
+:warning: If you want instantiate a Monobehaviour object, it's better to write:
 
 ```cs
 MyComponent myComponent = new GameObject.AddComponent<MonComponent>();
