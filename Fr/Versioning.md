@@ -1,6 +1,6 @@
 # Versioning : Git & Unity
 
-Si vous utiliser *git* pour versionner vos projets *Unity*, vous avez du remarquez que parfois les fichiers tels que les scènes et les *prefabs* subissent des régressions lors des merges. Deux personnes modifiant ainsi le même fichier en même temps provoquent un conflit que git, par défaut n’arrive pas à résoudre. Vous retrouvez alors votre scène entièrement vide ou votre *prefab* tout cassé. 
+Si vous utiliser *git* pour versionner vos projets *Unity*, vous avez dû remarquer que parfois les fichiers tels que les scènes et les *prefabs* subissent des régressions lors des merges. Deux personnes modifiant ainsi le même fichier en même temps provoquent un conflit que git, par défaut n’arrive pas à résoudre. Vous retrouvez alors votre scène entièrement vide ou votre *prefab* tout cassé. 
 Voici la solution que j’ai choisi d’adopter.
 
 ## Créer un .gitignore
