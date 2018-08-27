@@ -49,8 +49,8 @@ Mon but n’est pas de vous imposer une méthode stricte pour vos projets mais d
       - [Comprendre les interfaces](Architecture.md/#comprendre-les-interfaces)
       - [Appliquer la Clean Architecture dans Unity](Architecture.md/#appliquer-la-clean-architecture-dans-unity)
       
-- [Concevoir un code mieux structuré avec une aproche par composants **(prochainement)**](Architecture.md/#)
-  - [ECS (Entity-Component-System) architecture **(prochainement)**](Architecture.md/#ecs-architecture)
+- [Concevoir un code mieux structuré avec une aproche par composants **(prochainement)**](#)
+  - [ECS (Entity-Component-System) architecture **(prochainement)**](#)
 
 - [A propos](About.md)
 - [Licence](../LICENSE)
