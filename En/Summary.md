@@ -17,7 +17,9 @@ This guide requires C# programming basics and knowledge of Unity software.
   - [Store file in YAML](Versioning.md/#store-file-in-yaml)
   - [Merge with Smart Merge](Versioning.md/#merge-with-smart-merge)
   - [Manage large files (image, 3D object, ...)](Versioning.md/#manage-large-files)
-        
+- [Versioning : GitHub & Unity **(Soon)**](#)
+- [Versioning : Unity Collaborate **(Soon)**](#)
+
 - [Unit Tests & TDD](Unit_Test_And_TDD.md/#unit-tests--tdd)
   - [Tests : Introduction](Unit_Test_And_TDD.md/#tests--introduction)
   - [Unit Tests](Unit_Test_And_TDD.md/#unit-tests)
@@ -32,6 +34,14 @@ This guide requires C# programming basics and knowledge of Unity software.
 - [Management of dependencies **(In progress)**](ManagementOfDependencies.md/#management-of-dependencies)
 
 - [Clean Code](CleanCode.md/#clean-code)
+  - [The starting](CleanCode.md/#the-starting)
+     - [Names](CleanCode.md/#names)
+     - [Comments](CleanCode.md/#comments)
+ - [Principles](CleanCode.md/#principles)
+  - [SOLID principles](CleanCode.md/#solid-principles)
+  - [Components principles](CleanCode.md/#the-three-component-principles)
+   
+   
 - [Architecture **(Soon)**](#architecture)
  
 - [About **(Soon)**](#)
