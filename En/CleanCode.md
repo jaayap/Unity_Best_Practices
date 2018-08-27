@@ -8,11 +8,11 @@
 ![image focus shift wtf/min](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/wtfm.jpg) 
 
  
--        A clean code must be pleasant to read and easy to understand
--        A clean code must be focus
--        Each method, class, … must have a simple and independent behavior and not polluted by unnecessary details.
--        A code without test is not a clean code.
--        A clean code has not duplication
+- A clean code must be pleasant to read and easy to understand
+- A clean code must be focus
+- Each method, class, … must have a simple and independent behavior and not polluted by unnecessary details.
+- A code without test is not a clean code.
+- A clean code has not duplication
  
 The clean of the code define the software quality.
  
@@ -30,10 +30,10 @@ A clean code allows to evolve and maintain a project.
 When we develop, we forget to think about names we give to variables, methods and classes. This can lead to misunderstandings of the system by other developers and a longer proofreading of the code. Bad naming can also impact the maintainability of an application.
  
 When you program:
--        Use names that reveal intent (= descriptive names). For help you, you can ask “What will this method/class/variable do for?”
--        Try to choose one word per concept. For example, if a class is used to instantiate an object, don’t mix “create”, “instantiate”, “generate”, … But choose a single word. If possible choose a word to what you do, or the word used by the business.
--        Choose word easy to pronounce.
--        Avoid magic number (place value without name).
+- Use names that reveal intent (= descriptive names). For help you, you can ask “What will this method/class/variable do for?”
+- Try to choose one word per concept. For example, if a class is used to instantiate an object, don’t mix “create”, “instantiate”, “generate”, … But choose a single word. If possible choose a word to what you do, or the word used by the business.
+- Choose word easy to pronounce.
+- Avoid magic number (place value without name).
  
 ### Comments
  
