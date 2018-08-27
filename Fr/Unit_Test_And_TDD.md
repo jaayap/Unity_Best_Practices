@@ -25,7 +25,7 @@ Pour le moment nous nous intéresserons aux **tests unitaires et au TDD (test-dr
 
 **Rédiger des tests unitaires sert à vérifier le comportement du code, tandis qu’avec l’approche TDD, qui consiste à écrire les tests en premier, rédiger des tests unitaires sert à spécifier comment le code doit fonctionner**.
 
-Pour en savoir plus sur les tests, je vous conseille [l'article sur la pyramide des tests du blog d'OCTO Technology](https://blog.octo.com/la-pyramide-des-tests-par-la-pratique-1-5) , [ou une de leurs publications, Culture Code](https://www.octo.com/fr/publications/20-culture-code).
+Pour en savoir plus sur les tests, je vous conseille [l'article sur la pyramide des tests du blog d'OCTO Technology](https://blog.octo.com/la-pyramide-des-tests-par-la-pratique-1-5), [ou une de leurs publications, Culture Code](https://www.octo.com/fr/publications/20-culture-code).
 
 [Retour au menu](Summary.md)
 
@@ -69,7 +69,7 @@ Différentes conventions de nommage existent :
 
 Attention à ne pas avoir le nom de la méthode dans le nom du test car en cas de refactorisation du nom de la méthode, il faut également penser à modifier le nom du test sinon le test ne veut plus rien dire. Le test peut alors être plus difficile à maintenir et demande plus de rigueur lors de la refacto.
 
-Un test unitaire exprime une intention, c'est à dire, qu'il test une fonctionnalité, et non son implémentation.
+Un test unitaire exprime une intention, c'est-à-dire, qu'il teste une fonctionnalité, et non son implémentation.
 
 Un test se décompose en **3 parties** : 
 - **Arrange** est l’étape d’initialisation
@@ -137,7 +137,7 @@ public class NewTestScript {
 }
 ```
 
-Ces deux tests devraient apparaître dans le Test Runner :
+Ces deux tests devraient apparaître dans le *Test Runner* :
 
 ![Image of Test Runner tests with test](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture3_tests.PNG)
 
@@ -225,7 +225,7 @@ Pour réaliser une assertion avec un test *NUnit*, il faut utiliser la classe **
 
 :warning: Les méthode *Awake*, *Start* et *Update* doivent être passé en public pour être appelée avec les tests.
 
-Si tous vos tests ont le même *"Arrange"* vous pouvez utilisez les attributs [SetUp] et [TearDown].
+Si tous vos tests ont le même *"Arrange"* vous pouvez utiliser les attributs [SetUp] et [TearDown].
 La méthode sous l'attribut [SetUp] s'exécutera avant toutes les méthodes [Test] et la méthode sous l'attribut [TearDown] s'exécutera aprés  toutes les méthodes [Test].
 
 Ainsi : 
