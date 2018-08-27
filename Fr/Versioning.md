@@ -1,11 +1,11 @@
 # Versioning : Git & Unity
 
 Si vous utiliser *git* pour versionner vos projets *Unity*, vous avez dû remarquer que parfois les fichiers tels que les scènes et les *prefabs* subissent des régressions lors des merges. Deux personnes modifiant ainsi le même fichier en même temps provoquent un conflit que git, par défaut n’arrive pas à résoudre. Vous retrouvez alors votre scène entièrement vide ou votre *prefab* tout cassé. 
-Voici la solution que j’ai choisi d’adopter.
+Voici la solution que j’ai choisie d’adopter.
 
 ## Créer un .gitignore
 
-Il est important d’ajouter un fichier **.gitignore** à votre dépôt. Il permettra à git d’ignorer certains fichiers générés par *Unity* et par votre IDE (dans l’exemple Visual Studio, mais vous pouvez modifier le *gitignore* pour l’adapter aux outils que vous utilisez). Dans certains projets, il est pertinent d’ajouter des dossiers de votre projet afin de ne pas les enregistrer dans le dépôt en ligne, un *asset* de l’*asset store* par exemple (peut peser lourd dans l’archive, ce qui ralenti considérablement l’équipe lorsqu’elle doit mettre à jour le dépôt ou le récupérer).
+Il est important d’ajouter un fichier **.gitignore** à votre dépôt. Il permettra à git d’ignorer certains fichiers générés par *Unity* et par votre IDE (dans l’exemple Visual Studio, mais vous pouvez modifier le *gitignore* pour l’adapter aux outils que vous utilisez). Dans certains projets, il est pertinent d’ajouter des dossiers de votre projet afin de ne pas les enregistrer dans le dépôt en ligne, un *asset* de l’*asset store* par exemple (peut peser lourd dans l’archive, ce qui ralentit considérablement l’équipe lorsqu’elle doit mettre à jour le dépôt ou le récupérer).
 
 <a href="https://github.com/github/gitignore/blob/master/Unity.gitignore" target="_blank">voir dépot .gitignore Unity</a>
 
@@ -44,11 +44,11 @@ Cet outil est très performant et permet de travailler à plusieurs sans se souc
 ### Comment ça marche ?
 
 Continuez à utiliser *git* comme à votre habitude et si lors d’un *merge*, vous avez un conflit, effectuez la commande *“git mergetool”* pour appeller le *SmartMerge* qui s’occupera, dans la plupart des cas, de régler les conflits. Un exemple est donné ci-dessous, deux branches sont créées, *“Master”* et *“Another”*, Chacune modifie la scène *“sceneTest”*. Ensuite chacune est *commit* sur le dépôt et on essaye de “fusionner” les branches.  
-A ce moment là, git nous dit qu’il y a un conflit et lorsque l’on ouvre la scène dans *Unity*, on s'aperçoit qu'elle est vide. On exécute alors *git mergetool* et on retrouve une scène qui possède tous nos objets.  
+A ce moment-là, git nous dit qu’il y a un conflit et lorsque l’on ouvre la scène dans *Unity*, on s'aperçoit qu'elle est vide. On exécute alors *git mergetool* et on retrouve une scène qui possède tous nos objets.  
 
 ![Schema explicatif du Smart Merge](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/schemaSmartMergeV2.PNG?token=AHjeDgISOj3_CsXFl6gK4QxKd5kcyGPBks5baXFawA%3D%3D)
 
-Le *SmartMerge* possède ses limites. Il ne peut pas résoudre seul le conflit lorsque vous toucher au même objet d'une scène. Dans ce cas, il vous demandera de choisir la bonne version (la scène actuelle, l’ancienne scène ou celle de votre collègue ?)
+Le *SmartMerge* possède ses limites. Il ne peut pas résoudre seul le conflit lorsque vous toucher au même objet d'une scène. Dans ce cas, il vous demandera de choisir la bonne version (la scène actuelle, l’ancienne scène ou celle de votre collègue ?).
 
 [Retour au menu](Summary.md)
 
@@ -92,7 +92,7 @@ git lfs track "*.extension"
 ```sh
 git add .gitattributes
 ```
-et voilà le tour est joué, à présent vous pouvez ajouter vos fichiers et *commit* comme vous le faisiez avant, la différence est que *Git* va envoyer les fichiers trackés sur [Git LFS](https://git-lfs.github.com/).  
+Et voilà le tour est joué, à présent vous pouvez ajouter vos fichiers et *commit* comme vous le faisiez avant, la différence est que *Git* va envoyer les fichiers trackés sur [Git LFS](https://git-lfs.github.com/).  
 
 Si vous utilisez github, la notification ***“stored with Git LFS”*** devrait apparaître dans l’interface web lorsque vous ouvrez votre fichier.
 
@@ -103,6 +103,6 @@ Pour comprendre le fonctionnement de [Git LFS](https://git-lfs.github.com/), je 
 [![video Btbucket Git LFS](http://img.youtube.com/vi/9gaTargV5BY/0.jpg)](http://www.youtube.com/watch?v=9gaTargV5BY "Git LFS explain")
 
 
-D’autres solutions existes avec *git* : *Git Annex*, *Git Fat* , *Git Media* , *Git Bigstore*, *Git Sizer*, … Ces dernières sont moins documentées, plus difficiles à mettre en place et à prendre en main et semblent moins adaptées à un projet *Unity*.
+D’autres solutions existes avec *git* : *Git Annex*, *Git Fat*, *Git Media*, *Git Bigstore*, *Git Sizer*, … Ces dernières sont moins documentées, plus difficiles à mettre en place et à prendre en main et semblent moins adaptées à un projet *Unity*.
 
 [Retour au menu](Summary.md)
