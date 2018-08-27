@@ -6,7 +6,7 @@ Les tests sont importants dans la réalisation d’un logiciel car ils assurent 
 Beaucoup de logiciels sont conçus sans test et les conséquences sont:  
 - beaucoup d’**anomalies**
 - des **bugs** compliqués à résoudre et parfois lancés en production.
-- un logiciel **qui grossit** à cause des **patchs** et des nouvelles fonctionnalités s’appuyant sur un code bancal. 
+- un logiciel **qui grossit** à cause des **correctifs (patchs)** et des nouvelles fonctionnalités s’appuyant sur un code bancal. 
 En bref, un code **non testé** entraîne bien souvent une **dette technique**.
 
 ![Image de la pyramide des tests](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/img_pyramide_des_tests.png?token=AHjeDoKKyxTJRlb2sRXe6a4YPP5RwJQTks5bYCFzwA%3D%3D)
