@@ -19,6 +19,8 @@ Mon but n’est pas de vous imposer une méthode stricte pour vos projets mais d
   - [Enregistrer des fichiers en YAML](Versioning.md/#enregistrer-des-fichiers-en-yaml)
   - [Merger avec l'outil Smart Merge](Versioning.md/#merger-avec-loutil-smart-merge)
   - [Gérer les fichiers volumineux (images, objets 3D, ...)](Versioning.md/#gérer-les-fichiers-volumineux)
+- [Versioning : GitHub & Unity **(prochainement)**](#)
+- [Versioning : Unity Collaborate **(prochainement)**](#)
         
 - [Tests unitaires & TDD](Unit_Test_And_TDD.md/#tests-unitaires--tdd)
   - [Tour d'horizon sur les tests](Unit_Test_And_TDD.md/#tour-dhorizon-sur-les-tests)
