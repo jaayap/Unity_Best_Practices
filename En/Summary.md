@@ -31,7 +31,7 @@ This guide requires C# programming basics and knowledge of Unity software.
  
 - [Management of dependencies **(In progress)**](ManagementOfDependencies.md/#management-of-dependencies)
 
-- [Clean Code **(Soon)**](#clean-code)
+- [Clean Code](CleanCode.md/#clean-code)
 - [Architecture **(Soon)**](#architecture)
  
 - [About **(Soon)**](#)
