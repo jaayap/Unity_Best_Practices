@@ -2,7 +2,7 @@
 
 ## Les dépendances dans les tests unitaires 
 
-Dans la pratique, un TU ne doit jamais s’appuyer sur **une dépendance extérieure** (service web, base de données, librairie, …). En effet, cela peut entraîner un **biais** et peut rendre les TU plus difficiles à maintenir dans le temps.  
+Dans la pratique, un TU ne doit jamais s’appuyer sur **une dépendance extérieure** (service web, base de données, librairie, …). En effet, cela peut entraîner un **biais** et peut rendre les T.U. plus difficiles à maintenir dans le temps.  
 Une dépendance extérieure aura tendance à **rallonger le temps d'exécution**.
 
 Pour être sûr de tester un seul comportement, sans aucune dépendance, il est possible de créer **des bouchons (mock ou stub)** pour remplacer une classe.
