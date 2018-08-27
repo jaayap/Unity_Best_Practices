@@ -117,7 +117,7 @@ watch [this site](https://martinfowler.com/bliki/BeckDesignRules.html) for more 
  
 Several years later, Uncle Bob talks about SOLID principles and Component principles.
  
-### SOLID principles**
+### SOLID principles
  
 - **SRP (Single Responsibility Principle)**
  
