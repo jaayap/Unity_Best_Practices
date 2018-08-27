@@ -110,8 +110,8 @@ Simple design rules are defined by Kent Beck in 90s in his book “Extreme Progr
 - Reveals intention
 - No duplication (DRY (Don’t Repeat Yourself) principle)
 -  Fewest elements:
-  -  KISS: Keep It Simple & Stupid (an element has once reason to be modified)
-  -  YAGNI: You Ain’t Gonna Need It (Trying to anticipate future problems is not a good idea. It’s better to take care of the present and not make assumptions about what the application could use).
+   -  KISS: Keep It Simple & Stupid (an element has once reason to be modified)
+   -  YAGNI: You Ain’t Gonna Need It (Trying to anticipate future problems is not a good idea. It’s better to take care of the present and not make assumptions about what the application could use).
  
 watch [this site](https://martinfowler.com/bliki/BeckDesignRules.html) for more information about simple design. 
  
@@ -121,26 +121,26 @@ Several years later, Uncle Bob talks about SOLID principles and Component princi
  
 - **SRP (Single Responsibility Principle)**
  
-An active corollary to Conway’s law: The best structure for a software system is heavily influenced by the social structure of the organization that uses it so that each software module has one, and only one, reason to change.
+ An active corollary to Conway’s law: The best structure for a software system is heavily influenced by the social structure of the    organization that uses it so that each software module has one, and only one, reason to change.
  
 - **OCP (Open-Closed Principle)**  
  
-Bertrand Meyer made this principle famous in the 1980s : « A software artifact should be open for extension but closed for modification »
+ Bertrand Meyer made this principle famous in the 1980s : « A software artifact should be open for extension but closed for modification »
 The gist is that for software systems to be easy to change, they must be designed to allow the behavior of those systems to be changed by adding new code, rather than changing existing code.  
  
 - **LSP (Liskov Substitution Principle)**  
  
-Barbara Liskov’s famous definition of subtypes, from 1988. In short, this principle says that to build software systems from interchangeable parts, those parts must adhere to a contract that allows those parts to be substituted one for another.  
+ Barbara Liskov’s famous definition of subtypes, from 1988. In short, this principle says that to build software systems from interchangeable parts, those parts must adhere to a contract that allows those parts to be substituted one for another.  
   
  
 - **ISP (interface Segregation Principle)**  
  
-This principle advises software designers to avoid depending on things that they don’t use.
-Language issue rather than an architecture issue.  
+ This principle advises software designers to avoid depending on things that they don’t use.
+ Language issue rather than an architecture issue.  
  
 - **DIP (Dependency Inversion Principle)**  
  
-The code that implements high-level policy should not depend on the code that implements low-level details. Rather, details should depend on policies.  
+ The code that implements high-level policy should not depend on the code that implements low-level details. Rather, details should depend  on policies.  
  
 ### The Three Component principles
  
@@ -152,9 +152,9 @@ Three principles can be defined like this:
   “the granule of reuse is the granule of release”
  
 - **CCP (Common Closure Principle)**  
-  “Gather into components those classes that change for the same reasons and at the same times. Separate into different components those classes that change at different times and for different reason”  
+  “Gather into components those classes that change for the same reasons and at the same times. Separate into different components those         classes that change at different times and for different reason”  
 
-A component (class, method, …) should not have multiple reasons to change
+  A component (class, method, …) should not have multiple reasons to change
  
 - **CRP (Common Reuse Principle)**  
  "Don’t force users of a component to depend on things they don’t need."
