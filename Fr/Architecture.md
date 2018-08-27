@@ -5,7 +5,7 @@ La mise en place d'une bonne architecture doit permettre de :
   - Séparer les responsabilités
   - Rendre le code facilement testable
   - Rendre le code facilement modifiable et maintenable dans le temps 
-  - Séparer les parties facilement testable (fonctions métier ? stable)  et les parties difficilement testable (infrastructure ? volatile)
+  - Séparer les parties facilement testable (fonctions métiers, stable)  et les parties difficilement testable (infrastructure, volatile)
   
 > “Architecture is not about tools and building materials, architecture is about usage.” 
 > Robert C. Martin (Oncle Bob)
@@ -16,9 +16,9 @@ Une bonne architecture doit supporter :
   - Le développement du système
   - Et le déploiement du système
    
-Elle est centrée sur les cas d’utilisation, les architectes logiciel peuvent donc décrirent les structures qui les supportent en toute sécurité sans devenir dépendant des frameworks, des outils ou de l’environnement.   
+Elle est centrée sur les cas d’utilisation, les architectes logiciels peuvent donc décrirent les structures qui les supportent en toute sécurité sans devenir dépendant des frameworks, des outils ou de l’environnement.   
 Le choix d’un framework (bases de données, serveur web, …) ne doit pas impacter l’architecture.   
-Oncle bob dit ***“les framework sont des produits commerciaux, tout est fait pour que ce soit simple à utiliser mais tout n'est pas une bonne idée.”***
+Oncle bob dit ***“les frameworks sont des produits commerciaux, tout est fait pour que ce soit simple à utiliser mais tout n'est pas une bonne idée.”***
 
 [Retour au menu](Summary.md)
 
@@ -64,7 +64,7 @@ La Clean Architecture définit 4 couches :
  Ils servent à orchestrer les données entrante et sortante de la couche “Entities” et à faire le “passe-plat” entre les “Controllers” et les classes “Entities”. Les Use Cases ne doivent pas posséder de logique ou d’intelligence (ou elle doit être minimal).
 **Les changements de cette couche ne doivent pas affecter les entities**
 
-- **“Interface Adapters”** : contient les “Controllers” de l’application qui va être appelé en fonction des entrées/sorties mais n’en a pas connaissance.Dans un MVC (Model-View-Controller), cette couche correspond aux Views et Controllers. Elle va convertir les données qu’il reçoit pour les transmettre correctement aux use cases. 
+- **“Interface Adapters”** : contient les “Controllers” de l’application qui va être appelé en fonction des entrées/sorties mais n’en a pas connaissance. Dans un MVC (Model-View-Controller), cette couche correspond aux Views et Controllers. Elle va convertir les données qu’il reçoit pour les transmettre correctement aux use cases. 
 
 - **“Framework & Drivers”** : contient les entrées/sorties de l’application et leurs codes associés, c’est ici que va être appelé les fonctions du Controller.
 
@@ -85,13 +85,13 @@ La clean architecture à donc pour objectif de réaliser des *softwares*. Oncle 
 
 Ainsi un logiciel doit également être indépendant du système d’exploitation et du matériel sur lequel il sera déployé.   
 
-**Note:** Avec Unity, il est assez facile d’être indépendant du système d’exploitation car un même code peut être déployer sur plusieurs système différents d’un simple clic, unity se charge pour nous de convertir les méthodes qu’on utilise en langage exploitable pour le système ciblé.
+**Note:** Avec Unity, il est assez facile d’être indépendant du système d’exploitation car un même code peut être déployé sur plusieurs systèmes différents d’un simple clic, unity se charge pour nous de convertir les méthodes qu’on utilise en langage exploitable pour le système ciblé.
 
 Le Main est la partie la plus sale de l’application, et c’est normal. 
 > « Think of Main as a plugin to the application […] that sets up the initial conditions and configurations, gathers all the outside resources, and then hands control over to the high-level policy of the application. »
 > Clean Architecture, Robert C. Martin
 
-La Clean Architecture peut être utilisé sur tout type de projet. La maîtriser peut donc permettre d’avoir des repère peu importe le projet. Si l’on maîtrise la Clean Archi, il est facile de comprendre rapidement un code qui l’utilise.
+La Clean Architecture peut être utilisée sur tout type de projet. La maîtriser peut donc permettre d’avoir des repères peu importe le projet. Si l’on maîtrise la Clean Archi, il est facile de comprendre rapidement un code qui l’utilise.
 
 [Retour au menu](Summary.md)
 
@@ -101,12 +101,12 @@ Dans la Clean Architecture, les interfaces reviennent systématiquement.
 Une définition très scolaire d’une interface est qu’elle permet le polymorphisme or ce n’est qu’un exemple d’usage secondaire d’une interface. Les interfaces permettent de créer une abstraction entre deux objets, elles servent de contrats entre ces deux derniers. Cet usage correspond à l’inversion de contrôle (D de SOLID).
 
 L’intérêt des interfaces est de séparer ce que vous voulez faire de comment vous allez le faire.
-Elles peuvent aussi servir à “mapper” une dépendance extérieure ou une fonction lié à Unity (ex : Random / Instantiate) pour utiliser le vocabulaire choisi par l’équipe dans le Domain. Avec des interfaces, le code est plus facile à tester car on peut substituer la dépendance  (voir chapitre [Les dépendances dans les TU](ManagementOfDependancies.md/#les-dépendances-dans-les-tests-unitaires)).
+Elles peuvent aussi servir à “mapper” une dépendance extérieure ou une fonction liée à Unity (ex : Random / Instantiate) pour utiliser le vocabulaire choisi par l’équipe dans le Domain. Avec des interfaces, le code est plus facile à tester car on peut substituer la dépendance  (voir chapitre [Les dépendances dans les TU](ManagementOfDependancies.md/#les-dépendances-dans-les-tests-unitaires)).
 
 D’autres usages des interfaces : 
 Ne pas attendre que la classe X soit finie pour développer la classe  Y. 
-Y peut être développer en utilisant un bouchon pour X (mock ou stub).
-Réaliser des démonstrations dans des conditions différentes de l’appli final (pas de connexion internet,  …) 
+Y peut être développée en utilisant un bouchon pour X (mock ou stub).
+Réaliser des démonstrations dans des conditions différentes de l’appli finale (pas de connexion internet,  …) 
 
 Dans le code :
 ```cs
@@ -136,11 +136,11 @@ Créer une application qui comporte plusieurs versions (version PC, version mobi
 Faire abstraction de certains SDK (Vuforia, Oculus, SteamVR, …). Mettre un maximum de code en commun pour pouvoir facilement changer la techno utilisé par le projet.
 
 
-Dans Unity, les couches vont se transformer en trois dossier :
+Dans Unity, les couches vont se transformer en trois dossiers :
 
  ![capture écran Unity](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/folders_unity.png)
 
-Les “Entities” et les “Use Cases” ne doivent pas ou presque pas dérivée de MonoBehaviour. Les classes contenus dans ces couches sont donc des classes C# classiques.
+Les “Entities” et les “Use Cases” ne doivent pas ou presque pas dérivée de MonoBehaviour. Les classes contenues dans ces couches sont donc des classes C# classiques.
 
 Exemple :
 ```cs
@@ -188,12 +188,12 @@ Chaque cas d’usage doit être indépendant et leurs limites avec les méthodes
 
 **Lorsque l’on implémente la clean architecture, il faut que le code soit le plus flexible possible.**  
   
-Un code doit pouvoir être déplacer ou renommer (classe, méthode, variable) à tout moment, pour ça je vous conseille de bien connaître les raccourci fourni par votre IDE. Beaucoup d’outils sont fournis dans les IDE pour refacto du code automatiquement après un changement. Par exemple, ils nous permettent de renommer une classe ou une variable et de transformer toutes les occurrences dans le code en conséquence. Renommer ou déplacer un élément ne doit pas devenir une corvée pour un développeur.
+Un code doit pouvoir être déplacé ou renommé (classe, méthode, variable) à tout moment, pour ça je vous conseille de bien connaître les raccourci fourni par votre IDE. Beaucoup d’outils sont fournis dans les IDE pour refacto du code automatiquement après un changement. Par exemple, ils nous permettent de renommer une classe ou une variable et de transformer toutes les occurrences dans le code en conséquence. Renommer ou déplacer un élément ne doit pas devenir une corvée pour un développeur.
 **Les noms évoluent avec la compréhension que l'on a du système que l’on développe**, les noms définis au début ne seront pas obligatoirement les mêmes à la fin. Lorsque l’on travaille en équipe, il faut que les noms utilisés parlent à tout le monde. Ainsi, les noms utilisé lors des stand-up ou des réunions sont une bonne piste. En cas de doute sur un nom, demander au reste de l’équipe ce qu’il en pense.
-Si vous avez un doute sur l’emplacement d’un script, essayer de procéder par élimination. Il est en général plus simple de voir ou un code ne va pas, plutôt que ou il va. Vous pouvez également regarder le nom du script, si les mots “JSON”, “SQL”, .. apparaissent dans le Domain, il y a quelque chose qui cloche car ce sont des choix techniques, ce script ou une partie de ce script devraient donc se trouver dans l’Infra. De la même manière si un use case possède de l'intelligence (switch case, if, ...), le script devrait se trouver dans l’Infra ou dans le Domain.
+Si vous avez un doute sur l’emplacement d’un script, essayer de procéder par élimination. Il est en général plus simple de voir ou un code ne va pas, plutôt que ou il va. Vous pouvez également regarder le nom du script, si les mots “JSON”, “SQL”, ... apparaissent dans le Domain, il y a quelque chose qui cloche car ce sont des choix techniques, ce script ou une partie de ce script devraient donc se trouver dans l’Infra. De la même manière si un use case possède de l'intelligence (switch case, if, ...), le script devrait se trouver dans l’Infra ou dans le Domain.
 
 Appliquer la Clean Architecture à un projet Unity, génère quelques **inconvénients** : 
-- Moins de contrôle depuis Unity. Si l’on travail avec des designers : plus de scripts passe plat entre l’interface et le code métier (réglage des valeurs)
+- Moins de contrôle depuis Unity. Si l’on travaille avec des designers : plus de scripts passe plat entre l’interface et le code métier (réglage des valeurs)
 - Complique l’utilisation des coroutines : le script doit dériver de MonoBehaviour pour lancer une coroutine.
 - Dans certains cas, il est difficile de découpler la vue 3D du comportement métier de l’application
 
