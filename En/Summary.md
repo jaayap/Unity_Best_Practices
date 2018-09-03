@@ -37,9 +37,9 @@ This guide requires C# programming basics and knowledge of Unity software.
   - [The starting](CleanCode.md/#the-starting)
      - [Names](CleanCode.md/#names)
      - [Comments](CleanCode.md/#comments)
- - [Principles](CleanCode.md/#principles)
-    - [SOLID principles](CleanCode.md/#solid-principles)
-    - [Components principles](CleanCode.md/#the-three-component-principles)
+   - [Principles](CleanCode.md/#principles)
+      - [SOLID principles](CleanCode.md/#solid-principles)
+      - [Components principles](CleanCode.md/#the-three-component-principles)
    
    
 - [Architecture **(Soon)**](#architecture)
