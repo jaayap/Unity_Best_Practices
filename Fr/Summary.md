@@ -22,7 +22,7 @@ Mon but n’est pas de vous imposer une méthode stricte pour vos projets mais d
 - [Versioning : GitHub & Unity **(prochainement)**](#)
 - [Versioning : Unity Collaborate **(prochainement)**](#)
         
-- [Tests unitaires & TDD](Unit_Test_And_TDD.md/#tests-unitaires--tdd)
+- [Tests & TDD](Unit_Test_And_TDD.md/#tests---tdd)
   - [Tour d'horizon sur les tests](Unit_Test_And_TDD.md/#tour-dhorizon-sur-les-tests)
   - [Tests Unitaires (TU)](Unit_Test_And_TDD.md/#tests-unitaires-tu)
       - [Pourquoi écrire un TU ?](Unit_Test_And_TDD.md/#pourquoi-écrire-un-test-unitaire-)
@@ -30,7 +30,9 @@ Mon but n’est pas de vous imposer une méthode stricte pour vos projets mais d
       - [Comment écrire un TU ?](Unit_Test_And_TDD.md/#comment-écrire-un-test-unitaire-)
       - [Comment mettre en pratique Les TU avec Unity ?](Unit_Test_And_TDD.md/#comment-mettre-en-pratique-les-tu-avec-unity-)
         - [Unity Test Runner](Unit_Test_And_TDD.md/#unity-test-runner)
-        - [Les scripts de tests](Unit_Test_And_TDD.md/#les-scripts-de-tests)   
+        - [Les scripts de tests](Unit_Test_And_TDD.md/#les-scripts-de-tests)
+  - [Test d'intégration (TI) (prochainement)](Unit_Test_And_TDD.md/#)
+  - [Séparer les scripts de tests et les scripts de mon appli en deux solutions (prochainement)](Unit_Test_And_TDD.md/#)
   - [développement piloté par les tests (TDD)](Unit_Test_And_TDD.md/#développement-piloté-par-les-tests-tdd)
 
 - [Gestion des dépendances](ManagementOfDependancies.md/#gestion-des-dépendances)
