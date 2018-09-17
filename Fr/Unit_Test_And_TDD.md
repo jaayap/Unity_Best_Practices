@@ -90,19 +90,21 @@ Pour afficher la fenêtre *"Test Runner"*, allez dans *Windows > Test Runner*.
 ![Image of Test Runner](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/UnityTestsRunner/Capture1_ouvertureOnglet.PNG)
 
 On peut voir sur la capture d'écran, qu'il existe **deux modes** :
+  
+  -	**PlayMode** :
+      o	Il permet d'exécuter des tests sur **plusieurs frames**
+      o	Les comportement Awake(), Start(), ... sont exécutés **automatiquement**
+      o	Il sert davantage pour les **tests d'intégration**
+      o	Les tests [UnityTest] sont exécutés comme des **coroutines classiques**
+      o	**Ouvre une scène** de test pour exécuter les tests (⚠️il faut penser à bien enregistrer la scène de l’application avant de lancer les tests car votre scène sera écrasée au lancement des tests)
 
-- **PlayMode** :
-  - Permet d'exécuter des tests sur **plusieurs frames**
-  - Comportement Awake(), Start(), ... sont exécutés **automatiquement**
-  - Sert davantage pour les **tests d'intégration**
-  - [UnityTest] = exécuté comme une **Coroutine classique**
-  - Ouvre une **scène** de test pour exécuter les tests (:warning: pensez à bien **enregistrer** votre scène avant de lancer les tests car votre scène sera écrasée au lancement des tests)
 
-- **EditMode** :
-  - Chaque test est exécuté en **une frame**
-  - Il faut appeler **explicitement** les méthodes Awake() et Start(), ce qui necessite de les passer en **public**.
-  - **Doit être placés dans un dossier Editor**
-  - [UnityTest] est exécuté dans l'editor avec **"Editor.Application.Update"**
+  -	**EditMode** :
+      o	Chaque test est exécuté en **une frame**
+      o	Il faut appeler **explicitement** les méthodes Awake() et Start(), ce qui nécessite de les passer en **public**.
+      o	Les tests doivent être placés dans un dossier **Editor**
+      o	Les tests **[UnityTest]** sont exécutés dans l'editor avec **"Editor.Application.Update"**
+
 
 Sélectionnez le mode qui vous intéresse puis cliquez sur le bouton *“Create PlayMode/EditMode Test Assembly Folder”*. 
 *Unity* va créer automatiquement un dossier *Test* avec un fichier *“Tests.asmdef”de type “assembly definition”*.  
