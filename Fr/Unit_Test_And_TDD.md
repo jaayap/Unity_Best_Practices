@@ -349,4 +349,16 @@ TODO : exercice à trou (suite ou reprise du même exo) TU avec TDD.
 
 ## Séparer les scripts de tests et les scripts de mon appli en deux solutions
 
+Une bonne pratique lorsque l'on rédige des tests est de séparer le projet en deux solutions : 
+  - La solution projet : contient tous les scripts de l'application en développement
+  - La solution test : contient tous les scripts de tests (TU et TI)
+  
+exemple dans Visual Studio : 
+![Capture d'écran Visual Studio](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/applicationsolution.png)
+
+Pour faire ça, il suffit de créer deux dossiers respectivement "Application" et "Tests" possédant chacun un fichier .asmdef. Pour créer ces fichiers aller dans le dossier "Application" (dans la fenetre projet) puis **Create > Assembly Definition**. Si vous avez suivis les étapes précédantes, vous avez déjà un fichier .asmdef dans votre dossier Tests, il faut alors définir une référence vers les scripts contenu dans le dossier application : 
+
+![Capture d'écran Unity, references](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/application.png)
+
+
 [Retour au menu](Summary.md)
