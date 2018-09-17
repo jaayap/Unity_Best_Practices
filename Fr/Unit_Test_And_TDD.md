@@ -341,5 +341,12 @@ Il précise également que suivre les trois lois n'est pas toujours appropprié,
 
 TODO : exercice à trou (suite ou reprise du même exo) TU avec TDD. 
 
+[Retour au menu](Summary.md)
+
+## Tests d'integration (TI)
+
+[Retour au menu](Summary.md)
+
+## Séparer les scripts de tests et les scripts de mon appli en deux solutions
 
 [Retour au menu](Summary.md)
