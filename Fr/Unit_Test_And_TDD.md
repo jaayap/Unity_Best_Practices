@@ -76,6 +76,7 @@ Un test se décompose en **3 parties** :
 - **Act** correspond à l’appel de la méthode testée
 - **Assert** est l’étape de vérification du comportement de la méthode testée
 
+:warning: Il exste aussi la méthode Given, When, Then qui est un équivalent.
 Lorsque l'on écrit un test unitaire, il est conseillé de commencer par rédiger l'**Assert**, qui est la réponse à la question : **Qu'est-ce qu'on veut tester?**
 
 [Retour au menu](Summary.md)
