@@ -93,18 +93,18 @@ Pour afficher la fenêtre *"Test Runner"*, allez dans *Windows > Test Runner*.
 On peut voir sur la capture d'écran, qu'il existe **deux modes** :
   
   -	**PlayMode** :
-      o	Il permet d'exécuter des tests sur **plusieurs frames**
-      o	Les comportement Awake(), Start(), ... sont exécutés **automatiquement**
-      o	Il sert davantage pour les **tests d'intégration**
-      o	Les tests [UnityTest] sont exécutés comme des **coroutines classiques**
-      o	**Ouvre une scène** de test pour exécuter les tests (⚠️il faut penser à bien enregistrer la scène de l’application avant de lancer les tests car votre scène sera écrasée au lancement des tests)
+      - Il permet d'exécuter des tests sur **plusieurs frames**
+      -	Les comportement Awake(), Start(), ... sont exécutés **automatiquement**
+      -	Il sert davantage pour les **tests d'intégration**
+      -	Les tests [UnityTest] sont exécutés comme des **coroutines classiques**
+      -	**Ouvre une scène** de test pour exécuter les tests (⚠️il faut penser à bien enregistrer la scène de l’application avant de lancer les tests car votre scène sera écrasée au lancement des tests)
 
 
   -	**EditMode** :
-      o	Chaque test est exécuté en **une frame**
-      o	Il faut appeler **explicitement** les méthodes Awake() et Start(), ce qui nécessite de les passer en **public**.
-      o	Les tests doivent être placés dans un dossier **Editor**
-      o	Les tests **[UnityTest]** sont exécutés dans l'editor avec **"Editor.Application.Update"**
+      -	Chaque test est exécuté en **une frame**
+      -	Il faut appeler **explicitement** les méthodes Awake() et Start(), ce qui nécessite de les passer en **public**.
+      -	Les tests doivent être placés dans un dossier **Editor**
+      -	Les tests **[UnityTest]** sont exécutés dans l'editor avec **"Editor.Application.Update"**
 
 
 Sélectionnez le mode qui vous intéresse puis cliquez sur le bouton *“Create PlayMode/EditMode Test Assembly Folder”*. 
