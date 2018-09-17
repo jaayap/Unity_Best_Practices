@@ -1,4 +1,4 @@
-﻿# Tests unitaires & TDD
+# Tests & TDD
 
 ## Tour d'horizon sur les tests
   
