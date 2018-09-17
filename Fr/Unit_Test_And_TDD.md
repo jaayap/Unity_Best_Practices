@@ -326,7 +326,7 @@ Exemple dans Visual Studio :
 
 ![Capture d'écran Visual Studio](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/applicationsolution.png)
 
-Pour faire ça, il suffit de créer deux dossiers respectivement "Application" et "Tests" possédant chacun un fichier .asmdef. Pour créer ces fichiers aller dans le dossier "Application" (dans la fenetre projet) puis **Create > Assembly Definition**. Si vous avez suivis les étapes précédantes, vous avez déjà un fichier .asmdef dans votre dossier Tests, il faut alors définir une référence vers les scripts contenu dans le dossier application : 
+Pour faire ça, il suffit de créer deux dossiers respectivement "Application" et "Tests" possédant chacun un fichier .asmdef. Pour créer ces fichiers aller dans le dossier "Application" (dans la fenetre projet) puis **Create > Assembly Definition**. Si vous avez suivi les étapes précédantes, vous avez déjà un fichier .asmdef dans votre dossier Tests, il faut alors définir une référence vers les scripts contenus dans le dossier application : 
 
 ![Capture d'écran Unity, references](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/application.png)
 
