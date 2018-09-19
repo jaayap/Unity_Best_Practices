@@ -314,6 +314,26 @@ Source : Unite Austin 2017 - Testing for Sanity: Using Unity's Integrated TestRu
 
 ## Tests d'integration (TI)
 
+Les tests d'intégration sont des tests qui s'effectuent après les tests unitaires et en amont des tests fonctionnels.
+
+![Schema l'ordre des tests](https://raw.githubusercontent.com/jaayap/Unity_Best_Practices/master/Img/schemaOrdreTests.png)
+
+Les tests d'intégration servent à vérifier le bon comportement entre deux objets. Ils peuvent donc servir à vérifier le comportement du moteur physique, le bon mouvement des objets dans la scène ou encore la mise à jour de l'état d'un objet aprés une action. 
+Les tests d'intégration vont être réalisés lorsqu'il y a une intéraction entre deux classes, deux méthodes ou deux packages. Ces tests n'ont pas de bouchons et sont donc plus fiable que les tests unitaires dans certaines situations. Il valide le système dans son ensemble.
+
+**Avantages :**
+
+  - Test plus fiable
+  - Dans Unity, permettent d'attendre plusieurs *frames* ou plusieurs secondes
+  - Les assertions sont les mêmes que pour les TU.
+  
+**Inconvénients :**
+
+  - Temps d'execution (quelques secondes à quelques minutes)
+  - Exécuté moins souvent que les TU.
+  - plus souvent refacto lorsque le code est modifié
+
+
 [Retour au menu](Summary.md)
 
 ## Séparer les scripts de tests et les scripts de mon appli en deux solutions
