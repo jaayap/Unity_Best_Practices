@@ -31,7 +31,7 @@ Mon but n’est pas de vous imposer une méthode stricte pour vos projets mais d
       - [Comment mettre en pratique Les TU avec Unity ?](Unit_Test_And_TDD.md/#comment-mettre-en-pratique-les-tu-avec-unity-)
         - [Unity Test Runner](Unit_Test_And_TDD.md/#unity-test-runner)
         - [Les scripts de tests](Unit_Test_And_TDD.md/#les-scripts-de-tests)
-  - [Test d'intégration (TI) (prochainement)](Unit_Test_And_TDD.md/#tests-dintegration-ti)
+  - [Test d'intégration (TI)](Unit_Test_And_TDD.md/#tests-dintegration-ti)
   - [Séparer les scripts de tests et les scripts de mon appli en deux solutions](Unit_Test_And_TDD.md/#séparer-les-scripts-de-tests-et-les-scripts-de-mon-appli-en-deux-solutions)
   - [développement piloté par les tests (TDD)](Unit_Test_And_TDD.md/#développement-piloté-par-les-tests-tdd)
 
