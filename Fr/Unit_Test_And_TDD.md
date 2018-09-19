@@ -220,13 +220,18 @@ Pour réaliser une assertion avec un test *NUnit*, il faut utiliser la classe **
 **Dans le cas de *Asset.AreEqual*, la value1 correspond à la valeur attendue est la value2 est la valeur testée. Cet ordre est important et permet notamment d'avoir des messages d'erreurs cohérents :  *Expected "value1" but was "value2"*.**
 
 *Unity* ajoute également ses **propres assertions** (avec using UnityEngine.Assertions et UnityEngine.TestTools.Utils) comme :
-- *"Assert.AreApproximatelyEqual"* et *"Assert.AreNotApproximatelyEqual"* qui prennent par défaut une tolérance de  0.00001f qui permettent de comparer deux floats.
+- *"Assert.AreApproximatelyEqual"* et *"Assert.AreNotApproximatelyEqual"* qui prennent par défaut une tolérance de  0.00001f qui permettent de comparer deux floats. Typiquement, ils vont servir à comparer des positions trés proches ou des rotations.
 - *"ColorEqualityComparer"*
 - *"QuaternionEqualityComparer"*
 - *"Vector2EqualityComparer"* ,*"Vector3EqualityComparer"* et *"Vector4EqualityComparer"*
 
 
 :warning: Les méthode *Awake*, *Start* et *Update* doivent être passé en public pour être appelée avec les tests.
+
+**Une bonne pratique est d'ajouter un message pour vos assertions.**
+```cs
+     Assert.IsTrue(useGravity, "Should use gravity");
+```
 
 Si tous vos tests ont le même *"Arrange"* vous pouvez utiliser les attributs [SetUp] et [TearDown].
 La méthode sous l'attribut [SetUp] s'exécutera avant toutes les méthodes [Test] et la méthode sous l'attribut [TearDown] s'exécutera aprés  toutes les méthodes [Test].
